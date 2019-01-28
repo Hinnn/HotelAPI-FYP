@@ -7,7 +7,7 @@ let mailer = require('../models/nodemailer');
 
 let mongodbUri ='mongodb://YueWang:donations999@ds113435.mlab.com:13435/hotelapi-fyp';
 
-mongoose.connect(mongodbUri);
+mongoose.connect(mongodbUri,{useNewUrlParser:true});
 
 let db = mongoose.connection;
 
