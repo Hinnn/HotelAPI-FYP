@@ -1,0 +1,13 @@
+{
+  "message": "Login Successfully!",
+  "data": {
+    "_id": "5c5020d32253960004bf4433",
+    "customerID": "20082242",
+    "name": "YueWang",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$Lr0ZKbFqH/V2vD9CSTmBdOoOPFP2CBNG3cGEO..1AYKEsjBIvOmMK",
+    "password2": "$2a$10$QGa7KYdVh/FF5QoII4App.kUeFkGr8XwD8oicyrk1f7xilsCeLF2S",
+    "register_date": "2019-01-29T09:45:55.847Z",
+    "__v": 0
+  }
+}

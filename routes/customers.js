@@ -73,7 +73,7 @@ router.login = (req, res) => {
                 res.json({message: 'Login Successfully!', data: customer});
             }
             else
-                res.json({message: 'Incorrect email Address or Password!', errmsg: err});
+                res.json({message: 'Incorrect Password!', errmsg: err});
         }
     });
 }

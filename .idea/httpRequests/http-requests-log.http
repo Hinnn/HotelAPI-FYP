@@ -1,3 +1,47 @@
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"wangyue"}
+
+<> 2019-01-29T100025.200.json
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"10953649@qq.com","password":"wangyue"}
+
+<> 2019-01-29T100011.200.json
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"wang000yue"}
+
+<> 2019-01-29T100002.200.json
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"wangyue"}
+
+<> 2019-01-29T095946.200.json
+
+###
+
 PUT http://localhost:3000/customers/20082242
 Accept: */*
 Cache-Control: no-cache
