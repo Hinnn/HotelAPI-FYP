@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const customers = require("./routes/customers");
+const bookings = require("./routes/bookings");
+const admin = require("./routes/admin");
+// const cookiekey = require('./models/Key');
+
 var app = express();
 var port = process.env.PORT || 3001;
 app.listen(port, function () {
@@ -30,10 +34,17 @@ app.use(cors());
 //operations on customers
 app.post('/customers/signUp', customers.signUp);
 app.post('/customers/login', customers.login);
-//app.get('/customers/:email', customers.findOne);
-app.put('/customers/:customerID', customers.EditInfo);
+app.post('/customers/verification', customers.verification);
+app.get('/customers/:email', customers.findOne);
+app.put('/customers/:email', customers.EditInfo);
 
+app.post('/admin/signUp', admin.signUp);
+app.post('/admin/login', admin.login);
+app.post('/admin/verification/:email', admin.verification);
+app.put('/admin/:email', admin.EditInfo);
 
+app.get('/bookings/:_id', bookings.findOne);
+app.post('/bookings', bookings.addBooking);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
-let CustomerSchema = new mongoose.Schema({
-        customerID: {
+let AdminSchema = new mongoose.Schema({
+        adminID: {
             type: String,
             //required: true,
             //unique: true
@@ -23,9 +23,7 @@ let CustomerSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        phoneNum:String,
-        DateOfBirth: Number,
-        Gender: String,
+
         register_date: Date,
         verification: {
             type: Boolean,
@@ -34,6 +32,6 @@ let CustomerSchema = new mongoose.Schema({
         code: String
 
     },
-    { collection: 'customers' });
+    { collection: 'admin' });
 
-module.exports = mongoose.model('Customer', CustomerSchema);
+module.exports = mongoose.model('Admin', AdminSchema);

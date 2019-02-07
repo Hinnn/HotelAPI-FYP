@@ -1,0 +1,14 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c5cb7962c9b050bcb265ff7",
+    "name": "YvetteWang",
+    "email": "772012459@qq.com",
+    "password": "$2a$10$4AzwAEg6TD6qpUEST.VqOOJSnlum4Wqjwb6taUjkupCBLsZ.5Tx/q",
+    "password2": "$2a$10$Uu39jJenEh4gaH2AcF/DwuswDfy0lT.EsQbGlFp0CwkdHjqzj6pTO",
+    "register_date": "2019-02-07T22:56:23.031Z",
+    "code": "947447",
+    "__v": 0
+  }
+}

@@ -1,88 +1,11 @@
-POST http://localhost:3000/customers/login
+POST http://localhost:3000/customers/signUp
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email":"1095933649@qq.com","password":"wangyue"}
+{"name":"Yvette","email":"772012459@qq.com","password":"wangYue123...","password2":"wangYue123..."}
 
-<> 2019-01-29T100025.200.json
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"10953649@qq.com","password":"wangyue"}
-
-<> 2019-01-29T100011.200.json
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","password":"wang000yue"}
-
-<> 2019-01-29T100002.200.json
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","password":"wangyue"}
-
-<> 2019-01-29T095946.200.json
-
-###
-
-PUT http://localhost:3000/customers/20082242
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue","Gender":"female"}
-
-<> 2019-01-28T080613.200.json
-
-###
-
-PUT http://localhost:3000/customers/20082242
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"name":"Yvette","email":"1095933649@qq.com","password":wangyue","password2":"wangyue","Gender":"female"}
-
-<> 2019-01-28T080530.400.html
-
-###
-
-PUT http://localhost:3000/customers/20082242
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"Gender":"female"}
-
-<> 2019-01-28T080406.200.json
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","password":"wangyue"}
-
-<> 2019-01-28T080155.200.json
+<> 2019-02-07T112730.200.json
 
 ###
 
@@ -91,9 +14,95 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email":"1095933649@qq.com","password":"wangyue"}
+{"name":"Yvette","email":"772012459@qq.com","password":"wangYue123...","password2":"wangYue123..."}
 
-<> 2019-01-28T080147.200.json
+<> 2019-02-07T112624.200.json
+
+###
+
+POST http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"Yvette","email":"772012459@qq.com","password":"wangYue123...","password2":"wangYue123..."}
+
+<> 2019-02-07T112616.200.json
+
+###
+
+POST http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"772012459@qq.com","code":"664790"}
+
+<> 2019-02-07T110726.200.json
+
+###
+
+POST http://localhost:3000/customers/verification/772012459@qq.com
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":"664790"}
+
+<> 2019-02-07T110605.404.html
+
+###
+
+POST http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":"664790"}
+
+<> 2019-02-07T110535.200.json
+
+###
+
+POST http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":"664790"}
+
+<> 2019-02-07T110527.200.json
+
+###
+
+POST http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":"664790"}
+
+<> 2019-02-07T110242.200.json
+
+###
+
+POST http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":"664790"}
+
+###
+
+GET http://localhost:3000/customers/verification
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"code":"664790"}
+
+<> 2019-02-07T110104.200.json
 
 ###
 
@@ -102,20 +111,9 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T080022.200.json
-
-###
-
-POST http://localhost:3000/customers/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
-
-<> 2019-01-28T080016.200.json
+<> 2019-02-07T110004.200.json
 
 ###
 
@@ -124,20 +122,9 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T075346-1.200.json
-
-###
-
-POST http://localhost:3000/customers/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
-
-<> 2019-01-28T075346.200.json
+<> 2019-02-07T105856.200.json
 
 ###
 
@@ -146,9 +133,9 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T075310.200.json
+<> 2019-02-07T105833.200.json
 
 ###
 
@@ -157,75 +144,383 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T075302.200.json
-
-###
-
-POST http://localhost:3000/customers/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: applicayion/json
-
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
-
-<> 2019-01-28T075208.200.json
+<> 2019-02-07T105732.200.json
 
 ###
 
 POST http://localhost:3000/customers/signUp
 Accept: */*
 Cache-Control: no-cache
-Content-Type: applicayion/json
+Content-Type: application/json
 
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T075109.200.json
-
-###
-
-POST http://localhost:3001/customers/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: applicayion/json
-
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
-
-<> 2019-01-28T075005.200.json
+<> 2019-02-07T105623.200.json
 
 ###
 
-POST http://localhost:3001/customers/signUp
+POST http://localhost:3000/customers/signUp
 Accept: */*
 Cache-Control: no-cache
-Content-Type: applicayion/json
+Content-Type: application/json
 
-{"customerID":"20082242","name":"Yvette","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T074831.200.json
+<> 2019-02-07T105500.200.json
 
 ###
 
-POST http://localhost:3001/customers/signUp
+POST http://localhost:3000/customers/signUp
 Accept: */*
 Cache-Control: no-cache
-Content-Type: applicayion/json
+Content-Type: application/json
 
-{"customerID":"20082242","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T074804.200.json
+<> 2019-02-07T105400.200.json
 
 ###
 
-POST http://localhost:3001/customers/signUp
+POST http://localhost:3000/customers/signUp
 Accept: */*
 Cache-Control: no-cache
-Content-Type: applicayion/json
+Content-Type: application/json
 
-{"customerID":"20082242","email":"1095933649@qq.com","password":"wangyue","password2":"wangyue"}
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
 
-<> 2019-01-28T074725.200.json
+<> 2019-02-07T105220.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T105103.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T104635.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T103733.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T103520.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T103512.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T103401.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T103004.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T102928.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T102757.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T095126.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T095104.200.json
+
+###
+
+GET http://localhost:3000/customers/active
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T072323.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T072151.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T071843.500.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T071109.500.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T071000.500.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T013509.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T013413.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20082242","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T013358.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T013313.200.json
+
+###
+
+POST http://localhost:3000/customers/signUp
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"customerID":"20150009","name":"YvetteWang","email":"772012459@qq.com","password":"Wangyue123..","password2":"Wangyue123.."}
+
+<> 2019-02-07T013254.200.json
 
 ###
 
