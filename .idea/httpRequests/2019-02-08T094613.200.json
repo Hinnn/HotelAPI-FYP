@@ -1,0 +1,14 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c5df8a50917ff0d092195c7",
+    "name": "Yvette",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$VlHP5Xi8pjDbVjKe9PgHc.sHQJtgwr6bBggrJKpVIo4rkCeyqiXHm",
+    "password2": "$2a$10$xzAI2P8jgRpu3kvrQRO5guHVuhtg0kz2hGWZHBbZ0vF2GXtfeuvOK",
+    "register_date": "2019-02-08T21:46:13.461Z",
+    "code": "417429",
+    "__v": 0
+  }
+}

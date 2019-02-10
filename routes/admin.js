@@ -1,23 +1,8 @@
-let mongoose = require('mongoose');
 let Admin = require('../models/admin');
 let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mailer = require('../models/nodemailer');
-
-let mongodbUri ='mongodb://YueWang:donations999@ds113435.mlab.com:13435/hotelapi-fyp';
-
-mongoose.connect(mongodbUri,{useNewUrlParser:true});
-
-let db = mongoose.connection;
-
-db.on('error', function (err) {
-    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
-});
-
-db.once('open', function () {
-    console.log('Successfully Connected to [ ' + db.name + ' ] ');
-});
 
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');

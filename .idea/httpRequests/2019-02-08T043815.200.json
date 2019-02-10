@@ -1,0 +1,14 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c5db076457560099126526f",
+    "name": "Yvette",
+    "email": "Yue1095933649@gmail.com",
+    "password": "$2a$10$eR5C1OPccPmFN0BMMREA0O8je0Qc5Z7cHIlAAzqlEL4a9iRmuL6dW",
+    "password2": "$2a$10$nVQHpDqxHaBJlY4aOFFR..IuMxo85pdYOfhscN3jW3O/etxnGQIES",
+    "register_date": "2019-02-08T16:38:15.087Z",
+    "code": "146964",
+    "__v": 0
+  }
+}

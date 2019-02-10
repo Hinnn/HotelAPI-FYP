@@ -1,3 +1,4 @@
+let mongoose = require('mongoose');
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -7,10 +8,25 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+let mongodbUri ='mongodb://YueWang:donations999@ds127545.mlab.com:27545/hotelbooking-fyp';
+
+mongoose.connect(mongodbUri,{useNewUrlParser:true});
+
+let db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('Unable to Connect to [ ' + db.name + ' ]', err);
+});
+
+db.once('open', function () {
+    console.log('Successfully Connected to [ ' + db.name + ' ] ');
+});
+
+
+
 const customers = require("./routes/customers");
 const bookings = require("./routes/bookings");
 const admin = require("./routes/admin");
-// const cookiekey = require('./models/Key');
 
 var app = express();
 var port = process.env.PORT || 3001;
@@ -45,6 +61,8 @@ app.put('/admin/:email', admin.EditInfo);
 
 app.get('/bookings/:_id', bookings.findOne);
 app.post('/bookings', bookings.addBooking);
+app.put('/bookings/:email', bookings.edit);
+app.delete('/bookings/:email',bookings.deleteBooking);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

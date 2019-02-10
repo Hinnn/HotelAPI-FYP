@@ -1,8 +1,9 @@
 let nodemailer = require('nodemailer');
-
-function send (email) {
+let customer = require('../models/customers');
+function send (email, code) {
 //new smtp server
-    let code =Math.floor(Math.random()*1100000-100001);
+    // let code =Math.floor(Math.random()*1100000-100001);
+    // let code = customer.code;
     const config = {
         host: 'smtp.126.com',
         port: 465,
@@ -17,20 +18,21 @@ function send (email) {
         to: email,
         subject: 'Email Verification',
         text: 'Your verification code is ' + code + ' The valid time is 10 minutes'
-       // html: '<h3>Thank you for your register!</h3>' +'<h3>Your verification code is: <strong style="color: #ff4e2a;"> +code+</strong>, ' +'valid time is 5 minutes. </h3>'
     };
 
 // add a new SMTP server object
     let transporter = nodemailer.createTransport(config);
 //send email
 
-    transporter.sendMail(mail, function (error, info) {
+    transporter.sendMail(mail, code, function (error) {
         //callback(error);
         if (error) {
-            return console.log('error');
+            // return console.log('error');
+            console.log('Error occurred');
+            console.log(error.message);
             // return process.exit(1);
         }
-        console.log('Email sent successfully!', info.response);
+        console.log('Email sent successfully! Your code is '+ code);
         transporter.close();
     });
 }

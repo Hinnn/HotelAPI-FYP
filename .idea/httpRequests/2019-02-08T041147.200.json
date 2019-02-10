@@ -1,0 +1,11 @@
+{
+  "message": "Fail to register!",
+  "err": {
+    "driver": true,
+    "name": "MongoError",
+    "index": 0,
+    "code": 11000,
+    "errmsg": "E11000 duplicate key error index: hotelapi-fyp.customers.$username_1 dup key: { : null }"
+  },
+  "data": null
+}

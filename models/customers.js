@@ -1,10 +1,6 @@
 let mongoose = require('mongoose');
+
 let CustomerSchema = new mongoose.Schema({
-        customerID: {
-            type: String,
-            //required: true,
-            //unique: true
-        },
         name: {
             type: String,
             required: true

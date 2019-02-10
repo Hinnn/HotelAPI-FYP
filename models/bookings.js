@@ -1,35 +1,38 @@
-/*const bookings = [
-    {orderID: 1000000, customerID: 100000000, paymenttype: 'PayPal', date : 20081022, amount: 1,roomID: 101,price: 30},
-    {orderID: 1000001, customerID: 100000001, paymenttype: 'Direct', date : 20181116, amount: 1,roomID: 102,price: 30},
-    {orderID: 1000002, customerID: 100000002, paymenttype: 'Visa', date : 20181116, amount: 1,roomID: 103,price: 40}
-];
-
-module.exports = bookings;*/
 let mongoose = require('mongoose');
 
 let BookingSchema = new mongoose.Schema({
-        customerID:{
-            //required: true,
-            type: String
+        name:{
+            type: String,
+            required: true
         },
-        paymenttype: {
-           type: String
+        email:{
+            type: String,
+            required: true
         },
-
-        date:{
+        roomType:{
+            type: String,
+            required: true
+        },
+        checkin_Date:{
+            type: Number,
+            required: true
+        },
+        leave_Date:{
             type: Number,
             required: true
         },
         amount:{
-                type: Number,
-                required: true
-        },
-        roomNum : {
-                type: String
+            type: Number,
+            required: true
         },
         price: {
-            type: Number
-        }
+            type: Number,
+            required: true
+        },
+        payment_status: {
+            type: Boolean,
+            default: false
+        },
     },
     { collection: 'bookings' });
 
