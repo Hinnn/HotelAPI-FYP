@@ -1,0 +1,21 @@
+{
+  "message": "Verification successful!",
+  "data": {
+    "n": 0,
+    "nModified": 0,
+    "opTime": {
+      "ts": "6656820003058221063",
+      "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1,
+    "operationTime": "6656820003058221063",
+    "$clusterTime": {
+      "clusterTime": "6656820003058221063",
+      "signature": {
+        "hash": "Hrv5RJzZ+iGjJg/Xlg8IRwGmGls=",
+        "keyId": "6655647193518571521"
+      }
+    }
+  }
+}

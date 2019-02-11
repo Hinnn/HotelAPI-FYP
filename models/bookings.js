@@ -1,6 +1,9 @@
 let mongoose = require('mongoose');
 
 let BookingSchema = new mongoose.Schema({
+    // orderID:{
+    //     type: String
+    // },
         name:{
             type: String,
             required: true

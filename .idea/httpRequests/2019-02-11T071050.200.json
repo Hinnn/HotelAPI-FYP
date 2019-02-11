@@ -1,0 +1,14 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c61c8b98aae4203554798ec",
+    "name": "Wangyue",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$Il/Bf26uYkapc98DMmbxouKTephBDLN.T4/W96MTJnfPM/0S9rhB.",
+    "password2": "$2a$10$RQVSSaFv98NjYyW8.reXg.QLdqWvyU9SmaeDlmIAUmtH9aT0/Xddu",
+    "register_date": "2019-02-11T19:10:50.292Z",
+    "code": "267168",
+    "__v": 0
+  }
+}

@@ -17,7 +17,7 @@ function send (email, code) {
         from: '"Yve Hotel"<wy20082242@126.com>',
         to: email,
         subject: 'Email Verification',
-        text: 'Your verification code is ' + code + ' The valid time is 10 minutes'
+        text: 'Your verification code is ' + code + '. The valid time is 10 minutes'
     };
 
 // add a new SMTP server object
@@ -32,7 +32,7 @@ function send (email, code) {
             console.log(error.message);
             // return process.exit(1);
         }
-        console.log('Email sent successfully! Your code is '+ code);
+        console.log('Email sent successfully! Your code is '+ code );
         transporter.close();
     });
 }

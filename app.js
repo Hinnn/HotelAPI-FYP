@@ -50,6 +50,7 @@ app.use(cors());
 //operations on customers
 app.post('/customers/signUp', customers.signUp);
 app.post('/customers/login', customers.login);
+
 app.post('/customers/verification', customers.verification);
 app.get('/customers/:email', customers.findOne);
 app.put('/customers/:email', customers.EditInfo);
@@ -59,9 +60,9 @@ app.post('/admin/login', admin.login);
 app.post('/admin/verification/:email', admin.verification);
 app.put('/admin/:email', admin.EditInfo);
 
-app.get('/bookings/:_id', bookings.findOne);
+//app.get('/bookings/:_id', bookings.findOne);
 app.post('/bookings', bookings.addBooking);
-app.put('/bookings/:email', bookings.edit);
+//app.put('/bookings/:email', bookings.edit);
 app.delete('/bookings/:email',bookings.deleteBooking);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,14 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c61c6605ba28a0320bc80c6",
+    "name": "Wang",
+    "email": "772012459@qq.com",
+    "password": "$2a$10$vpUhdLrRZsJXdrIMEbCrWeQSWWeKnxEMUTV8HPBXbh8uQK5FOfSIe",
+    "password2": "$2a$10$FVayuBBVrgt7Wspg1s2aX.LW2I0ovz9CbvOFVj7Q3YyyqhrM4HuRa",
+    "register_date": "2019-02-11T19:00:49.469Z",
+    "code": "922084",
+    "__v": 0
+  }
+}

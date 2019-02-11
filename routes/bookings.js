@@ -1,7 +1,7 @@
 let Booking = require('../models/bookings');
 let express = require('express');
 let router = express.Router();
-
+/*
 router.findAll = (req, res) => {
     // Return a JSON representation of our list
     res.setHeader('Content-Type', 'application/json');
@@ -30,10 +30,10 @@ function getTotalAmount(array) {
     array.forEach(function(obj) { totalAmount += obj.amount; });
     return totalAmount;
 }
-
+*/
 router.addBooking = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    var booking = new Booking();
+    let booking = new Booking();
     // var bookingID = Math.floor((Math.random() * 1000000) + 1);
     // booking.bookingID = req.params.bookingID;
     //booking.orderID = Math.floor((Math.random() * 1000000) + 1);
@@ -50,7 +50,7 @@ router.addBooking = (req, res) => {
             res.json({ message: 'Booking Successfully Added!', data: booking });
     });
 }
-router.edit = (req, res) => {
+/*router.edit = (req, res) => {
 
     // Find the relevant booking based on params id passed in
 
@@ -80,9 +80,9 @@ router.edit = (req, res) => {
     });
 };
 
-
+*/
 router.deleteBooking = (req, res) => {
-    Booking.findOneAndRemove({email:req.params.email}, function (err) {
+    Booking.findOneAndRemove({_id:req.params.id}, function (err) {
         if (!err) {
             res.json({message: 'Booking Successfully Deleted!'});
         }
@@ -93,13 +93,13 @@ router.deleteBooking = (req, res) => {
     });
 }
 
-router.findTotalAmount = (req, res) => {
+/*router.findTotalAmount = (req, res) => {
     Booking.find(function(err, bookings) {
         if (err)
             res.send(err);
         else
             res.json({ totalamount : getTotalAmount(bookings) });
     });
-}
+}*/
 
 module.exports = router;

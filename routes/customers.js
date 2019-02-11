@@ -4,11 +4,11 @@ let express = require('express');
 let router = express.Router();
 let mailer = require('../models/nodemailer');
 let code =Math.floor(Math.random()*1100000-100001);
-
+let jwt = require('jsonwebtoken');
+let SECRET = require('../models/secretkey');
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
-    //let code =Math.floor(Math.random()*1100000-100001);
-    // let code =Math.random()*(999999-100000)+100000;
+
     let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
     let email = req.body.email;
 
@@ -53,48 +53,56 @@ router.signUp = (req, res)=> {
 router.verification = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Customer.findOne({email: req.body.email}, function (err, customer) {
+        Customer.findOne({code: req.body.code}, function (err, customer) {
         if (!customer) {
-            res.json({ message: 'Verification failed'});
+            res.json({  message: 'Wrong code!'});
         } else if ((Date.now() - customer.register_date) > (1000*60*10)){
-            Customer.deleteOne({email: customer.email});
-            res.json({ message: 'Time expired! Please try again!'});
+            Customer.findOneAndRemove({email: customer.email});
+            res.json({ message: 'Timeout! Please try again!'});
         } else {
-            Customer.updateOne({ email: req.body.email}, {verification: true}, function(err, newCustomer){
-                // if (err){
-                //     res.json({ message: err});
-                // } else {
-                //     res.json({ message: 'Verification successful!', data: newCustomer});
-                // }
-                if (req.body.code, customer.code){
-                    res.json({ message: 'Verification successful!', data: newCustomer});
+            Customer.update({ email: customer.email}, {verification: true}, function(err, newCustomer){
+                if (err){
+                    res.json({ message: err});
+                } else {
+                    res.json({message: 'Verification successful!', data: newCustomer});
                 }
-                else{
-                    res.json({ message: 'Wrong code!'});
-                }
-
-
             });
         }
     });
+};
+
+
+
+loginToken = (customer) => {
+    return jwt.sign({
+        iss: 'developer',
+        sub: customer.email,
+        iat: new Date().getTime()
+    }, SECRET.JWT_CUSTOMER_SECRET);
 };
 router.login = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     Customer.findOne({email: req.body.email}, function (err, customer) {
-        if (!customer) {
-            res.json({message: 'Customer NOT found!', errmsg: err});
-        } else {
-            if (bcrypt.compareSync(req.body.password, customer.password)) {
-                let token = customer.generateAuthToken();
-                res.header('token', token);
-                res.json({message: 'Login Successfully!', data: customer});
+        if(!customer) {
+            res.json({ message: ' Please sign up first!', data: null });
+        } else if(customer.verification === false) {
+            res.json({ message: 'You are not verified!', data: null })
+        } else{
+            if(bcrypt.compareSync(req.body.password, customer.password)){
+                let token = loginToken(customer);
+                res.header('token',token);
+                res.cookie('customer', customer.email, {
+                });
+                res.json({ message: 'Welcome to our website! '+ customer.name, data: customer });
+                console.log(req.cookies)
             }
             else
-                res.json({message: 'Incorrect Password!', errmsg: err});
+                res.json({ message: 'Wrong password!', data: null });
         }
     });
-}
+};
+
     router.EditInfo = (req, res) => {
 
         // Find the relevant booking based on params id passed in
