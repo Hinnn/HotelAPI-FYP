@@ -23,15 +23,17 @@ router.signUp = (req, res)=> {
     customer.register_date = Date.now();
     customer.code = code;
          if( customer.name == null || customer.email == null || customer.password == null || customer.password2 == null){
-             res.json({message: 'Name, email,password and confirm password are all required',data:null})
+             res.json({message: 'Name, email,password and confirm password are all required!',data:null})
          }
         else if (!checkEmail.test(customer.email)){
             res.json({message: 'Wrong email format!'})
         } else if((8 > req.body.password.length) || (8 > req.body.password2)){
-            res.json({message: 'Password should be more than 8 characters',data:null})
+            res.json({message: 'Password should be more than 8 characters!',data:null})
         } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
             res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
-        }
+        } else if (req.body.password !== req.body.password2){
+             res.json({message: 'Please input the same password!',data:null})
+         }
         else{
             Customer.findOne({ email: req.body.email }, function (err, user) {
                 if(user) {

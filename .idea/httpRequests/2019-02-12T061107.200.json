@@ -1,0 +1,14 @@
+{
+  "message": "Welcome to our website! Wangyue",
+  "data": {
+    "verification": true,
+    "_id": "5c630bd1d89a9602d5370d81",
+    "name": "Wangyue",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$.fNCAc3KVNdal9tX98zFa.7aiXe3zatJfJxQNtezBvwQekbnUVN5y",
+    "password2": "$2a$10$CUsbf99UkILmSHd42axi4.u7/rqQxdajdi0NmTFpCakE1xZdq393y",
+    "register_date": "2019-02-12T18:09:21.777Z",
+    "code": "614894",
+    "__v": 0
+  }
+}
