@@ -58,7 +58,7 @@ app.put('/customers/:email', customers.EditInfo);
 app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
 app.post('/admin/verification/:email', admin.verification);
-app.put('/admin/:email', admin.EditInfo);
+//app.put('/admin/:email', admin.EditInfo);
 
 //app.get('/bookings/:_id', bookings.findOne);
 app.post('/bookings', bookings.addBooking);
