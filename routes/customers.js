@@ -77,9 +77,9 @@ router.verification = (req, res) => {
 
 loginToken = (customer) => {
     return jwt.sign({
-        iss: 'developer',
-        sub: customer.email,
-        iat: new Date().getTime()
+        iss: 'developer',//发行者
+        sub: customer.login,//主题
+        iat: new Date().getTime()//发行时间
     }, SECRET.JWT_CUSTOMER_SECRET);
 };
 router.login = (req, res) => {
@@ -94,7 +94,7 @@ router.login = (req, res) => {
             if(bcrypt.compareSync(req.body.password, customer.password)){
                 let token = loginToken(customer);
                 res.header('token',token);
-                res.cookie('customer', customer.email, {
+                res.cookie('user', customer.email, {
                 });
                 res.json({ message: 'Welcome to our website! '+ customer.name, data: customer });
                 console.log(req.cookies)
@@ -107,29 +107,54 @@ router.login = (req, res) => {
 
     router.EditInfo = (req, res) => {
 
-        // Find the relevant booking based on params id passed in
-
         res.setHeader('Content-Type', 'application/json');
-        let customer = new Customer({
-            password: bcrypt.hashSync(req.body.password),
-            password2: bcrypt.hashSync(req.body.password2),
-            DateOfBirth: req.body.DateOfBirth,
-            Gender: req.body.Gender
-        });
+        let customer = new Customer;
+            customer.DateOfBirth = req.body.DateOfBirth;
+            customer.Gender = req.body.Gender;
+            customer.phoneNum = req.body.phoneNum
+
         Customer.update({"email": req.params.email},
             {
-                password: req.body.password,
-                password2: req.body.password2,
                 DateOfBirth: req.body.DateOfBirth,
-                Gender: req.body.Gender
+                Gender: req.body.Gender,
+                phoneNum: req.body.phoneNum
             },
             function (err, customer) {
                 if (err)
-                    res.json({message: 'Customer Not Edited', errmsg: err});
+                    res.json({message: 'Unable to change', errmsg: err});
                 else
-                    res.json({message: 'Customer Edited successfully', data: customer});
+                    res.json({message: 'Information changed successfully!', data: customer});
             });
     };
+    router.changePassword = (req, res) => {
+        res.setHeader('Content-Type', 'application/json');
+        let customer = new Customer();
+        customer.password = bcrypt.hashSync(req.body.password);
+        customer.password2 = bcrypt.hashSync(req.body.password2)
+        if(customer.password == null || customer.password2 == null){
+            res.json({message: 'Password and confirm password are all required!',data:null})
+        } else if((8 > req.body.password.length) || (8 > req.body.password2)){
+            res.json({message: 'Password should be more than 8 characters!',data:null})
+        } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
+            res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
+        } else if (req.body.password !== req.body.password2) {
+            res.json({message: 'Please input the same password!', data: null})
+          }
+        else{
+            Customer.update({"email": req.params.email},
+                {
+                    password: bcrypt.hashSync(req.body.password),
+                    password2: bcrypt.hashSync(req.body.password2)
+                },
+                function (err, customer) {
+                    if (err)
+                    res.json({message: 'Unable to change', errmsg: err});
+                else
+                    res.json({message: 'Password changed successfully!', data: customer});
+                });
+        };
+    };
+    /*
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     Customer.find({"email": req.params.email}, function (err, customer) {
@@ -139,7 +164,19 @@ router.findOne = (req, res) => {
             res.send(JSON.stringify(customer, null, 5));
     });
 }
+*/
+  router.logout = (req, res) => {
+      res.setHeader('Content-Type', 'application/json');
 
+      if (req.headers.cookie != null) {
+          res.removeHeader('cookie');
+          res.clearCookie('user')
+          res.json({ data: req.headers.cookie });
+      } else{
+          //     console.log(req.headers);
+          res.json({ message: 'Please log in first' });
+      }
+  };
 
 module.exports = router;
 module.exports.code = code;

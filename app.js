@@ -52,8 +52,10 @@ app.post('/customers/signUp', customers.signUp);
 app.post('/customers/login', customers.login);
 
 app.post('/customers/verification', customers.verification);
-app.get('/customers/:email', customers.findOne);
-app.put('/customers/:email', customers.EditInfo);
+app.post('/customers/logout', customers.logout);
+//app.get('/customers/:email', customers.findOne);
+app.put('/customers/edit/:email', customers.EditInfo);
+app.put('/customers/changePassword/:email', customers.changePassword);
 
 app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);

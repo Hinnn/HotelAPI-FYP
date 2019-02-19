@@ -1,0 +1,21 @@
+{
+  "message": "Password changed successfully!",
+  "data": {
+    "n": 1,
+    "nModified": 1,
+    "opTime": {
+      "ts": "6659428731834073089",
+      "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1,
+    "operationTime": "6659428731834073089",
+    "$clusterTime": {
+      "clusterTime": "6659428731834073089",
+      "signature": {
+        "hash": "6x93MRdKYXF5LBKR5dGPSDe0cYQ=",
+        "keyId": "6655647193518571521"
+      }
+    }
+  }
+}

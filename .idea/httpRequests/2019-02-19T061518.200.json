@@ -1,19 +1,19 @@
 {
   "message": "Verification successful!",
   "data": {
-    "n": 0,
-    "nModified": 0,
+    "n": 1,
+    "nModified": 1,
     "opTime": {
-      "ts": "6656818869186854914",
+      "ts": "6659776795983740929",
       "t": 1
     },
     "electionId": "7fffffff0000000000000001",
     "ok": 1,
-    "operationTime": "6656818869186854914",
+    "operationTime": "6659776795983740929",
     "$clusterTime": {
-      "clusterTime": "6656818869186854914",
+      "clusterTime": "6659776795983740929",
       "signature": {
-        "hash": "9eUq65MOWiGdgUxqzkhXhKfOkD8=",
+        "hash": "xqgSCQVNbU18Fkx2Poc7u9Tlt00=",
         "keyId": "6655647193518571521"
       }
     }

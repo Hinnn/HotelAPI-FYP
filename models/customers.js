@@ -1,6 +1,5 @@
 let mongoose = require('mongoose');
 
-//let bcrypt = require('bcrypt-nodejs');
 let CustomerSchema = new mongoose.Schema({
         name: {
             type: String,
@@ -32,18 +31,6 @@ let CustomerSchema = new mongoose.Schema({
 
     },
     { collection: 'customers' });
-//
-// CustomerSchema.methods = {
-//
-//     comparePassword: function (password, cb) {
-//         bcrypt.compare(password, this.password, function (err, isMatch) {
-//             if (err) {
-//                 return cb(err);
-//             }
-//             cb(null, isMatch);
-//         })
-//     }
-// };
 
 
 
