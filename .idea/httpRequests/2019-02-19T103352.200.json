@@ -1,0 +1,15 @@
+{
+  "message": "Booking Successfully Added!",
+  "data": {
+    "payment_status": false,
+    "_id": "5c6c8450665e1604526c176b",
+    "contactNum": 830694220,
+    "name": "YueWang",
+    "email": "1095933649@qq.com",
+    "amount": 1,
+    "roomType": "double",
+    "checkin_date": 20190228,
+    "leave_date": 20180201,
+    "__v": 0
+  }
+}

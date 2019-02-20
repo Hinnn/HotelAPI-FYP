@@ -1,9 +1,6 @@
 let mongoose = require('mongoose');
 
 let BookingSchema = new mongoose.Schema({
-    // orderID:{
-    //     type: String
-    // },
         name:{
             type: String,
             required: true
@@ -12,16 +9,20 @@ let BookingSchema = new mongoose.Schema({
             type: String,
             required: true
         },
+        contactNum:{
+            type: Number,
+            required: true
+        },
         roomType:{
             type: String,
             required: true
         },
-        checkin_Date:{
-            type: Number,
+        checkin_date:{
+            type: Date,
             required: true
         },
-        leave_Date:{
-            type: Number,
+        leave_date:{
+            type: Date,
             required: true
         },
         amount:{
@@ -30,7 +31,7 @@ let BookingSchema = new mongoose.Schema({
         },
         price: {
             type: Number,
-            required: true
+            // required: true
         },
         payment_status: {
             type: Boolean,

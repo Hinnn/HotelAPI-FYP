@@ -64,7 +64,7 @@ app.post('/admin/verification/:email', admin.verification);
 
 //app.get('/bookings/:_id', bookings.findOne);
 app.post('/bookings', bookings.addBooking);
-//app.put('/bookings/:email', bookings.edit);
+app.put('/bookings/:email', bookings.editBooking);
 app.delete('/bookings/:email',bookings.deleteBooking);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
