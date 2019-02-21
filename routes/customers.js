@@ -30,7 +30,7 @@ router.signUp = (req, res)=> {
         } else if((8 > req.body.password.length) || (8 > req.body.password2)){
             res.json({message: 'Password should be more than 8 characters!',data:null})
         } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
-            res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
+            res.json({ message: 'Password must have number,special character, lowercase and capital Letters!', data: null});
         } else if (req.body.password !== req.body.password2){
              res.json({message: 'Please input the same password!',data:null})
          }
@@ -60,7 +60,7 @@ router.verification = (req, res) => {
             res.json({  message: 'Wrong code!'});
         } else if ((Date.now() - customer.register_date) > (1000*60*10)){
             Customer.findOneAndRemove({email: customer.email});
-            res.json({ message: 'Timeout! Please try again!'});
+            res.json({ message: 'Timeout! Please sign up again!'});
         } else {
             Customer.update({ email: customer.email}, {verification: true}, function(err, newCustomer){
                 if (err){

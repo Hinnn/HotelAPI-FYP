@@ -25,12 +25,10 @@ function send (email, code) {
 //send email
 
     transporter.sendMail(mail, code, function (error) {
-        //callback(error);
+        // callback(error);
         if (error) {
-            // return console.log('error');
             console.log('Error occurred');
             console.log(error.message);
-            // return process.exit(1);
         }
         console.log('Email sent successfully! Your code is '+ code );
         transporter.close();
