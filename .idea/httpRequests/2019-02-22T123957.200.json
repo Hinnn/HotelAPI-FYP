@@ -1,0 +1,14 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c6fed9d44c851050cb8ede3",
+    "name": "YueWang",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$UFkwjuZ4DJ7hKLzg306ZGONpr9XLDgifAVu3rVhsflQuJ1DzJp4TS",
+    "password2": "$2a$10$Qv2shhy9j9PCD2Hoq8jWweQmL9FPZKCISaGJ5pDFAbArvtyQL8L2G",
+    "register_date": "2019-02-22T12:39:57.783Z",
+    "code": "a90f8d832a86ba3d77c780aa36269f8ee0a8097268cf2f93874b0d2328fbf30f",
+    "__v": 0
+  }
+}

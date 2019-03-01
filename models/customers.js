@@ -27,8 +27,10 @@ let CustomerSchema = new mongoose.Schema({
             type: Boolean,
             default: false
         },
-        code: String
-
+        code: {
+            type: String,
+            // required: true
+        }
     },
     { collection: 'customers' });
 

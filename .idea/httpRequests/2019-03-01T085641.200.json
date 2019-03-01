@@ -1,0 +1,21 @@
+{
+  "message": "Email confirmed!",
+  "data": {
+    "n": 1,
+    "nModified": 1,
+    "opTime": {
+      "ts": "6663529235895812097",
+      "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1,
+    "operationTime": "6663529235895812097",
+    "$clusterTime": {
+      "clusterTime": "6663529235895812097",
+      "signature": {
+        "hash": "Dv64afcg7in7AUpW0h7yrjDg4A0=",
+        "keyId": "6655647193518571521"
+      }
+    }
+  }
+}

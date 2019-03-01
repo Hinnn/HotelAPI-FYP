@@ -7,7 +7,7 @@ var logger = require('morgan');
 var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+// let jwt = require('jsonwebtoken');
 let mongodbUri ='mongodb://YueWang:donations999@ds127545.mlab.com:27545/hotelbooking-fyp';
 
 mongoose.connect(mongodbUri,{useNewUrlParser:true});
@@ -59,7 +59,7 @@ app.put('/customers/changePassword/:email', customers.changePassword);
 
 app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
-app.post('/admin/verification/:email', admin.verification);
+app.post('/admin/verification', admin.verification);
 //app.put('/admin/:email', admin.EditInfo);
 
 //app.get('/bookings/:_id', bookings.findOne);

@@ -29,7 +29,7 @@ let AdminSchema = new mongoose.Schema({
             type: Boolean,
             default: false
         },
-        code: String
+        admin_code: String
 
     },
     { collection: 'admin' });

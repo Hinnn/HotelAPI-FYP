@@ -2,8 +2,8 @@ let Admin = require('../models/admin');
 let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
-let mailer = require('../models/nodemailer');
-let code =Math.floor(Math.random()*1100000-100001);
+let mailer = require('../models/adminmail');
+let admin_code = Math.floor(Math.random()*900000 + 100000);
 let jwt = require('jsonwebtoken');
 let SECRET = require('../models/secretkey');
 
@@ -12,15 +12,13 @@ router.signUp = (req, res)=> {
 
     let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
     let email = req.body.email;
-
-    let admin = new Customer();
+    let admin = new Admin();
     admin.name = req.body.name;
     admin.email = req.body.email;
     admin.password = bcrypt.hashSync(req.body.password);
     admin.password2 = bcrypt.hashSync(req.body.password2);
-    admin.phoneNumber = req.body.phoneNumber;
     admin.register_date = Date.now();
-    admin.code = code;
+    admin.admin_code = admin_code;
     if( admin.name == null || admin.email == null || admin.password == null || admin.password2 == null){
         res.json({message: 'Name, email,password and confirm password are all required!',data:null})
     }
@@ -29,7 +27,7 @@ router.signUp = (req, res)=> {
     } else if((8 > req.body.password.length) || (8 > req.body.password2)){
         res.json({message: 'Password should be more than 8 characters!',data:null})
     } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
-        res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
+        res.json({ message: 'Password must have number,special character, lowercase and capital Letters!', data: null});
     } else if (req.body.password !== req.body.password2){
         res.json({message: 'Please input the same password!',data:null})
     }
@@ -42,7 +40,8 @@ router.signUp = (req, res)=> {
                     if(err) {
                         res.json({ message: 'Fail to register!',err : err, data: null});
                     } else {
-                        mailer.send(email,code);
+                        //mailer.send(email,code);
+                        mailer.send(email, admin_code);
                         res.json({message: 'Sign Up Successfully!', data: admin});
                     }
                 });
@@ -54,18 +53,21 @@ router.signUp = (req, res)=> {
 router.verification = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    Admin.findOne({code: req.body.code}, function (err, admin) {
+    Admin.findOne({admin_code: req.body.admin_code}, function (err, admin) {
         if (!admin) {
-            res.json({  message: 'Wrong code!'});
+            res.json({  message: 'Fail to confirm email!'});
         } else if ((Date.now() - admin.register_date) > (1000*60*10)){
-            Admin.findOneAndRemove({email: admin.email});
-            res.json({ message: 'Timeout! Please try again!'});
+            Admin.findOneAndRemove({email: req.body.email})
+            {
+                res.json({message: 'Timeout! Please sign up again!'});
+
+            }
         } else {
             Admin.update({ email: admin.email}, {verification: true}, function(err, newAdmin){
                 if (err){
                     res.json({ message: err});
                 } else {
-                    res.json({message: 'Verification successful!', data: newAdmin});
+                    res.json({message: 'Email confirmed!', data: newAdmin});
                 }
             });
         }
@@ -76,10 +78,10 @@ router.verification = (req, res) => {
 
 loginToken = (admin) => {
     return jwt.sign({
-        iss: 'developer',
-        sub: admin.email,
-        iat: new Date().getTime()
-    }, SECRET.JWT_CUSTOMER_SECRET);
+        iss: 'developer',//发行者
+        sub: admin.login,//主题
+        iat: new Date().getTime()//发行时间
+    }, SECRET.JWT_ADMIN_SECRET);
 };
 router.login = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -93,9 +95,9 @@ router.login = (req, res) => {
             if(bcrypt.compareSync(req.body.password, admin.password)){
                 let token = loginToken(admin);
                 res.header('token',token);
-                res.cookie('admin', admin.email, {
+                res.cookie('user', admin.email, {
                 });
-                res.json({ message: 'Welcome to our website! '+ admin.name, data: admin });
+                res.json({ message: 'Welcome! '+ admin.name });
                 console.log(req.cookies)
             }
             else
@@ -103,30 +105,79 @@ router.login = (req, res) => {
         }
     });
 };
-/*
-router.EditInfo = (req, res) => {
-
-    // Find the relevant booking based on params id passed in
-
+//
+// router.EditInfo = (req, res) => {
+//
+//     res.setHeader('Content-Type', 'application/json');
+//     let admin = new Admin;
+//     admin.DateOfBirth = req.body.DateOfBirth;
+//     admin.Gender = req.body.Gender;
+//     admin.phoneNum = req.body.phoneNum
+//
+//     Admin.update({"email": req.params.email},
+//         {
+//             DateOfBirth: req.body.DateOfBirth,
+//             Gender: req.body.Gender,
+//             phoneNum: req.body.phoneNum
+//         },
+//         function (err, admin) {
+//             if (err)
+//                 res.json({message: 'Unable to change', errmsg: err});
+//             else
+//                 res.json({message: 'Information changed successfully!', data: admin});
+//         });
+//};
+router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let admin = new Admin({
-        password: bcrypt.hashSync(req.body.password),
-        password2: bcrypt.hashSync(req.body.password2),
-    });
-    Admin.update({"email": req.params.email},
-        {
-            password: req.body.password,
-            password2: req.body.password2,
-            DateOfBirth: req.body.DateOfBirth,
-            Gender: req.body.Gender
-        },
-        function (err, customer) {
-            if (err)
-                res.json({message: 'Admin Not Edited', errmsg: err});
-            else
-                res.json({message: 'Admin Edited successfully', data: admin});
-        });
+    let admin = new Admin();
+    admin.password = bcrypt.hashSync(req.body.password);
+    admin.password2 = bcrypt.hashSync(req.body.password2)
+    if(admin.password == null || admin.password2 == null){
+        res.json({message: 'Password and confirm password are all required!',data:null})
+    } else if((8 > req.body.password.length) || (8 > req.body.password2)){
+        res.json({message: 'Password should be more than 8 characters!',data:null})
+    } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
+        res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
+    } else if (req.body.password !== req.body.password2) {
+        res.json({message: 'Please input the same password!', data: null})
+    }
+    else{
+        Admin.update({"email": req.params.email},
+            {
+                password: bcrypt.hashSync(req.body.password),
+                password2: bcrypt.hashSync(req.body.password2)
+            },
+            function (err, admin) {
+                if (err)
+                    res.json({message: 'Unable to change', errmsg: err});
+                else
+                    res.json({message: 'Password changed successfully!', data: admin});
+            });
+    };
 };
+/*
+router.findOne = (req, res) => {
+res.setHeader('Content-Type', 'application/json');
+Customer.find({"email": req.params.email}, function (err, customer) {
+    if (err)
+        res.json({message: 'Customer NOT Found!', errmsg: err});
+    else
+        res.send(JSON.stringify(customer, null, 5));
+});
+}
 */
+router.logout = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
+    if (req.headers.cookie != null) {
+        res.removeHeader('cookie');
+        res.clearCookie('user')
+        res.json({ data: req.headers.cookie });
+    } else{
+        //     console.log(req.headers);
+        res.json({ message: 'Please log in first' });
+    }
+};
 
 module.exports = router;
+module.exports.admin_code = admin_code;

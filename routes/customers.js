@@ -3,15 +3,15 @@ let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mailer = require('../models/nodemailer');
-let code =Math.floor(Math.random()*1100000-100001);
+let code = Math.floor(Math.random()*900000 + 100000);
 let jwt = require('jsonwebtoken');
 let SECRET = require('../models/secretkey');
+
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
 
     let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
     let email = req.body.email;
-
     let customer = new Customer();
     customer.name = req.body.name;
     customer.email = req.body.email;
@@ -43,7 +43,8 @@ router.signUp = (req, res)=> {
                                 if(err) {
                                     res.json({ message: 'Fail to register!',err : err, data: null});
                                 } else {
-                                    mailer.send(email,code);
+                                    //mailer.send(email,code);
+                                    mailer.send(email, code);
                                     res.json({message: 'Sign Up Successfully!', data: customer});
                                 }
                             });
@@ -57,16 +58,22 @@ router.verification = (req, res) => {
 
         Customer.findOne({code: req.body.code}, function (err, customer) {
         if (!customer) {
-            res.json({  message: 'Wrong code!'});
+            res.json({  message: 'Fail to confirm email!'});
         } else if ((Date.now() - customer.register_date) > (1000*60*10)){
-            Customer.findOneAndRemove({email: customer.email});
-            res.json({ message: 'Timeout! Please sign up again!'});
-        } else {
+            Customer.findOneAndRemove({email: req.body.email})
+            {
+                //if (!err) {
+                res.json({message: 'Timeout! Please sign up again!'});
+                // } else
+                //  res.json({message: 'Customer NOT Found!', errmsg: err});
+            }
+            //res.json({ message: 'Timeout! Please sign up again!'});
+            } else {
             Customer.update({ email: customer.email}, {verification: true}, function(err, newCustomer){
                 if (err){
                     res.json({ message: err});
                 } else {
-                    res.json({message: 'Verification successful!', data: newCustomer});
+                    res.json({message: 'Email confirmed!', data: newCustomer});
                 }
             });
         }
@@ -171,7 +178,7 @@ router.findOne = (req, res) => {
       if (req.headers.cookie != null) {
           res.removeHeader('cookie');
           res.clearCookie('user')
-          res.json({ data: req.headers.cookie });
+          res.json({ message: 'Logout Successfully!',data: req.headers.cookie });
       } else{
           //     console.log(req.headers);
           res.json({ message: 'Please log in first' });
