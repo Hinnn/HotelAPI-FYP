@@ -1,4 +1,5 @@
 let Admin = require('../models/admin');
+let Customer = require('../models/customers');
 let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
@@ -11,8 +12,10 @@ router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
 
     let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+    let checkID = /^\d{8}$/;
     let email = req.body.email;
     let admin = new Admin();
+    admin.adminID = req.body.adminID;
     admin.name = req.body.name;
     admin.email = req.body.email;
     admin.password = bcrypt.hashSync(req.body.password);
@@ -26,25 +29,42 @@ router.signUp = (req, res)=> {
         res.json({message: 'Wrong email format!'})
     } else if((8 > req.body.password.length) || (8 > req.body.password2)){
         res.json({message: 'Password should be more than 8 characters!',data:null})
-    } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
+    } else if((15 < req.body.password.length) || (15 < req.body.password2)){
+        res.json({message: 'Password should be less than 15 characters!',data:null})
+    } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,15}/.test(req.body.password))){
         res.json({ message: 'Password must have number,special character, lowercase and capital Letters!', data: null});
     } else if (req.body.password !== req.body.password2){
         res.json({message: 'Please input the same password!',data:null})
+    } else if (!checkID.test(admin.adminID)){
+        res.json({message: 'Please enter an 8-bit valid ID!', data:null})
     }
     else{
         Admin.findOne({ email: req.body.email }, function (err, user) {
             if(user) {
                 res.json({ message : 'Account already exists! Please change another email!', data: null });
             } else {
-                admin.save(function (err) {
-                    if(err) {
-                        res.json({ message: 'Fail to register!',err : err, data: null});
-                    } else {
-                        //mailer.send(email,code);
-                        mailer.send(email, admin_code);
-                        res.json({message: 'Sign Up Successfully!', data: admin});
+                Customer.findOne({email: req.body.email}, function (err, user) {
+                    if(user) {
+                        res.json({ message : 'Email has been registered as a customer! Please change another email!', data: null });
+                    } else{
+                        Admin.findOne({adminID: req.body.adminID}, function(err, user){
+                            if(user) {
+                                res.json({ message : 'This ID already exists! Please check your ID!', data: null });
+                            } else {
+                                admin.save(function (err) {
+                                    if(err) {
+                                        res.json({ message: 'Fail to register!',err : err, data: null});
+                                    } else {
+                                        //mailer.send(email,code);
+                                        mailer.send(email, admin_code);
+                                        res.json({message: 'Sign Up Successfully!', data: admin});
+                                    }
+                                });
+                            }
+                        })
                     }
-                });
+                })
+
             }
         });
     }
@@ -63,7 +83,7 @@ router.verification = (req, res) => {
 
             }
         } else {
-            Admin.update({ email: admin.email}, {verification: true}, function(err, newAdmin){
+            Admin.updateOne({ email: admin.email}, {verification: true}, function(err, newAdmin){
                 if (err){
                     res.json({ message: err});
                 } else {
@@ -96,6 +116,8 @@ router.login = (req, res) => {
                 let token = loginToken(admin);
                 res.header('token',token);
                 res.cookie('user', admin.email, {
+                    httpOnly: true,
+                    signed: true
                 });
                 res.json({ message: 'Welcome! '+ admin.name });
                 console.log(req.cookies)
@@ -105,28 +127,7 @@ router.login = (req, res) => {
         }
     });
 };
-//
-// router.EditInfo = (req, res) => {
-//
-//     res.setHeader('Content-Type', 'application/json');
-//     let admin = new Admin;
-//     admin.DateOfBirth = req.body.DateOfBirth;
-//     admin.Gender = req.body.Gender;
-//     admin.phoneNum = req.body.phoneNum
-//
-//     Admin.update({"email": req.params.email},
-//         {
-//             DateOfBirth: req.body.DateOfBirth,
-//             Gender: req.body.Gender,
-//             phoneNum: req.body.phoneNum
-//         },
-//         function (err, admin) {
-//             if (err)
-//                 res.json({message: 'Unable to change', errmsg: err});
-//             else
-//                 res.json({message: 'Information changed successfully!', data: admin});
-//         });
-//};
+
 router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let admin = new Admin();
@@ -155,24 +156,14 @@ router.changePassword = (req, res) => {
             });
     };
 };
-/*
-router.findOne = (req, res) => {
-res.setHeader('Content-Type', 'application/json');
-Customer.find({"email": req.params.email}, function (err, customer) {
-    if (err)
-        res.json({message: 'Customer NOT Found!', errmsg: err});
-    else
-        res.send(JSON.stringify(customer, null, 5));
-});
-}
-*/
+
 router.logout = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     if (req.headers.cookie != null) {
         res.removeHeader('cookie');
         res.clearCookie('user')
-        res.json({ data: req.headers.cookie });
+        res.json({ message: 'log out successfully!', data: req.headers.cookie });
     } else{
         //     console.log(req.headers);
         res.json({ message: 'Please log in first' });

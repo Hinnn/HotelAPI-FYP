@@ -29,7 +29,9 @@ router.signUp = (req, res)=> {
             res.json({message: 'Wrong email format!'})
         } else if((8 > req.body.password.length) || (8 > req.body.password2)){
             res.json({message: 'Password should be more than 8 characters!',data:null})
-        } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
+        } else if((15 < req.body.password.length) || (15 < req.body.password2)){
+             res.json({message: 'Password should be less than 15 characters!',data:null})
+        } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,15}/.test(req.body.password))){
             res.json({ message: 'Password must have number,special character, lowercase and capital Letters!', data: null});
         } else if (req.body.password !== req.body.password2){
              res.json({message: 'Please input the same password!',data:null})
@@ -58,7 +60,7 @@ router.verification = (req, res) => {
 
         Customer.findOne({code: req.body.code}, function (err, customer) {
         if (!customer) {
-            res.json({  message: 'Fail to confirm email!'});
+            res.json({  message: 'Wrong code!'});
         } else if ((Date.now() - customer.register_date) > (1000*60*10)){
             Customer.findOneAndRemove({email: req.body.email})
             {
@@ -99,9 +101,9 @@ router.login = (req, res) => {
             res.json({ message: 'You are not verified!', data: null })
         } else{
             if(bcrypt.compareSync(req.body.password, customer.password)){
-                let token = loginToken(customer);
-                res.header('token',token);
                 res.cookie('user', customer.email, {
+                    httpOnly: true,
+                    signed: true
                 });
                 res.json({ message: 'Welcome to our website! '+ customer.name, data: customer });
                 console.log(req.cookies)
@@ -119,19 +121,22 @@ router.login = (req, res) => {
             customer.DateOfBirth = req.body.DateOfBirth;
             customer.Gender = req.body.Gender;
             customer.phoneNum = req.body.phoneNum
-
-        Customer.update({"email": req.params.email},
-            {
-                DateOfBirth: req.body.DateOfBirth,
-                Gender: req.body.Gender,
-                phoneNum: req.body.phoneNum
-            },
-            function (err, customer) {
-                if (err)
-                    res.json({message: 'Unable to change', errmsg: err});
-                else
-                    res.json({message: 'Information changed successfully!', data: customer});
-            });
+        if(10 !== req.body.phoneNum.length) {
+            res.json({message: 'Please input 10 valid phone numbers!', data: null})
+        } else {
+            Customer.update({"email": req.params.email},
+                {
+                    DateOfBirth: req.body.DateOfBirth,
+                    Gender: req.body.Gender,
+                    phoneNum: req.body.phoneNum
+                },
+                function (err, customer) {
+                    if (err)
+                        res.json({message: 'Unable to change', errmsg: err});
+                    else
+                        res.json({message: 'Information changed successfully!', data: customer});
+                });
+        }
     };
     router.changePassword = (req, res) => {
         res.setHeader('Content-Type', 'application/json');

@@ -1,0 +1,15 @@
+{
+  "message": "Sign Up Successfully!",
+  "data": {
+    "verification": false,
+    "_id": "5c882d12ed1aef033e3a069b",
+    "adminID": "20082240",
+    "name": "yue",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$ZJQzANIK..V1ZIYI1QwPheXnDsSujFUn.oeMCPMrGY0eR.5hb8HKu",
+    "password2": "$2a$10$8idiWxe0HZfYMk/WCpz.M.hqBWjI953/IA/x0bJS6CPAXGfMUFzf.",
+    "register_date": "2019-03-12T22:05:06.930Z",
+    "admin_code": "149519",
+    "__v": 0
+  }
+}

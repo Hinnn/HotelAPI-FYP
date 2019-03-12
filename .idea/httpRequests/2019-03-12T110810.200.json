@@ -1,0 +1,12 @@
+{
+  "message": "Room Successfully Added!",
+  "data": {
+    "isEmpty": true,
+    "upvotes": 0,
+    "_id": "5c883bda17949504244d28cd",
+    "roomNum": "102",
+    "roomType": "double",
+    "price": 40,
+    "__v": 0
+  }
+}

@@ -2,8 +2,8 @@ let mongoose = require('mongoose');
 let AdminSchema = new mongoose.Schema({
         adminID: {
             type: String,
-            //required: true,
-            //unique: true
+            required: true,
+            unique: true
         },
         name: {
             type: String,

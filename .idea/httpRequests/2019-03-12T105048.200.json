@@ -1,0 +1,26 @@
+{
+  "message": "Room NOT UpVoted!",
+  "errmsg": {
+    "errors": {
+      "upvotes": {
+        "message": "Cast to Number failed for value \"NaN\" at path \"upvotes\"",
+        "name": "CastError",
+        "stringValue": "\"NaN\"",
+        "kind": "Number",
+        "value": null,
+        "path": "upvotes",
+        "reason": {
+          "message": "Cast to number failed for value \"NaN\" at path \"upvotes\"",
+          "name": "CastError",
+          "stringValue": "\"NaN\"",
+          "kind": "number",
+          "value": null,
+          "path": "upvotes"
+        }
+      }
+    },
+    "_message": "Room validation failed",
+    "message": "Room validation failed: upvotes: Cast to Number failed for value \"NaN\" at path \"upvotes\"",
+    "name": "ValidationError"
+  }
+}

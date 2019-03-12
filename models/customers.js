@@ -20,7 +20,7 @@ let CustomerSchema = new mongoose.Schema({
             required: true
         },
         phoneNum:String,
-        DateOfBirth: Number,
+        DateOfBirth: Date,
         Gender: String,
         register_date: Date,
         verification: {
