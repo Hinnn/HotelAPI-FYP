@@ -1,21 +1,28 @@
 let Booking = require('../models/bookings');
 let express = require('express');
 let router = express.Router();
-/*
+
+
 router.findAll = (req, res) => {
     // Return a JSON representation of our list
     res.setHeader('Content-Type', 'application/json');
+    if (req.params.admin == null ) {
+        res.json({ message: 'You can not do this operation!'});
+    } else {
+        Booking.find(function (err, bookings) {
+            if (err)
+                res.send(err);
 
-
-    Booking.find(function(err, bookings) {
-        if (err)
-            res.send(err);
-
-        res.send(JSON.stringify(bookings,null,5));
-    });
+            res.send(JSON.stringify(bookings, null, 5));
+        });
+    }
 }
-router.findOne = (req, res) => {
+/*
+router.adminFind = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
+    if (req.params.admin == null ) {
+        res.json({ message: 'You can not do this operation!'});
+    } else {
     Booking.find({ "_id" : req.params.id},function(err, booking) {
         if (err)
             res.json({ message: 'Booking NOT Found!', errmsg : err } );
@@ -23,7 +30,18 @@ router.findOne = (req, res) => {
             res.send(JSON.stringify(booking,null,5));
     });
 }
-
+router.customerFind = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    if (req.params.customers == null ) {
+        res.json({ message: 'You can not do this operation!'});
+    } else {
+    Booking.find({ "email" : req.params.email},function(err, booking) {
+        if (err)
+            res.json({ message: 'Booking NOT Found!', errmsg : err } );
+        else
+            res.send(JSON.stringify(booking,null,5));
+    });
+}
 
 function getTotalAmount(array) {
     let totalAmount = 0;
@@ -42,6 +60,7 @@ router.addBooking = (req, res) => {
     booking.roomType = req.body.roomType;
     booking.checkin_date = req.body.checkin_date;
     booking.leave_date = req.body.leave_date;
+
     let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
     let email = req.body.email;
     var d1 = req.body.checkin_date;
@@ -80,34 +99,28 @@ router.addBooking = (req, res) => {
         });
     }
 }
-    router.editBooking = (req, res) => {
 
+    router.Edit = (req, res) => {
         // Find the relevant booking based on params id passed in
 
         res.setHeader('Content-Type', 'application/json');
-        let booking = new Booking;
-        booking.roomType = req.body.roomType;
-        booking.checkin_date = req.body.checkin_date;
-        booking.leave_date = req.body.leave_date;
-        booking.amount = req.body.amount;
-
-        if (booking.contactNum == null || booking.amount == null || booking.roomType == null || booking.checkin_date == null || booking.leave_date == null) {
-            res.json({message: 'Please complete all the information!', data: null})
-        } else if (10 !== req.body.contactNum.length) {
-            res.json({message: 'Your phone number should contain 10 characters!', data: null})
-        } else if (0 > req.body.amount) {
-            res.json({message: 'Please choose at least one room!', data: null})
-        } else if (4 < req.body.amount) {
-            res.json({message: 'You can only book no more than 3 rooms!', data: null})
-        } else if (req.body.checkin_Date > req.body.leave_Date) {
-            res.json({message: 'Leaving date should be later than check in date!', data: null})
-        } else {
-            Booking.update({"email": req.params.email},
+        let booking = new Booking();
+        // if (req.params.customer == null ) {
+        //     res.json({ message: 'You can not do this operation!'});
+        // }else if(booking.email !== req.params.customer) {
+        //     res.json({ message: 'sorry!'});
+        // }
+        // else
+            if(booking.contactNum == null) {
+                res.json({message: 'Please input the contact number!', data: null})
+            } else if (10 !== req.body.contactNum.length) {
+                res.json({message: 'Your phone number should contain 10 characters!', data: null})
+            }  else {
+            booking.contactNum = req.body.contactNum;
+            booking.updateOne({"email": req.params.email},
                 {
-                    roomType: req.body.roomType,
-                    checkin_date: req.body.checkin_date,
-                    leave_date: req.body.leave_date,
-                    amount: req.body.amount,
+                    contactNum: req.body.contactNum,
+
                 },
                 function (err, booking) {
                     if (err)
@@ -117,6 +130,35 @@ router.addBooking = (req, res) => {
                 });
         }
     };
+/*
+router.adminEdit = (req, res) => {
+
+    // Find the relevant booking based on params id passed in
+
+    res.setHeader('Content-Type', 'application/json');
+    let booking = new Booking();
+
+    if (req.params.admin == null) {
+        res.json({ message: 'You can not do this operation!'});
+    }else if(req.body.price == null) {
+        res.json({message: 'Please input the price!', data: null})
+    }else {
+
+        booking.price = req.body.price;
+        booking.updateOne({"email": req.params.email},
+            {
+                price: req.body.price,
+                // leave_date: req.body.leave_date,
+                // amount: req.body.amount,
+            },
+            function (err, booking) {
+                if (err)
+                    res.json({message: 'Booking Not Edited', errmsg: err});
+                else
+                    res.json({message: 'Booking Edited successfully', data: booking});
+            });
+    }
+};*/
 
 
         router.deleteBooking = (req, res) => {

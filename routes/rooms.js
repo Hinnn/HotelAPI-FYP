@@ -100,12 +100,51 @@ router.edit = (req, res) => {
                 if (err) {
                     res.json({ message: 'Room edited failed', data: null});
                 } else {
-                    res.json({ message: 'Romm edited successfully', data: room});
+                    res.json({ message: 'Room edited successfully', data: room});
                 }
             });
     }
 };
+router.addDiscount = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
+    if (req.params.admin == null) {
+        res.json({ message: 'You can not edit the room!'});
+    } else if (req.body.price == null) {
+        res.json({ message: 'Price is required'});
+    }  else{
+        Room.updateOne({"roomNum" : req.body.roomNum},
+            {admin_id: req.params.admin,
+                price: req.body.price,
+                last_edit: Date.now()}, function (err, room) {
+                if (err) {
+                    res.json({ message: 'Room edited failed', data: null});
+                } else {
+                    res.json({ message: 'Room edited successfully', data: room});
+                }
+            });
+    }
+};
+router.deleteDiscount = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
+    if (req.params.admin == null) {
+        res.json({ message: 'You can not edit the room!'});
+    } else if (req.body.price == null) {
+        res.json({ message: 'Price is required'});
+    }  else{
+        Room.updateOne({"roomNum" : req.body.roomNum},
+            {admin_id: req.params.admin,
+                price: req.body.price,
+                last_edit: Date.now()}, function (err, room) {
+                if (err) {
+                    res.json({ message: 'Fail to delete the discount', data: null});
+                } else {
+                    res.json({ message: 'Discount deleted successfully！', data: room});
+                }
+            });
+    }
+};
 router.deleteRoom = (req, res) => {
 
     if (req.params.admin == null) {

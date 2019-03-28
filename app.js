@@ -72,8 +72,8 @@ app.post('/customers/verification', customers.verification);
 app.post('/customers/logout', customers.logout);
 app.put('/customers/edit/:email', customers.EditInfo);
 app.put('/customers/changePassword/:email', customers.changePassword);
-
-
+app.post('/customers/forgetPassword',customers.forgetPassword);
+app.delete('/:admin/customers', customers.deleteCustomer);
 
 app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
@@ -81,9 +81,11 @@ app.post('/admin/verification', admin.verification);
 app.post('/admin/logout', admin.logout);
 
 
-
+app.get('/:admin/bookings',auth.authAdmin,bookings.findAll);
+//app.get('/bookings/:_id',booking.findOne);
 app.post('/bookings', bookings.addBooking);
-app.put('/bookings/:email', bookings.editBooking);
+app.put('/bookings/:_id', bookings.Edit);
+//app.put('/:customers/bookings/:_id',auth.authCustomer,bookings.customerEdit);
 app.delete('/bookings/:email',bookings.deleteBooking);
 
 
@@ -94,7 +96,12 @@ app.get('/rooms/:roomType', rooms.getByType);
 app.put('/rooms/upvotes/:roomNum', rooms.UpVotes);
 app.post('/:admin/rooms', auth.authAdmin, rooms.addRoom);
 app.put('/:admin/rooms/edit/:roomNum', auth.authAdmin, rooms.edit);
-app.delete('/:admin/rooms/:roomNum', rooms.deleteRoom);
+//app.put('/rooms/changeStatus/:roomNum',rooms.changeStatus);
+app.put('/:admin/rooms/addDiscount/:roonNum', rooms.addDiscount);
+app.put('/:admin/rooms/deleteDiscount/:roomNum', rooms.deleteDiscount);
+//comments
+app.delete('/:admin/rooms/:roomNum', auth.authAdmin, rooms.deleteRoom);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

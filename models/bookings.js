@@ -25,12 +25,15 @@ let BookingSchema = new mongoose.Schema({
             type: Date,
             required: true
         },
+    days:{
+            type :Number
+    },
         amount:{
             type: Number,
             required: true
         },
         price: {
-            type: Number,
+            type: Number
             // required: true
         },
         payment_status: {

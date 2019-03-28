@@ -3,7 +3,9 @@ let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mailer = require('../models/nodemailer');
+let mail = require('../models/pass_mail');
 let code = Math.floor(Math.random()*900000 + 100000);
+let newPass = randomWord();
 let jwt = require('jsonwebtoken');
 let SECRET = require('../models/secretkey');
 
@@ -166,6 +168,66 @@ router.login = (req, res) => {
                 });
         };
     };
+// function randomPass(charSet) {
+//     charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+//     let Str = '';
+//     for (var i = 0; i < 8; i++) {
+//         var randomPoz = Math.floor(Math.random() * charSet.length);
+//         Str += charSet.substring(randomPoz,randomPoz+1);
+//     }
+//     return Str;
+// }
+//     let newPass= randomPass(Str);
+
+function randomWord(randomFlag,str){
+    var str = "",
+        range = 8,
+        arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+            'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
+            'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+            'T', 'U', 'V', 'W', 'X', 'Y', 'Z','?','.','!','_','+'];
+
+    // random password
+    if(randomFlag){
+        range = Math.round(Math.random() * 8) + 8;
+    }
+    for(var i=0; i<range; i++){
+        pos = Math.round(Math.random() * (arr.length-1));
+        str += arr[pos];
+        console.log(str);
+    }
+    return str;
+
+}
+   // let newPass = str;
+    router.forgetPassword = (req, res) => {
+        res.setHeader('Content-Type', 'application/json');
+        let email = req.body.email;
+
+        Customer.findOne({ email: req.body.email }, function (err, user) {
+            if(!user) {
+                res.json({ message : 'Account does not exist! Please check your email!', data: null });
+            } else {
+                mail.send(email, newPass);
+                res.json({message : 'Email sent successfully!'})
+            }
+        });
+                Customer.updateOne({"email": req.body.email},
+                    {password :bcrypt.hashSync(newPass),
+                        password2 : bcrypt.hashSync(newPass)
+                    }, function (err){
+
+                        if (err) {
+                            console.log( 'Password failed to change!');
+                        } else {
+                            console.log( 'Password has been changed. Please do remember to change your password! ');
+                        }
+                    })
+            //password: bcrypt.hashSync(newPass),
+            //password2: bcrypt.hashSync(newPass)
+
+}
     /*
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
@@ -189,6 +251,21 @@ router.findOne = (req, res) => {
           res.json({ message: 'Please log in first' });
       }
   };
+  router.deleteCustomer = (req, res) => {
+      res.setHeader('Content-Type','application/json');
+      if (req.params.admin == null) {
+          res.json({ message: 'You can not delete the customer!'});
+      } else{
+          Customer.findOneAndRemove({"email" : req.body.email},function (err) {
+                  if (err) {
+                      res.json({ message: 'Failed to delete!', data: null});
+                  } else {
+                      res.json({ message: 'Customer deleted successfully', data: customer});
+                  }
+              });
+      }
+  };
 
 module.exports = router;
 module.exports.code = code;
+module.exports.newPass = newPass;

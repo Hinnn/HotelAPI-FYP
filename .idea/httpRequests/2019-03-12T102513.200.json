@@ -1,7 +1,0 @@
-{
-  "message": "Room NOT Found!",
-  "errmsg": {
-    "message": "Parameter \"filter\" to find() must be an object, got 101",
-    "name": "ObjectParameterError"
-  }
-}

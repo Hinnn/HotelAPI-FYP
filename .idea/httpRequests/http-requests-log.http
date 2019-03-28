@@ -1,421 +1,33 @@
-POST http://localhost:3000/772012459@qq.com/rooms
+PUT http://localhost:3000/772012459@qq.com/rooms/deleteDiscount/102
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"102","roomType":"double","price":"40"}
+{"admin_id":"5c86e02b16479003fe3b4f84","price":"30"}
 
-<> 2019-03-12T110810.200.json
+<> 2019-03-28T023340.200.json
 
 ###
 
-DELETE http://localhost:3000/772012459@qq.com/rooms
+PUT http://localhost:3000/772012459@qq.com/rooms/102
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"102","roomType":"double","price":"40"}
+{"admin_id":"5c86e02b16479003fe3b4f84","price":"30"}
 
-<> 2019-03-12T110806.404.html
+<> 2019-03-28T023156.404.html
 
 ###
 
-DELETE http://localhost:3000/772012459@qq.com/rooms/101
+PUT http://localhost:3000/772012459@qq.com/rooms/102
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"102","roomType":"double","price":"40"}
+{"price":"30"}
 
-<> 2019-03-12T110759.200.json
-
-###
-
-PUT http://localhost:3000/772012459@qq.com/rooms/edit/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"double","price":"40"}
-
-<> 2019-03-12T110703.200.json
-
-###
-
-PUT http://localhost:3000/772012459@qq.com/rooms/edit/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"double","price":"40"}
-
-###
-
-PUT http://localhost:3000/772012459@qq.com/rooms/edit/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"double","price":"40"}
-
-###
-
-GET http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105745.200.json
-
-###
-
-PUT http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105741.404.html
-
-###
-
-PUT http://localhost:3000/rooms/upvotes/102
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105726.200.json
-
-###
-
-GET http://localhost:3000/rooms/upvotes/102
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105721.404.html
-
-###
-
-GET http://localhost:3000/rooms/102
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105708.200.json
-
-###
-
-POST http://localhost:3000/rooms/102
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105704.404.html
-
-###
-
-POST http://localhost:3000/772012459@qq.com/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105651.200.json
-
-###
-
-POST http://localhost:3000/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105635.404.html
-
-###
-
-POST http://localhost:3000/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105400.404.html
-
-###
-
-POST http://localhost:3000/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105331.404.html
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"772012459@qq.com","password":"Yue123..."}
-
-<> 2019-03-12T105313.200.json
-
-###
-
-POST http://localhost:3000/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105209.404.html
-
-###
-
-PUT http://localhost:3000/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105048.200.json
-
-###
-
-PUT http://localhost:3000/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T105029.404.html
-
-###
-
-GET http://localhost:3000/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104952.404.html
-
-###
-
-GET http://localhost:3000/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104848.404.html
-
-###
-
-GET http://localhost:3000/rooms/upvotes/5c88309ce945cd0367fa8aad
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104842.404.html
-
-###
-
-GET http://localhost:3000/rooms/upvotes/5c88309ce945cd0367fa8aad
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104818.404.html
-
-###
-
-GET http://localhost:3000/rooms/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104804.200.json
-
-###
-
-GET http://localhost:3000/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104741.404.html
-
-###
-
-GET http://localhost:3000/rooms/{single}
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-###
-
-GET http://localhost:3000/rooms/gouble
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104711.200.json
-
-###
-
-GET http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T104648.200.json
-
-###
-
-GET http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T103835-1.200.json
-
-###
-
-GET http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T103835.200.json
-
-###
-
-GET http://localhost:3000/rooms/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T103822.200.json
-
-###
-
-PUT http://localhost:3000/rooms/upvote/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T102513.200.json
-
-###
-
-PUT http://localhost:3000/rooms/upvote/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T102439.200.json
-
-###
-
-GET http://localhost:3000/rooms/double
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T102421.200.json
-
-###
-
-GET http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T102240.200.json
-
-###
-
-GET http://localhost:3000/rooms/"single"
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-###
-
-GET http://localhost:3000/rooms/single
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T102219.200.json
-
-###
-
-GET http://localhost:3000/rooms/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"roomNum":"102","roomType":"single","price":"34"}
-
-<> 2019-03-12T102210.200.json
+<> 2019-03-28T023039.404.html
 
 ###
 
@@ -424,119 +36,501 @@ Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"102","roomType":"single","price":"34"}
+{"contactNum":"8306941110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T102159.200.json
+<> 2019-03-28T022953.200.json
 
 ###
 
-POST http://localhost:3000/772012459@qq.com/rooms
+GET http://localhost:3000/772012459@qq.com/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"102","roomType":"single","price":"34"}
+{"contactNum":"8306941110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T102120.200.json
+<> 2019-03-28T122934.200.json
 
 ###
 
-POST http://localhost:3000/20082242/rooms
+GET http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"102","roomType":"single","price":"34"}
+{"contactNum":"8306941110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T102045.500.html
+<> 2019-03-28T122910.404.html
 
 ###
 
-POST http://localhost:3000/772012459@qq.com/rooms
+GET http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"101","roomType":"single","price":"34"}
+{"contactNum":"8306941110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T102012.200.json
+<> 2019-03-28T122855.404.html
 
 ###
 
-POST http://localhost:3000/772012459@qq.com/rooms
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"101","roomType":"single","price":"34"}
+{"contactNum":"8306941110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T101919.200.json
+<> 2019-03-28T121931.500.json
 
 ###
 
-POST http://localhost:3000/rooms
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"roomNum":"101","roomType":"single","price":"34"}
+{"contactNum":"8306941110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T101809.404.html
+<> 2019-03-28T121922.200.json
 
 ###
 
-POST http://localhost:3000/admin/login
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"email":"772012459@qq.com","password":"Yue123..."}
+{"contactNum":"830694110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T101705.200.json
+<> 2019-03-28T121908.200.json
 
 ###
 
-POST http://localhost:3000/admin/signUp
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"adminID":"20082242","name":"yue","email":"673711270@qq.com","password":"Yue123...","password2":"Yue123..."}
+{"contactNum":"830694110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26"}
 
-<> 2019-03-12T101629.200.json
+<> 2019-03-28T121847.500.json
 
 ###
 
-POST http://localhost:3000/admin/signUp
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"adminID":"20082240","name":"yue","email":"1095933649@qq.com","password":"Yue123...","password2":"Yue123..."}
+{"contactNum":"830694110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "2019-05-25","leave_date":"2019-05-26", }
 
-<> 2019-03-12T101547.200.json
+<> 2019-03-28T121835.400.html
 
 ###
 
-POST http://localhost:3000/admin/signUp
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"adminID":"20082240","name":"yue","email":"1095933649@qq.com","password":"Yue123...","password2":"Yue123..."}
+{"contactNum":"830694110","name":"Yvette","email":"1095933649@qq.com","amount": 1,"roomType": "double", "checkin_date": "20190525","leave_date":"20190526"}
 
-<> 2019-03-12T101457.200.json
+<> 2019-03-28T121752.500.json
 
 ###
 
-POST http://localhost:3000/admin/signUp
+POST http://localhost:3000/bookings
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
 
-{"adminID":"20082240","name":"yue","email":"1095933649@qq.com","password":"Yue123...","password2":"Yue123..."}
+{"contactNum": 830694110,   "name": "Yvette",   "email": "1095933649@qq.com",   "amount": 1,   "roomType": "double",   "checkin_date": "20190525"   "leave_date":"20190526"}
 
-<> 2019-03-12T100507.200.json
+<> 2019-03-28T121654.400.html
+
+###
+
+GET http://localhost:3000/772012459@qq.com/bookings
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"N??C4RzC"}
+
+<> 2019-03-28T121237.200.json
+
+###
+
+GET http://localhost:3000/bookings
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"N??C4RzC"}
+
+<> 2019-03-28T121222.404.html
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"N??C4RzC"}
+
+<> 2019-03-26T114622.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T114529.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T114350.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"q2UVUi+w"}
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"q2UVUi+w"}
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"q2UVUi+w"}
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"q2UVUi+w"}
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T111214.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T110453.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T110253.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T110152.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T110016.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T105816.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T105229.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T105209.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T105133.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T105047.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T105026.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T105008.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T100531.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T100435.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T100337.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T095804.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T095657.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetPassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T095200.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetpassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T095008.200.json
+
+###
+
+POST http://localhost:3000/customers/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com","password":"fee?nool"}
+
+<> 2019-03-26T094617.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetpassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-26T094448.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetpassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-14T114752.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetpassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-14T114652.200.json
+
+###
+
+POST http://localhost:3000/customers/forgetpassword
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"email":"1095933649@qq.com"}
+
+<> 2019-03-14T114542.200.json
 
 ###
 
