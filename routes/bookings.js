@@ -30,25 +30,27 @@ router.adminFind = (req, res) => {
             res.send(JSON.stringify(booking,null,5));
     });
 }
-router.customerFind = (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    if (req.params.customers == null ) {
-        res.json({ message: 'You can not do this operation!'});
-    } else {
-    Booking.find({ "email" : req.params.email},function(err, booking) {
-        if (err)
-            res.json({ message: 'Booking NOT Found!', errmsg : err } );
-        else
-            res.send(JSON.stringify(booking,null,5));
-    });
-}
-
-function getTotalAmount(array) {
-    let totalAmount = 0;
-    array.forEach(function(obj) { totalAmount += obj.amount; });
-    return totalAmount;
-}
 */
+router.findOne = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    if (req.params.customer == null) {
+        res.json({message: 'You can not do this operation!'});
+    } else {
+        Booking.find({"email": req.params.email}, function (err, booking) {
+            if (err)
+                res.json({message: 'Booking NOT Found!', errmsg: err});
+            else
+                res.send(JSON.stringify(booking, null, 5));
+        });
+    }
+}
+//
+// function getTotalAmount(array) {
+//     let totalAmount = 0;
+//     array.forEach(function(obj) { totalAmount += obj.amount; });
+//     return totalAmount;
+// }
+
 router.addBooking = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let booking = new Booking();

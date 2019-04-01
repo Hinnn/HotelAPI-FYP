@@ -82,12 +82,11 @@ app.post('/admin/logout', admin.logout);
 
 
 app.get('/:admin/bookings',auth.authAdmin,bookings.findAll);
-//app.get('/bookings/:_id',booking.findOne);
+app.get('/:customer/bookings/:email',bookings.findOne);
 app.post('/bookings', bookings.addBooking);
 app.put('/bookings/:_id', bookings.Edit);
 //app.put('/:customers/bookings/:_id',auth.authCustomer,bookings.customerEdit);
 app.delete('/bookings/:email',bookings.deleteBooking);
-
 
 
 app.get('/rooms', rooms.findAll);

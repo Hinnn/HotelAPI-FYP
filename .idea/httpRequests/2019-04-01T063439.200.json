@@ -1,0 +1,14 @@
+[
+  {
+    "payment_status": false,
+    "_id": "5ca24b491d98ef03c0adb74c",
+    "contactNum": 830299999,
+    "name": "YueWang",
+    "email": "1095933649@qq.com",
+    "amount": 1,
+    "roomType": "double",
+    "checkin_date": "2019-05-05T00:00:00.000Z",
+    "leave_date": "2019-05-07T00:00:00.000Z",
+    "__v": 0
+  }
+]
