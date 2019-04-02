@@ -136,6 +136,7 @@ router.login = (req, res) => {
                     if (err)
                         res.json({message: 'Unable to change', errmsg: err});
                     else
+                        res.send(JSON.stringify(customer, null, 5));
                         res.json({message: 'Information changed successfully!', data: customer});
                 });
         }
