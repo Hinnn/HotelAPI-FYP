@@ -228,7 +228,7 @@ function randomWord(randomFlag,str){
             //password2: bcrypt.hashSync(newPass)
 
 }
-    /*
+
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     Customer.find({"email": req.params.email}, function (err, customer) {
@@ -238,7 +238,7 @@ router.findOne = (req, res) => {
             res.send(JSON.stringify(customer, null, 5));
     });
 }
-*/
+
   router.logout = (req, res) => {
       res.setHeader('Content-Type', 'application/json');
 
