@@ -117,9 +117,10 @@ router.login = (req, res) => {
 };
 router.EditInfo = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    if(10 !== req.body.phoneNum.length) {
-                res.json({message: 'Please input 10 valid phone numbers!', data: null})
-            } else {
+    // if(10 !== req.body.phoneNum.length) {
+    //             res.json({message: 'Please input 10 valid phone numbers!', data: null})
+    //         } else {
+    console.log(req.body);
         Customer.findOneAndUpdate({
                 email:req.params.customer
             }, {
@@ -129,16 +130,16 @@ router.EditInfo = (req, res) => {
             },
             {new:true},
             // console.log(customer),
-            function (err, result) {
+            function (err, customer) {
             if (err) {
                 res.json({message: 'Unable to edit.', data: err})
             } else {
-                console.log(result);
-                // res.send(JSON.stringify(customer, null, 5));
-                res.json({message: 'Edit Successfully', data: result})
+                console.log(customer);
+                // res.send(JSON.stringify(result, null, 5));
+                res.json({message: 'Edit Successfully', data: customer})
             }
             });
-    }
+
 };
 
     //
@@ -188,11 +189,12 @@ router.EditInfo = (req, res) => {
             res.json({message: 'Please input the same password!', data: null})
           }
         else{
-            Customer.update({"email": req.params.email},
+            Customer.findOneAndUpdate({"email": req.params.email},
                 {
                     password: bcrypt.hashSync(req.body.password),
                     password2: bcrypt.hashSync(req.body.password2)
                 },
+                {new:true},
                 function (err, customer) {
                     if (err)
                     res.json({message: 'Unable to change', errmsg: err});
