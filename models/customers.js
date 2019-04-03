@@ -19,9 +19,19 @@ let CustomerSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        phoneNum:String,
-        DateOfBirth: Date,
-        Gender: String,
+        phoneNum: {
+            type: String,
+            default: "1234567891"
+        },
+        DateOfBirth: {
+            type: Date,
+            default : "1997-01-01"
+        },
+        Gender: {
+            type: String,
+            default: "Male"
+        },
+
         register_date: Date,
         verification: {
             type: Boolean,

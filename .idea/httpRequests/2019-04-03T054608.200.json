@@ -1,0 +1,21 @@
+{
+  "message": "Information changed successfully!",
+  "data": {
+    "n": 1,
+    "nModified": 0,
+    "opTime": {
+      "ts": "6675710424572231681",
+      "t": 1
+    },
+    "electionId": "7fffffff0000000000000001",
+    "ok": 1,
+    "operationTime": "6675710424572231681",
+    "$clusterTime": {
+      "clusterTime": "6675710424572231681",
+      "signature": {
+        "hash": "nhhhTObkKG88acpN2ei13/EP6Xw=",
+        "keyId": "6655647193518571521"
+      }
+    }
+  }
+}

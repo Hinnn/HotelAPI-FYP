@@ -70,7 +70,7 @@ app.post('/customers/signUp', customers.signUp);
 app.post('/customers/login', customers.login);
 app.post('/customers/verification', customers.verification);
 app.post('/customers/logout', customers.logout);
-app.put('/customers/edit/:email', customers.EditInfo);
+app.put('/customers/:customer/edit', customers.EditInfo);
 app.put('/customers/changePassword/:email', customers.changePassword);
 app.post('/customers/forgetPassword',customers.forgetPassword);
 app.delete('/:admin/customers', customers.deleteCustomer);
@@ -83,7 +83,7 @@ app.post('/admin/logout', admin.logout);
 
 
 app.get('/:admin/bookings',auth.authAdmin,bookings.findAll);
-app.get('/:customer/bookings/:email',bookings.findOne);
+app.get('/bookings/:email',bookings.findOne);
 app.post('/bookings', bookings.addBooking);
 app.put('/bookings/:_id', bookings.Edit);
 //app.put('/:customers/bookings/:_id',auth.authCustomer,bookings.customerEdit);
@@ -97,7 +97,7 @@ app.put('/rooms/upvotes/:roomNum', rooms.UpVotes);
 app.post('/:admin/rooms', auth.authAdmin, rooms.addRoom);
 app.put('/:admin/rooms/edit/:roomNum', auth.authAdmin, rooms.edit);
 //app.put('/rooms/changeStatus/:roomNum',rooms.changeStatus);
-app.put('/:admin/rooms/addDiscount/:roonNum', rooms.addDiscount);
+app.put('/:admin/rooms/addDiscount/:roomNum', rooms.addDiscount);
 app.put('/:admin/rooms/deleteDiscount/:roomNum', rooms.deleteDiscount);
 //comments
 app.delete('/:admin/rooms/:roomNum', auth.authAdmin, rooms.deleteRoom);

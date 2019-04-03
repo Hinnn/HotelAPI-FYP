@@ -115,32 +115,64 @@ router.login = (req, res) => {
         }
     });
 };
+router.EditInfo = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    if(10 !== req.body.phoneNum.length) {
+                res.json({message: 'Please input 10 valid phone numbers!', data: null})
+            } else {
+        Customer.findOneAndUpdate({
+                email:req.params.customer
+            }, {
+                DateOfBirth: req.body.DateOfBirth,
+                Gender: req.body.Gender,
+                phoneNum: req.body.phoneNum
+            },
+            {new:true},
+            // console.log(customer),
+            function (err, result) {
+            if (err) {
+                res.json({message: 'Unable to edit.', data: err})
+            } else {
+                console.log(result);
+                // res.send(JSON.stringify(customer, null, 5));
+                res.json({message: 'Edit Successfully', data: result})
+            }
+            });
+    }
+};
 
-    router.EditInfo = (req, res) => {
-
-        res.setHeader('Content-Type', 'application/json');
-        let customer = new Customer;
-            customer.DateOfBirth = req.body.DateOfBirth;
-            customer.Gender = req.body.Gender;
-            customer.phoneNum = req.body.phoneNum
-        if(10 !== req.body.phoneNum.length) {
-            res.json({message: 'Please input 10 valid phone numbers!', data: null})
-        } else {
-            Customer.update({"email": req.params.email},
-                {
-                    DateOfBirth: req.body.DateOfBirth,
-                    Gender: req.body.Gender,
-                    phoneNum: req.body.phoneNum
-                },
-                function (err, customer) {
-                    if (err)
-                        res.json({message: 'Unable to change', errmsg: err});
-                    else
-                        res.send(JSON.stringify(customer, null, 5));
-                        res.json({message: 'Information changed successfully!', data: customer});
-                });
-        }
-    };
+    //
+    // router.EditInfo = (req, res) => {
+    //     res.setHeader('Content-Type', 'application/json');
+    //
+    //     if(10 !== req.body.phoneNum.length) {
+    //         res.json({message: 'Please input 10 valid phone numbers!', data: null})
+    //     } else {
+    //         // let customers = new Customer({
+    //         //     DateOfBirth: req.body.DateOfBirth,
+    //         //     Gender: req.body.Gender,
+    //         //     phoneNum: req.body.phoneNum
+    //         // });
+    //         // console.log(customers);
+    //
+    //         Customer.updateOne({email: req.params.email},
+    //             {
+    //                 DateOfBirth: req.body.DateOfBirth,
+    //                 Gender: req.body.Gender,
+    //                 phoneNum: req.body.phoneNum
+    //             },
+    //             function (err, customers) {
+    //                 if (err)
+    //                     res.json({message: 'Unable to change', data: null});
+    //                  else
+    //                     // console.log(customers);
+    //                     // res.send(JSON.stringify(customers, null, 5));
+    //                     res.json({message: 'Information changed successfully!'});
+    //                 console.log(customers);
+    //
+    //             });
+    //     }
+    // };
     router.changePassword = (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         let customer = new Customer();
