@@ -24,43 +24,43 @@ router.signUp = (req, res)=> {
     customer.Gender = req.body.Gender;
     customer.register_date = Date.now();
     customer.code = code;
-         if( customer.name == null || customer.email == null || customer.password == null || customer.password2 == null){
-             res.json({message: 'Name, email,password and confirm password are all required!',data:null})
-         }
-        else if (!checkEmail.test(customer.email)){
-            res.json({message: 'Wrong email format!'})
-        } else if((8 > req.body.password.length) || (8 > req.body.password2)){
-            res.json({message: 'Password should be more than 8 characters!',data:null})
-        } else if((15 < req.body.password.length) || (15 < req.body.password2)){
-             res.json({message: 'Password should be less than 15 characters!',data:null})
-        } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,15}/.test(req.body.password))){
-            res.json({ message: 'Password must have number,special character, lowercase and capital Letters!', data: null});
-        } else if (req.body.password !== req.body.password2){
-             res.json({message: 'Please input the same password!',data:null})
-         }
-        else{
-            Customer.findOne({ email: req.body.email }, function (err, user) {
-                if(user) {
-                    res.json({ message : 'Account already exists! Please change another email!', data: null });
-                } else {
-                            customer.save(function (err) {
-                                if(err) {
-                                    res.json({ message: 'Fail to register!',err : err, data: null});
-                                } else {
-                                    //mailer.send(email,code);
-                                    mailer.send(email, code);
-                                    res.json({message: 'Sign Up Successfully!', data: customer});
-                                }
-                            });
-                        }
-                    });
-                }
+    if( customer.name == null || customer.email == null || customer.password == null || customer.password2 == null){
+        res.json({message: 'Name, email,password and confirm password are all required!',data:null})
+    }
+    else if (!checkEmail.test(customer.email)){
+        res.json({message: 'Wrong email format!'})
+    } else if((8 > req.body.password.length) || (8 > req.body.password2)){
+        res.json({message: 'Password should be more than 8 characters!',data:null})
+    } else if((15 < req.body.password.length) || (15 < req.body.password2)){
+        res.json({message: 'Password should be less than 15 characters!',data:null})
+    } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,15}/.test(req.body.password))){
+        res.json({ message: 'Password must have number,special character, lowercase and capital Letters!', data: null});
+    } else if (req.body.password !== req.body.password2){
+        res.json({message: 'Please input the same password!',data:null})
+    }
+    else{
+        Customer.findOne({ email: req.body.email }, function (err, user) {
+            if(user) {
+                res.json({ message : 'Account already exists! Please change another email!', data: null });
+            } else {
+                customer.save(function (err) {
+                    if(err) {
+                        res.json({ message: 'Fail to register!',err : err, data: null});
+                    } else {
+                        //mailer.send(email,code);
+                        mailer.send(email, code);
+                        res.json({message: 'Sign Up Successfully!', data: customer});
+                    }
+                });
+            }
+        });
+    }
 };
 
 router.verification = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-        Customer.findOne({code: req.body.code}, function (err, customer) {
+    Customer.findOne({code: req.body.code}, function (err, customer) {
         if (!customer) {
             res.json({  message: 'Wrong code!'});
         } else if ((Date.now() - customer.register_date) > (1000*60*10)){
@@ -72,7 +72,7 @@ router.verification = (req, res) => {
                 //  res.json({message: 'Customer NOT Found!', errmsg: err});
             }
             //res.json({ message: 'Timeout! Please sign up again!'});
-            } else {
+        } else {
             Customer.update({ email: customer.email}, {verification: true}, function(err, newCustomer){
                 if (err){
                     res.json({ message: err});
@@ -121,16 +121,16 @@ router.EditInfo = (req, res) => {
     //             res.json({message: 'Please input 10 valid phone numbers!', data: null})
     //         } else {
     console.log(req.body);
-        Customer.findOneAndUpdate({
-                email:req.params.customer
-            }, {
-                DateOfBirth: req.body.DateOfBirth,
-                Gender: req.body.Gender,
-                phoneNum: req.body.phoneNum
-            },
-            {new:true},
-            // console.log(customer),
-            function (err, customer) {
+    Customer.findOneAndUpdate({
+            email:req.params.customer
+        }, {
+            DateOfBirth: req.body.DateOfBirth,
+            Gender: req.body.Gender,
+            phoneNum: req.body.phoneNum
+        },
+        {new:true},
+        // console.log(customer),
+        function (err, customer) {
             if (err) {
                 res.json({message: 'Unable to edit.', data: err})
             } else {
@@ -138,71 +138,71 @@ router.EditInfo = (req, res) => {
                 // res.send(JSON.stringify(result, null, 5));
                 res.json({message: 'Edit Successfully', data: customer})
             }
-            });
+        });
 
 };
 
-    //
-    // router.EditInfo = (req, res) => {
-    //     res.setHeader('Content-Type', 'application/json');
-    //
-    //     if(10 !== req.body.phoneNum.length) {
-    //         res.json({message: 'Please input 10 valid phone numbers!', data: null})
-    //     } else {
-    //         // let customers = new Customer({
-    //         //     DateOfBirth: req.body.DateOfBirth,
-    //         //     Gender: req.body.Gender,
-    //         //     phoneNum: req.body.phoneNum
-    //         // });
-    //         // console.log(customers);
-    //
-    //         Customer.updateOne({email: req.params.email},
-    //             {
-    //                 DateOfBirth: req.body.DateOfBirth,
-    //                 Gender: req.body.Gender,
-    //                 phoneNum: req.body.phoneNum
-    //             },
-    //             function (err, customers) {
-    //                 if (err)
-    //                     res.json({message: 'Unable to change', data: null});
-    //                  else
-    //                     // console.log(customers);
-    //                     // res.send(JSON.stringify(customers, null, 5));
-    //                     res.json({message: 'Information changed successfully!'});
-    //                 console.log(customers);
-    //
-    //             });
-    //     }
-    // };
-    router.changePassword = (req, res) => {
-        res.setHeader('Content-Type', 'application/json');
-        let customer = new Customer();
-        customer.password = bcrypt.hashSync(req.body.password);
-        customer.password2 = bcrypt.hashSync(req.body.password2)
-        if(customer.password == null || customer.password2 == null){
-            res.json({message: 'Password and confirm password are all required!',data:null})
-        } else if((8 > req.body.password.length) || (8 > req.body.password2)){
-            res.json({message: 'Password should be more than 8 characters!',data:null})
-        } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
-            res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
-        } else if (req.body.password !== req.body.password2) {
-            res.json({message: 'Please input the same password!', data: null})
-          }
-        else{
-            Customer.findOneAndUpdate({"email": req.params.email},
-                {
-                    password: bcrypt.hashSync(req.body.password),
-                    password2: bcrypt.hashSync(req.body.password2)
-                },
-                {new:true},
-                function (err, customer) {
-                    if (err)
+//
+// router.EditInfo = (req, res) => {
+//     res.setHeader('Content-Type', 'application/json');
+//
+//     if(10 !== req.body.phoneNum.length) {
+//         res.json({message: 'Please input 10 valid phone numbers!', data: null})
+//     } else {
+//         // let customers = new Customer({
+//         //     DateOfBirth: req.body.DateOfBirth,
+//         //     Gender: req.body.Gender,
+//         //     phoneNum: req.body.phoneNum
+//         // });
+//         // console.log(customers);
+//
+//         Customer.updateOne({email: req.params.email},
+//             {
+//                 DateOfBirth: req.body.DateOfBirth,
+//                 Gender: req.body.Gender,
+//                 phoneNum: req.body.phoneNum
+//             },
+//             function (err, customers) {
+//                 if (err)
+//                     res.json({message: 'Unable to change', data: null});
+//                  else
+//                     // console.log(customers);
+//                     // res.send(JSON.stringify(customers, null, 5));
+//                     res.json({message: 'Information changed successfully!'});
+//                 console.log(customers);
+//
+//             });
+//     }
+// };
+router.changePassword = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    let customer = new Customer();
+    customer.password = bcrypt.hashSync(req.body.password);
+    customer.password2 = bcrypt.hashSync(req.body.password2)
+    if(customer.password == null || customer.password2 == null){
+        res.json({message: 'Password and confirm password are all required!',data:null})
+    } else if((8 > req.body.password.length) || (8 > req.body.password2)){
+        res.json({message: 'Password should be more than 8 characters!',data:null})
+    } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
+        res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
+    } else if (req.body.password !== req.body.password2) {
+        res.json({message: 'Please input the same password!', data: null})
+    }
+    else{
+        Customer.findOneAndUpdate({"email": req.params.email},
+            {
+                password: bcrypt.hashSync(req.body.password),
+                password2: bcrypt.hashSync(req.body.password2)
+            },
+            {new:true},
+            function (err, customer) {
+                if (err)
                     res.json({message: 'Unable to change', errmsg: err});
                 else
                     res.json({message: 'Password changed successfully!', data: customer});
-                });
-        };
+            });
     };
+};
 // function randomPass(charSet) {
 //     charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 //     let Str = '';
@@ -235,32 +235,32 @@ function randomWord(randomFlag,str){
     return str;
 
 }
-   // let newPass = str;
-    router.forgetPassword = (req, res) => {
-        res.setHeader('Content-Type', 'application/json');
-        let email = req.body.email;
+// let newPass = str;
+router.forgetPassword = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    let email = req.body.email;
 
-        Customer.findOne({ email: req.body.email }, function (err, user) {
-            if(!user) {
-                res.json({ message : 'Account does not exist! Please check your email!', data: null });
+    Customer.findOne({ email: req.body.email }, function (err, user) {
+        if(!user) {
+            res.json({ message : 'Account does not exist! Please check your email!', data: null });
+        } else {
+            mail.send(email, newPass);
+            res.json({message : 'Email sent successfully!'})
+        }
+    });
+    Customer.updateOne({"email": req.body.email},
+        {password :bcrypt.hashSync(newPass),
+            password2 : bcrypt.hashSync(newPass)
+        }, function (err){
+
+            if (err) {
+                console.log( 'Password failed to change!');
             } else {
-                mail.send(email, newPass);
-                res.json({message : 'Email sent successfully!'})
+                console.log( 'Password has been changed. Please do remember to change your password! ');
             }
-        });
-                Customer.updateOne({"email": req.body.email},
-                    {password :bcrypt.hashSync(newPass),
-                        password2 : bcrypt.hashSync(newPass)
-                    }, function (err){
-
-                        if (err) {
-                            console.log( 'Password failed to change!');
-                        } else {
-                            console.log( 'Password has been changed. Please do remember to change your password! ');
-                        }
-                    })
-            //password: bcrypt.hashSync(newPass),
-            //password2: bcrypt.hashSync(newPass)
+        })
+    //password: bcrypt.hashSync(newPass),
+    //password2: bcrypt.hashSync(newPass)
 
 }
 
@@ -274,32 +274,32 @@ router.findOne = (req, res) => {
     });
 }
 
-  router.logout = (req, res) => {
-      res.setHeader('Content-Type', 'application/json');
+router.logout = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
 
-      if (req.headers.cookie != null) {
-          res.removeHeader('cookie');
-          res.clearCookie('user')
-          res.json({ message: 'Logout Successfully!',data: req.headers.cookie });
-      } else{
-          //     console.log(req.headers);
-          res.json({ message: 'Please log in first' });
-      }
-  };
-  router.deleteCustomer = (req, res) => {
-      res.setHeader('Content-Type','application/json');
-      if (req.params.admin == null) {
-          res.json({ message: 'You can not delete the customer!'});
-      } else{
-          Customer.findOneAndRemove({"email" : req.body.email},function (err) {
-                  if (err) {
-                      res.json({ message: 'Failed to delete!', data: null});
-                  } else {
-                      res.json({ message: 'Customer deleted successfully', data: customer});
-                  }
-              });
-      }
-  };
+    if (req.headers.cookie != null) {
+        res.removeHeader('cookie');
+        res.clearCookie('user')
+        res.json({ message: 'Logout Successfully!',data: req.headers.cookie });
+    } else{
+        //     console.log(req.headers);
+        res.json({ message: 'Please log in first' });
+    }
+};
+router.deleteCustomer = (req, res) => {
+    res.setHeader('Content-Type','application/json');
+    if (req.params.admin == null) {
+        res.json({ message: 'You can not delete the customer!'});
+    } else{
+        Customer.findOneAndRemove({"email" : req.body.email},function (err) {
+            if (err) {
+                res.json({ message: 'Failed to delete!', data: null});
+            } else {
+                res.json({ message: 'Customer deleted successfully', data: customer});
+            }
+        });
+    }
+};
 
 module.exports = router;
 module.exports.code = code;

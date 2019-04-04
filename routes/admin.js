@@ -4,10 +4,12 @@ let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mailer = require('../models/adminmail');
+let mail = require('../models/pass_mail');
 let admin_code = Math.floor(Math.random()*900000 + 100000);
 let jwt = require('jsonwebtoken');
 let SECRET = require('../models/secretkey');
-
+let newPass = randomWord();
+// let newPassword = randomWord();
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
 
@@ -128,6 +130,64 @@ router.login = (req, res) => {
     });
 };
 
+router.logout = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+
+    if (req.headers.cookie != null) {
+        res.removeHeader('cookie');
+        res.clearCookie('user')
+        res.json({ message: 'log out successfully!', data: req.headers.cookie });
+    } else{
+            console.log(req.headers);
+        res.json({ message: 'Please log in first' });
+    }
+};
+function randomWord(randomFlag,str){
+    var str = "",
+        range = 8,
+        arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+            'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D',
+            'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S',
+            'T', 'U', 'V', 'W', 'X', 'Y', 'Z','?','.','!','_','+'];
+
+    // random password
+    if(randomFlag){
+        range = Math.round(Math.random() * 8) + 8;
+    }
+    for(var i=0; i<range; i++){
+        pos = Math.round(Math.random() * (arr.length-1));
+        str += arr[pos];
+        console.log(str);
+    }
+    return str;
+
+}
+// let newPass = str;
+router.forgetPassword = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    let email = req.body.email;
+    Admin.findOne({ email: req.body.email }, function (err, user) {
+        if(!user) {
+            res.json({ message : 'Account does not exist! Please check your email!', data: null });
+        } else {
+            mail.send(email, newPass);
+            // res.json({message : 'Email sent successfully!'})
+        }
+    });
+    Admin.updateOne({"email": req.body.email},
+        {password :bcrypt.hashSync(newPass),
+            password2 : bcrypt.hashSync(newPass)
+        }, function (err){
+
+            if (err) {
+                console.log( 'Password failed to change!');
+            } else {
+                console.log( 'Password has been changed. Please do remember to change your password! ');
+            }
+        })
+
+}
 router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let admin = new Admin();
@@ -143,11 +203,12 @@ router.changePassword = (req, res) => {
         res.json({message: 'Please input the same password!', data: null})
     }
     else{
-        Admin.update({"email": req.params.email},
+        Admin.findOneAndUpdate({"email": req.params.email},
             {
                 password: bcrypt.hashSync(req.body.password),
                 password2: bcrypt.hashSync(req.body.password2)
             },
+            {new:true},
             function (err, admin) {
                 if (err)
                     res.json({message: 'Unable to change', errmsg: err});
@@ -156,19 +217,6 @@ router.changePassword = (req, res) => {
             });
     };
 };
-
-router.logout = (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-
-    if (req.headers.cookie != null) {
-        res.removeHeader('cookie');
-        res.clearCookie('user')
-        res.json({ message: 'log out successfully!', data: req.headers.cookie });
-    } else{
-        //     console.log(req.headers);
-        res.json({ message: 'Please log in first' });
-    }
-};
-
 module.exports = router;
 module.exports.admin_code = admin_code;
+module.exports.newPass = newPass;

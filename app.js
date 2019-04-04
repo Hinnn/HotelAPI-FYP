@@ -80,7 +80,8 @@ app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
 app.post('/admin/verification', admin.verification);
 app.post('/admin/logout', admin.logout);
-
+app.put('/admin/changePassword/:email', admin.changePassword);
+app.post('/admin/forgetPassword',admin.forgetPassword);
 
 app.get('/:admin/bookings',auth.authAdmin,bookings.findAll);
 app.get('/bookings/:email',bookings.findOne);
