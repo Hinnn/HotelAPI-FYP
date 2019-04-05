@@ -9,7 +9,7 @@ function send (email, code) {
         secure: true,
         auth: {
             user: 'wy20082242@126.com', //account to send email
-            pass: 'wy20082242' //email authentication
+            pass: 'yue123' //email authentication
         }
     };
     let mail = {

@@ -1,0 +1,17 @@
+{
+  "message": "Customer deleted successfully",
+  "data": {
+    "phoneNum": "1234567891",
+    "DateOfBirth": "1997-01-01T00:00:00.000Z",
+    "Gender": "Male",
+    "verification": false,
+    "_id": "5ca66bdf52b7f906a4c0d6c5",
+    "name": "Yue",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$4Jf/ZRBvQ6torIau4dCzA./Srd4wJt5cSEtzSLcFk.DjSTVNCOzBG",
+    "password2": "$2a$10$B6eEbguXxGJrxTMf4uZIjOaK.d3zE4umopWiqfVu1tthBnhEmzSsu",
+    "register_date": "2019-04-04T20:41:03.638Z",
+    "code": "444058",
+    "__v": 0
+  }
+}

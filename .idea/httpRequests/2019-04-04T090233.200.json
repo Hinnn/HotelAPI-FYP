@@ -1,0 +1,16 @@
+[
+  {
+    "phoneNum": "1100000009",
+    "DateOfBirth": null,
+    "Gender": "Male",
+    "verification": true,
+    "_id": "5ca0bedee397e000046ec67d",
+    "name": "Yue",
+    "email": "Yue1095933649@gmail.com",
+    "password": "$2a$10$KqFrLU5362tpT53CaHbgDu72y0sEdEmzHDV/PWKxGOMJr49LceKVu",
+    "password2": "$2a$10$lACXfUaesbtjGNAWZEev0OlSthFV1Jfkc4E7g9xjH8ok8OJh0OAcO",
+    "register_date": "2019-03-31T13:21:35.024Z",
+    "code": "994657",
+    "__v": 0
+  }
+]

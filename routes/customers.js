@@ -6,8 +6,8 @@ let mailer = require('../models/nodemailer');
 let mail = require('../models/pass_mail');
 let code = Math.floor(Math.random()*900000 + 100000);
 let newPass = randomWord();
-let jwt = require('jsonwebtoken');
-let SECRET = require('../models/secretkey');
+// let jwt = require('jsonwebtoken');
+// let SECRET = require('../models/secretkey');
 
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
@@ -73,7 +73,7 @@ router.verification = (req, res) => {
             }
             //res.json({ message: 'Timeout! Please sign up again!'});
         } else {
-            Customer.update({ email: customer.email}, {verification: true}, function(err, newCustomer){
+            Customer.findOneAndUpdate({ email: customer.email}, {verification: true}, function(err, newCustomer){
                 if (err){
                     res.json({ message: err});
                 } else {
@@ -84,15 +84,6 @@ router.verification = (req, res) => {
     });
 };
 
-
-
-loginToken = (customer) => {
-    return jwt.sign({
-        iss: 'developer',//发行者
-        sub: customer.login,//主题
-        iat: new Date().getTime()//发行时间
-    }, SECRET.JWT_CUSTOMER_SECRET);
-};
 router.login = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
@@ -142,38 +133,6 @@ router.EditInfo = (req, res) => {
 
 };
 
-//
-// router.EditInfo = (req, res) => {
-//     res.setHeader('Content-Type', 'application/json');
-//
-//     if(10 !== req.body.phoneNum.length) {
-//         res.json({message: 'Please input 10 valid phone numbers!', data: null})
-//     } else {
-//         // let customers = new Customer({
-//         //     DateOfBirth: req.body.DateOfBirth,
-//         //     Gender: req.body.Gender,
-//         //     phoneNum: req.body.phoneNum
-//         // });
-//         // console.log(customers);
-//
-//         Customer.updateOne({email: req.params.email},
-//             {
-//                 DateOfBirth: req.body.DateOfBirth,
-//                 Gender: req.body.Gender,
-//                 phoneNum: req.body.phoneNum
-//             },
-//             function (err, customers) {
-//                 if (err)
-//                     res.json({message: 'Unable to change', data: null});
-//                  else
-//                     // console.log(customers);
-//                     // res.send(JSON.stringify(customers, null, 5));
-//                     res.json({message: 'Information changed successfully!'});
-//                 console.log(customers);
-//
-//             });
-//     }
-// };
 router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let customer = new Customer();
@@ -203,16 +162,6 @@ router.changePassword = (req, res) => {
             });
     };
 };
-// function randomPass(charSet) {
-//     charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     let Str = '';
-//     for (var i = 0; i < 8; i++) {
-//         var randomPoz = Math.floor(Math.random() * charSet.length);
-//         Str += charSet.substring(randomPoz,randomPoz+1);
-//     }
-//     return Str;
-// }
-//     let newPass= randomPass(Str);
 
 function randomWord(randomFlag,str){
     var str = "",
@@ -280,9 +229,9 @@ router.logout = (req, res) => {
     if (req.headers.cookie != null) {
         res.removeHeader('cookie');
         res.clearCookie('user')
+        console.log(req.headers.cookie);
         res.json({ message: 'Logout Successfully!',data: req.headers.cookie });
-    } else{
-        //     console.log(req.headers);
+    } else {
         res.json({ message: 'Please log in first' });
     }
 };
@@ -291,12 +240,26 @@ router.deleteCustomer = (req, res) => {
     if (req.params.admin == null) {
         res.json({ message: 'You can not delete the customer!'});
     } else{
-        Customer.findOneAndRemove({"email" : req.body.email},function (err) {
+        Customer.findOneAndRemove({"email" : req.params.email},function (err, customer) {
             if (err) {
                 res.json({ message: 'Failed to delete!', data: null});
             } else {
                 res.json({ message: 'Customer deleted successfully', data: customer});
             }
+        });
+    }
+};
+router.findAll = (req, res) => {
+    // Return a JSON representation of our list
+    res.setHeader('Content-Type', 'application/json');
+    if (req.params.admin == null) {
+        res.json({message: 'You can not do this operation!'});
+    } else {
+        Customer.find(function (err, customers) {
+            if (err)
+                res.send(err);
+            else
+                res.send(JSON.stringify(customers, null, 5));
         });
     }
 };

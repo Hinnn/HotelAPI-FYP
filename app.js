@@ -2,6 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var logger = require('morgan');
 var cors = require('cors');
 
@@ -46,12 +47,17 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser(cookiekey.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors({
+    credentials: true,
+    origin: 'http://localhost:8080'
+}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use(cors());
+//app.use(cors());
 //
 app.use("*", function (req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -73,8 +79,9 @@ app.post('/customers/logout', customers.logout);
 app.put('/customers/:customer/edit', customers.EditInfo);
 app.put('/customers/changePassword/:email', customers.changePassword);
 app.post('/customers/forgetPassword',customers.forgetPassword);
-app.delete('/:admin/customers', customers.deleteCustomer);
+app.delete('/:admin/customers/:email', customers.deleteCustomer);
 app.get('/customers/:email', customers.findOne);
+app.get('/:admin/customers', customers.findAll);
 
 app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
@@ -82,14 +89,16 @@ app.post('/admin/verification', admin.verification);
 app.post('/admin/logout', admin.logout);
 app.put('/admin/changePassword/:email', admin.changePassword);
 app.post('/admin/forgetPassword',admin.forgetPassword);
+app.get('/admin/:admin', admin.findOne);
 
-app.get('/:admin/bookings',auth.authAdmin,bookings.findAll);
-app.get('/bookings/:email',bookings.findOne);
+app.get('/bookings',bookings.findAll);
+app.get('/bookings/byEmail/:email',bookings.findOne);
+// app.get('bookings/:id',bookings.getOne);
 app.post('/bookings', bookings.addBooking);
-app.put('/bookings/:_id', bookings.Edit);
+app.put('/bookings/edit/:_id', bookings.Edit);
 //app.put('/:customers/bookings/:_id',auth.authCustomer,bookings.customerEdit);
-app.delete('/bookings/:email',bookings.deleteBooking);
-
+app.delete('/bookings/delete/:id',bookings.deleteBooking);
+app.get('/bookings/:id', bookings.getOne);
 
 app.get('/rooms', rooms.findAll);
 app.get('/rooms/:roomNum', rooms.findOne);

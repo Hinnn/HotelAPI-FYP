@@ -1,15 +1,14 @@
 let Admin = require('../models/admin');
-let Customer = require('../models/customers');
 let bcrypt = require('bcrypt-nodejs');
 let express = require('express');
 let router = express.Router();
 let mailer = require('../models/adminmail');
 let mail = require('../models/pass_mail');
 let admin_code = Math.floor(Math.random()*900000 + 100000);
-let jwt = require('jsonwebtoken');
-let SECRET = require('../models/secretkey');
+// let jwt = require('jsonwebtoken');
+// let SECRET = require('../models/secretkey');
 let newPass = randomWord();
-// let newPassword = randomWord();
+
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
 
@@ -45,7 +44,7 @@ router.signUp = (req, res)=> {
             if(user) {
                 res.json({ message : 'Account already exists! Please change another email!', data: null });
             } else {
-                Customer.findOne({email: req.body.email}, function (err, user) {
+                Admin.findOne({email: req.body.email}, function (err, user) {
                     if(user) {
                         res.json({ message : 'Email has been registered as a customer! Please change another email!', data: null });
                     } else{
@@ -85,7 +84,7 @@ router.verification = (req, res) => {
 
             }
         } else {
-            Admin.updateOne({ email: admin.email}, {verification: true}, function(err, newAdmin){
+            Admin.update({ email: admin.email}, {verification: true}, function(err, newAdmin){
                 if (err){
                     res.json({ message: err});
                 } else {
@@ -96,15 +95,6 @@ router.verification = (req, res) => {
     });
 };
 
-
-
-loginToken = (admin) => {
-    return jwt.sign({
-        iss: 'developer',//发行者
-        sub: admin.login,//主题
-        iat: new Date().getTime()//发行时间
-    }, SECRET.JWT_ADMIN_SECRET);
-};
 router.login = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
@@ -115,13 +105,13 @@ router.login = (req, res) => {
             res.json({ message: 'You are not verified!', data: null })
         } else{
             if(bcrypt.compareSync(req.body.password, admin.password)){
-                let token = loginToken(admin);
-                res.header('token',token);
-                res.cookie('user', admin.email, {
-                    httpOnly: true,
-                    signed: true
+                res.cookie('user', admin._id,
+                    {
+                    // httpOnly: true,//cookie不能被浏览器访问，只能被服务器访问
+                        signed: true
+                        // maxAge: 3600
                 });
-                res.json({ message: 'Welcome! '+ admin.name });
+                res.json({ message: 'Welcome! '+ admin.name, data: admin });
                 console.log(req.cookies)
             }
             else
@@ -129,16 +119,30 @@ router.login = (req, res) => {
         }
     });
 };
-
+//
+// router.logout = (req, res) => {
+//     res.setHeader('Content-Type', 'application/json');
+//
+//     if (req.headers.cookie != null) {
+//         res.removeHeader('cookie');
+//         res.clearCookie('user')
+//         res.json({ message: 'log out successfully!', data: req.headers.cookie });
+//         console.log(req.cookies);
+//         console.log(req.headers);
+//     } else{
+//             console.log(req.headers);
+//         res.json({ message: 'Please log in first' });
+//     }
+// };
 router.logout = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     if (req.headers.cookie != null) {
         res.removeHeader('cookie');
         res.clearCookie('user')
-        res.json({ message: 'log out successfully!', data: req.headers.cookie });
-    } else{
-            console.log(req.headers);
+        console.log(req.headers.cookie);
+        res.json({ message: 'Logout Successfully!',data: req.headers.cookie });
+    } else {
         res.json({ message: 'Please log in first' });
     }
 };
@@ -187,6 +191,15 @@ router.forgetPassword = (req, res) => {
             }
         })
 
+}
+router.findOne = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    Admin.findById(req.params.admin, function (err, admin) {
+        if (err)
+            res.json({message: 'Admin NOT Found!', errmsg: err});
+        else
+            res.send(JSON.stringify(admin, null, 5));
+    });
 }
 router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');

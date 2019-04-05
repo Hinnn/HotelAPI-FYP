@@ -1,0 +1,30 @@
+[
+  {
+    "phoneNum": "0830694111",
+    "DateOfBirth": "1996-05-09T00:00:00.000Z",
+    "Gender": "Female",
+    "verification": true,
+    "_id": "5c86a66f30303f02d1d6b580",
+    "name": "Yue Wang",
+    "email": "1095933649@qq.com",
+    "password": "$2a$10$ua5gB7E4qFID5OcHqyN.S.P0yQSSEWWTnquTxa1UZWlXvFH3jfrAm",
+    "password2": "$2a$10$dzB5KrZx.GKqgOUXEyXS9.M3g/nIAdSBCMk/RNEWFs/ztzT3yS/zq",
+    "register_date": "2019-03-11T18:18:24.467Z",
+    "code": "179597",
+    "__v": 0
+  },
+  {
+    "phoneNum": "1100000009",
+    "DateOfBirth": null,
+    "Gender": "Male",
+    "verification": true,
+    "_id": "5ca0bedee397e000046ec67d",
+    "name": "Yue",
+    "email": "Yue1095933649@gmail.com",
+    "password": "$2a$10$KqFrLU5362tpT53CaHbgDu72y0sEdEmzHDV/PWKxGOMJr49LceKVu",
+    "password2": "$2a$10$lACXfUaesbtjGNAWZEev0OlSthFV1Jfkc4E7g9xjH8ok8OJh0OAcO",
+    "register_date": "2019-03-31T13:21:35.024Z",
+    "code": "994657",
+    "__v": 0
+  }
+]
