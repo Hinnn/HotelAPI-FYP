@@ -1,0 +1,17 @@
+{
+  "message": "Welcome to our website! Shaw",
+  "data": {
+    "verification": true,
+    "_id": "5cab9655ae8fb703b4a16a07",
+    "name": "Shaw",
+    "email": "777@qq.com",
+    "password": "$2a$10$awS0kRoIY.3oCHqZhlyl.O2dAzBdFU6Qv2a1IczT8CpN4VV5bzMri",
+    "password2": "$2a$10$g6BYqULTMGGn7zUK6do2XOjI9TNnNN7dOI0yXkEOHlOvez4SZXiiG",
+    "register_date": "2019-04-08T18:43:33.859Z",
+    "code": "181736",
+    "__v": 0,
+    "DateOfBirth": "2003-02-12T00:00:00.000Z",
+    "Gender": "male",
+    "phoneNum": "8787878078"
+  }
+}

@@ -1,7 +1,7 @@
 let mongoose = require('mongoose');
 
 let RoomSchema = new mongoose.Schema({
-    roomNum:{
+    roomID:{
         type: String,
         required: true
     },
@@ -21,6 +21,11 @@ let RoomSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    people: {
+        type: Number,
+        required: true
+    },
+
 
     },
     { collection: 'rooms' });

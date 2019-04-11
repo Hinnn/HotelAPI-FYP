@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-
+let jwt = require('jsonwebtoken');
 let CustomerSchema = new mongoose.Schema({
         name: {
             type: String,
@@ -20,16 +20,16 @@ let CustomerSchema = new mongoose.Schema({
             required: true
         },
         phoneNum: {
-            type: String,
-            default: "1234567891"
+            type: String
+            // default: "1234567891"
         },
         DateOfBirth: {
-            type: Date,
-            default : "1997-01-01"
+            type: Date
+            // default : "1997-01-01"
         },
         Gender: {
-            type: String,
-            default: "Male"
+            type: String
+            // default: "Male"
         },
 
         register_date: Date,
@@ -45,6 +45,9 @@ let CustomerSchema = new mongoose.Schema({
     { collection: 'customers' });
 
 
-
+CustomerSchema.methods.generateAuthToken = function(){
+    let token = jwt.sign({email: this.email}, 'customerJwtKey');
+    return token;
+};
 
 module.exports = mongoose.model('Customer', CustomerSchema);

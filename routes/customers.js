@@ -6,8 +6,7 @@ let mailer = require('../models/nodemailer');
 let mail = require('../models/pass_mail');
 let code = Math.floor(Math.random()*900000 + 100000);
 let newPass = randomWord();
-// let jwt = require('jsonwebtoken');
-// let SECRET = require('../models/secretkey');
+
 
 router.signUp = (req, res)=> {
     res.setHeader('Content-Type', 'application/json');
@@ -19,9 +18,9 @@ router.signUp = (req, res)=> {
     customer.email = req.body.email;
     customer.password = bcrypt.hashSync(req.body.password);
     customer.password2 = bcrypt.hashSync(req.body.password2);
-    customer.phoneNumber = req.body.phoneNumber;
-    customer.DateOfBirth = req.body.DateOfBirth;
-    customer.Gender = req.body.Gender;
+    // customer.phoneNumber = req.body.phoneNumber;
+    // customer.DateOfBirth = req.body.DateOfBirth;
+    // customer.Gender = req.body.Gender;
     customer.register_date = Date.now();
     customer.code = code;
     if( customer.name == null || customer.email == null || customer.password == null || customer.password2 == null){
@@ -94,12 +93,14 @@ router.login = (req, res) => {
             res.json({ message: 'You are not verified!', data: null })
         } else{
             if(bcrypt.compareSync(req.body.password, customer.password)){
-                res.cookie('user', customer.email, {
-                    httpOnly: true,
-                    signed: true
-                });
+                // res.cookie('user', customer.email, {
+                //     httpOnly: true,//避免被 xss 攻击拿到 cookie。
+                //     signed: true
+                // });
+                let token = customer.generateAuthToken();
+                res.header('x-auth-token',token);
                 res.json({ message: 'Welcome to our website! '+ customer.name, data: customer });
-                console.log(req.cookies)
+                console.log(token)
             }
             else
                 res.json({ message: 'Wrong password!', data: null });
@@ -108,32 +109,38 @@ router.login = (req, res) => {
 };
 router.EditInfo = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    // if(10 !== req.body.phoneNum.length) {
-    //             res.json({message: 'Please input 10 valid phone numbers!', data: null})
-    //         } else {
-    console.log(req.body);
-    Customer.findOneAndUpdate({
-            email:req.params.customer
-        }, {
-            DateOfBirth: req.body.DateOfBirth,
-            Gender: req.body.Gender,
-            phoneNum: req.body.phoneNum
-        },
-        {new:true},
-        // console.log(customer),
-        function (err, customer) {
-            if (err) {
-                res.json({message: 'Unable to edit.', data: err})
-            } else {
-                console.log(customer);
-                // res.send(JSON.stringify(result, null, 5));
-                res.json({message: 'Edit Successfully', data: customer})
-            }
-        });
+    let customer = new Customer();
+        customer.DateOfBirth = req.body.DateOfBirth;
+        customer.Gender = req.body.Gender;
+        customer.phoneNum = req.body.phoneNum;
+    if(customer.DateOfBirth == null || customer.Gender == null || customer.phoneNum == null) {
+        res.json({ message : 'Please input all the information!', data: null });
+    }  else if(customer.phoneNum.length !== 10) {
+        res.json({message: 'Please input 10 digital phone numbers!', data: null})
+    } else {
+        Customer.findOneAndUpdate({
+                email: req.params.customer
+            }, {
 
+                DateOfBirth: req.body.DateOfBirth,
+                Gender: req.body.Gender,
+                phoneNum: req.body.phoneNum
+            },
+            {new: true},
+            // console.log(customer),
+            function (err, customer) {
+                if (err) {
+                    res.json({message: 'Unable to edit.', data: err})
+                } else {
+                    console.log(customer);
+                    // res.send(JSON.stringify(result, null, 5));
+                    res.json({message: 'Information Successfully edited', data: customer})
+                }
+            });
+    }
 };
 
-router.changePassword = (req, res) => {
+    router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let customer = new Customer();
     customer.password = bcrypt.hashSync(req.body.password);
@@ -226,13 +233,13 @@ router.findOne = (req, res) => {
 router.logout = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    if (req.headers.cookie != null) {
-        res.removeHeader('cookie');
-        res.clearCookie('user')
-        console.log(req.headers.cookie);
-        res.json({ message: 'Logout Successfully!',data: req.headers.cookie });
+    if (req.token != null) {
+        res.removeHeader('x-auth-token');
+        // res.clearCookie('user')
+        // console.log(req.headers.cookie);
+        res.json({ message: 'Logout Successfully!' });
     } else {
-        res.json({ message: 'Please log in first' });
+        res.json({ message: 'Please log in first', data: req.token });
     }
 };
 router.deleteCustomer = (req, res) => {

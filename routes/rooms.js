@@ -14,13 +14,13 @@ router.findAll = (req, res) => {
     });
 }
 
-// function getByValue(array, roomNum) {
-//     var result  = array.filter(function(obj){return obj.roomNum == roomNum;} );
+// function getByValue(array, roomID) {
+//     var result  = array.filter(function(obj){return obj.roomID == roomID;} );
 //     return result ? result[0] : null; // or undefined
 // }
 router.findOne = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    Room.find({ roomNum : req.params.roomNum },function(err, room) {
+    Room.find({ roomID : req.params.roomID },function(err, room) {
         if (err)
             res.json({ message: 'Room NOT Found!', errmsg : err } );
         else
@@ -30,19 +30,20 @@ router.findOne = (req, res) => {
 
 router.getByType = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-
-    Room.find({"roomType": req.params.roomType}, function(err, room) {
-        if (err){
-            res.json({message: 'Type not found', data: null});
-        } else {
-            res.json({data: room});
-        }
-    })
-};
+    // if (req.params.customer == null) {
+    //     res.json({message: 'You can not do this operation!'});
+    // } else {
+    Room.find({"roomType": req.params.roomType}, function (err, room) {
+        if (err)
+            res.json({message: 'Room NOT Found!', data: null});
+        else
+            res.send(JSON.stringify(room, null, 5));
+    });
+}
 
 router.UpVotes = (req, res) => {
 
-    Room.findOne({"roomNum": req.params.roomNum}, function(err,room) {
+    Room.findOne({"roomID": req.params.roomID}, function(err,room) {
         if (err)
             res.json({ message: 'Room NOT Found!', errmsg : err } );
         else {
@@ -58,21 +59,36 @@ router.UpVotes = (req, res) => {
 }
 router.addRoom = (req, res) => {
     //Add a new room to our list
-    res.setHeader('Content-Type', 'application/json');
-    let room = new Room();
+    res.setHeader('Content-Type', 'application/json')
+    // let room = new Room();
+    // room.roomID = req.body.roomID;
+    // room.roomType = req.body.roomType;
+    // room.price = req.body.price;
+    // // room.isEmpty = true;
+    // room.people = req.body.people;
+   // let email = req.admin.email;
     if (req.params.admin == null) {
         res.json({ message: 'You can not do this operation!'});
-    } else if (req.body.roomNum == null) {
-        res.json({ message: 'room number is required!'});
+    } else if (req.body.roomID == null) {
+        res.json({ message: 'Room number is required!'});
     } else if (req.body.roomType == null) {
-        res.json({ message: 'room type is required!'});
+        res.json({ message: 'Room type is required!'});
     } else if (req.body.price == null) {
         res.json({ message: 'Price is required'});
-    } else{
-        room.roomNum = req.body.roomNum;
+    } else if (req.body.people == null) {
+        res.json({ message: 'People amount is required'});
+    }else{
+        // console.log(token);
+        Room.findOne({ roomID: req.body.roomID }, function (err, room) {
+            if(room) {
+                res.json({ message : 'Room already exists! Please change another room!', data: null });
+            } else{
+                let room = new Room();
+            room.roomID = req.body.roomID;
         room.roomType = req.body.roomType;
         room.price = req.body.price;
         room.isEmpty = true;
+        room.people = req.body.people;
         room.save(function(err) {
             if (err)
                 res.json({ message: 'Room NOT Added!', errmsg : err } );
@@ -80,6 +96,8 @@ router.addRoom = (req, res) => {
                 res.json({ message: 'Room Successfully Added!', data: room });
         });
     }
+    });
+  }
 };
 
 router.edit = (req, res) => {
@@ -92,7 +110,7 @@ router.edit = (req, res) => {
     } else if (req.body.roomType== null) {
         res.json({ message: 'Room type is required'});
     }  else{
-        Room.updateOne({"roomNum" : req.body.roomNum},
+        Room.updateOne({"roomID" : req.body.roomID},
             {admin_id: req.params.admin,
                 price: req.body.price,
                 roomType: req.body.roomType,
@@ -113,7 +131,7 @@ router.addDiscount = (req, res) => {
     } else if (req.body.price == null) {
         res.json({ message: 'Price is required'});
     }  else{
-        Room.updateOne({"roomNum" : req.body.roomNum},
+        Room.updateOne({"roomID" : req.body.roomID},
             {admin_id: req.params.admin,
                 price: req.body.price,
                 last_edit: Date.now()}, function (err, room) {
@@ -133,7 +151,7 @@ router.deleteDiscount = (req, res) => {
     } else if (req.body.price == null) {
         res.json({ message: 'Price is required'});
     }  else{
-        Room.updateOne({"roomNum" : req.body.roomNum},
+        Room.findOneAndUpdate({"roomID" : req.body.roomID},
             {admin_id: req.params.admin,
                 price: req.body.price,
                 last_edit: Date.now()}, function (err, room) {
@@ -146,21 +164,19 @@ router.deleteDiscount = (req, res) => {
     }
 };
 router.deleteRoom = (req, res) => {
-
+    res.setHeader('Content-Type','application/json');
     if (req.params.admin == null) {
         res.json({ message: 'You can not delete the room!'});
     } else {
-        Room.findOneAndRemove({roomNum: req.params.roomNum}, function (err) {
-            if (!err) {
-                res.json({message: 'Room Successfully Deleted!'});
-            }
-            else
-
+        Room.findOneAndRemove({"roomID": req.params.roomID}, function (err, room) {
+            if (err) {
                 res.json({message: 'Room NOT Found!', errmsg: err});
+            } else {
+                res.json({message: 'Room Successfully Deleted!', data: room});
+            }
+
         });
     }
 };
 
 module.exports = router;
-
-

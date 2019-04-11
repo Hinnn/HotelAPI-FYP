@@ -31,7 +31,7 @@ router.adminFind = (req, res) => {
     });
 }
 */
-router.findOne = (req, res) => {
+router.findByCusEmail= (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     // if (req.params.customer == null) {
     //     res.json({message: 'You can not do this operation!'});
@@ -62,7 +62,7 @@ router.getOne = (req, res) => {
 
     Booking.findById(req.params.id, function(err, booking){
         if (err){
-            res.json({message: 'Product not found', data: null});
+            res.json({message: 'Booking not found', data: null});
         } else {
             res.json({data: booking});
         }
@@ -86,6 +86,7 @@ router.addBooking = (req, res) => {
     var d2 = req.body.leave_date;
     var d5 = new Date();//get current date
     d5.toLocaleDateString();
+    console.log(d5);
     var d3 = new Date(d1).getTime();
     var d4 = new Date(d2).getTime();
     var d6 = new Date(d5).getTime();
@@ -117,33 +118,33 @@ router.addBooking = (req, res) => {
     }
 }
 
-    router.Edit = (req, res) => {
+    router.AdminEdit = (req, res) => {
         // Find the relevant booking based on params id passed in
 
         res.setHeader('Content-Type', 'application/json');
         let booking = new Booking();
-        booking.contactNum = req.body.contactNum
-            if(booking.contactNum == null) {
-                res.json({message: 'Please input the contact number!', data: null})
-            } else if (10 !== req.body.contactNum.length) {
-                res.json({message: 'Your phone number should contain 10 characters!', data: null})
-            }  else {
+       //  booking.contactNum = req.body.contactNum
+        booking.roomID = req.body.roomID
+            // if(booking.contactNum == null) {
+            //     res.json({message: 'Please input the contact number!', data: null})
+            // } else if (10 !== req.body.contactNum.length) {
+            //     res.json({message: 'Your phone number should contain 10 characters!', data: null})
+            // }  else {
 
             Booking.findOneAndUpdate({_id: req.params._id},
                 {
-                    contactNum: req.body.contactNum,
+                    // contactNum: req.body.contactNum,
+                    roomID: req.body.roomID
                 },
                 {new:true},
                 function (err, booking) {
                     if (err)
                         res.json({message: 'Booking Not Edited', errmsg: err});
                     else
+                        // console.log(booking)
                         res.json({message: 'Booking Edited successfully', data: booking});
                 });
-        }
-    };
-
-
+        };
         router.deleteBooking = (req, res) => {
             res.setHeader('Content-Type', 'application/json');
             Booking.findOneAndRemove({_id: req.params.id}, function (err, booking) {
@@ -154,7 +155,25 @@ router.addBooking = (req, res) => {
                     res.json({message: 'Booking Successfully Deleted!', data: booking});
             });
         }
+router.getByCondition= (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    // if (req.params.customer == null) {
+    //     res.json({message: 'You can not do this operation!'});
+    // } else {
+    Booking.find({"roomType": req.params.roomType}, function (err, booking) {
+        if (err)
+            res.json({message: 'Booking NOT Found!', errmsg: err});
+        else
+            res.send(JSON.stringify(booking, null, 5));
+    });
+}
+router.getByDate = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    var d1 = req.body.checkin_date;
+    var d2 = req.body.leave_date;
+    var d3 = router.getByCondition.booking.checkin_date;
+    var d4 = router.getByCondition.booking.leave_date;
 
-
+}
 module.exports = router;
 module.exports.booking = router.addBooking.booking;

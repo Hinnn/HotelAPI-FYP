@@ -4,7 +4,8 @@ function send (email, admin_code) {
 //new smtp server
 
     let transporter = nodemailer.createTransport({
-        host: 'smtp.126.com',
+        // host: 'smtp.126.com',
+        host: 'localhost',// https://github.com/nodemailer/nodemailer/issues/441
         port: 465,
         secure: true,
         auth: {

@@ -1,10 +1,6 @@
 let mongoose = require('mongoose');
+let jwt = require('jsonwebtoken');
 let AdminSchema = new mongoose.Schema({
-        // adminID: {
-        //     type: String,
-        //     required: true,
-        //     unique: true
-        // },
         name: {
             type: String,
             required: true
@@ -12,8 +8,8 @@ let AdminSchema = new mongoose.Schema({
         email: {
             type: String,
             match:/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/,
-            required: true,
-            unique: true
+            required: true
+            // unique: true
         },
         password: {
             type: String,
@@ -32,6 +28,11 @@ let AdminSchema = new mongoose.Schema({
         admin_code: String
 
     },
-    { collection: 'admin' });
+    { collection: '  admin' });
+AdminSchema.methods.generateAuthToken = function(){
+    let token = jwt.sign({email: this.email}, 'AdminJwtKey');
+    return token;
+};
+
 
 module.exports = mongoose.model('Admin', AdminSchema);
