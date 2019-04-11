@@ -98,7 +98,7 @@ router.login = (req, res) => {
                 //     signed: true
                 // });
                 let token = customer.generateAuthToken();
-                res.header('x-auth-token',token);
+                res.header('token',token);
                 res.json({ message: 'Welcome to our website! '+ customer.name, data: customer });
                 console.log(token)
             }
@@ -142,32 +142,39 @@ router.EditInfo = (req, res) => {
 
     router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let customer = new Customer();
-    customer.password = bcrypt.hashSync(req.body.password);
-    customer.password2 = bcrypt.hashSync(req.body.password2)
-    if(customer.password == null || customer.password2 == null){
-        res.json({message: 'Password and confirm password are all required!',data:null})
-    } else if((8 > req.body.password.length) || (8 > req.body.password2)){
-        res.json({message: 'Password should be more than 8 characters!',data:null})
-    } else if(!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))){
-        res.json({ message: 'Password must has number,special character, lowercase and capital Letters!', data: null});
-    } else if (req.body.password !== req.body.password2) {
-        res.json({message: 'Please input the same password!', data: null})
-    }
-    else{
-        Customer.findOneAndUpdate({"email": req.params.email},
-            {
-                password: bcrypt.hashSync(req.body.password),
-                password2: bcrypt.hashSync(req.body.password2)
-            },
-            {new:true},
-            function (err, customer) {
-                if (err)
-                    res.json({message: 'Unable to change', errmsg: err});
-                else
-                    res.json({message: 'Password changed successfully!', data: customer});
-            });
-    };
+        if (req.params.customer == null) {
+            res.json({ message: 'You can not change password!'});
+        } else {
+            let customer = new Customer();
+            customer.password = bcrypt.hashSync(req.body.password);
+            customer.password2 = bcrypt.hashSync(req.body.password2)
+            if (customer.password == null || customer.password2 == null) {
+                res.json({message: 'Password and confirm password are all required!', data: null})
+            } else if ((8 > req.body.password.length) || (8 > req.body.password2)) {
+                res.json({message: 'Password should be more than 8 characters!', data: null})
+            } else if (!(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W])[a-zA-Z\d\W?$]{8,16}/.test(req.body.password))) {
+                res.json({
+                    message: 'Password must has number,special character, lowercase and capital Letters!',
+                    data: null
+                });
+            } else if (req.body.password !== req.body.password2) {
+                res.json({message: 'Please input the same password!', data: null})
+            }
+            else {
+                Customer.findOneAndUpdate({"email": req.params.customer},
+                    {
+                        password: bcrypt.hashSync(req.body.password),
+                        password2: bcrypt.hashSync(req.body.password2)
+                    },
+                    {new: true},
+                    function (err, customer) {
+                        if (err)
+                            res.json({message: 'Unable to change', errmsg: err});
+                        else
+                            res.json({message: 'Password changed successfully!', data: customer});
+                    });
+            }
+        }
 };
 
 function randomWord(randomFlag,str){
@@ -204,11 +211,12 @@ router.forgetPassword = (req, res) => {
             res.json({message : 'Email sent successfully!'})
         }
     });
-    Customer.updateOne({"email": req.body.email},
+    Customer.findOneAndUpdate({"email": req.body.email},
         {password :bcrypt.hashSync(newPass),
             password2 : bcrypt.hashSync(newPass)
-        }, function (err){
-
+        },
+        {new: true},
+        function (err){
             if (err) {
                 console.log( 'Password failed to change!');
             } else {
@@ -234,7 +242,7 @@ router.logout = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     if (req.token != null) {
-        res.removeHeader('x-auth-token');
+        res.removeHeader('token');
         // res.clearCookie('user')
         // console.log(req.headers.cookie);
         res.json({ message: 'Logout Successfully!' });

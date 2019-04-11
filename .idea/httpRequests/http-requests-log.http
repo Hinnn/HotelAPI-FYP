@@ -1,3 +1,336 @@
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUwMDI3OTh9.XroCE9oeIvwvj_GeXdalzdgn3K0G-Gx3IBQhaenMWRI
+
+{"roomType":"double","roomID":"405","price":"40","people":"3"}
+
+<> 2019-04-11T061454.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUwMDI3OTh9.XroCE9oeIvwvj_GeXdalzdgn3K0G-Gx3IBQhaenMWRI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T061343.404.html
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T061318.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomID":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021805.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021751.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021712.400.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021654.401.html
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T021627.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021332.401.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021319.500.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021150.401.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5ODgxOTB9.qpuf2S6EP05y5jLjblwXoxo1aS5Wb_Ra10nfkfUwBBk
+
+{"roomType":"single","roomNum":"302","price":"40","people":"2"}
+
+<> 2019-04-11T021122.401.html
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T020950.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"roomType":"single","roomID":"401","price":"40","people":"1"}
+
+<> 2019-04-11T020904.401.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"roomType":"single","roomID":"401","price":"40","people":"1"}
+
+<> 2019-04-11T014239.401.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"roomType":"single","roomID":"401","price":"40","people":"1"}
+
+<> 2019-04-11T014210.200.json
+
+###
+
+GET http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T014047.404.html
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T014036.200.json
+
+###
+
+POST http://localhost:3000/admin/logout
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T014032.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T014022.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T013954.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T013735.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T013711.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T013640.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+###
+
+GET http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T013614.200.json
+
+###
+
+GET http://localhost:3000/111@qq.com/customers
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T011403.200.json
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTQ5Nzg0NzV9.Sf6Qm9IbBEP7O9f3JrabvBwrW5ePp8m7O_luLoXvCPI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-11T011348.200.json
+
+###
+
 GET http://localhost:3000/111@qq.com/customers
 Accept: */*
 Cache-Control: no-cache
@@ -251,319 +584,6 @@ x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5
 {"email":"777@qq.com","password":"Yue123..."}
 
 <> 2019-04-11T100538.401.html
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100528.200.json
-
-###
-
-POST http://localhost:3000/customers/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100517.200.json
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100301.200.json
-
-###
-
-PUT http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100258.404.html
-
-###
-
-PUT http://localhost:3000/777@qq.com/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100242.401.html
-
-###
-
-PUT http://localhost:3000/777@qq.com/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100213.500.html
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100132.200.json
-
-###
-
-POST http://localhost:3000/111@qq.com/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"roomID":"102","roomType":"double","people":"2","price":"50"}
-
-<> 2019-04-11T125226.200.json
-
-###
-
-POST http://localhost:3000/111@qq.com/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"roomID":"102","roomType":"double","people":"2","price":"50"}
-
-###
-
-POST http://localhost:3000/111@qq.com/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"roomID":"102","roomType":"double","people":"2","price":"50"}
-
-###
-
-POST http://localhost:3000/111@qq.com/rooms
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"roomID":"101","roomType":"double","people":"3","price":"50"}
-
-<> 2019-04-11T125050.200.json
-
-###
-
-GET http://localhost:3000/111@qq.com/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"1095933649@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T124957.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"1095933649@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T124941.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T124750.200.json
-
-###
-
-POST http://localhost:3000/admin/verification
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"admin_code":"314335"}
-
-<> 2019-04-11T124716.200.json
-
-###
-
-POST http://localhost:3000/admin/verification
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"code":"314335"}
-
-<> 2019-04-11T124657.200.json
-
-###
-
-POST http://localhost:3000/admin/verification
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","code":"314335"}
-
-<> 2019-04-11T124610.200.json
-
-###
-
-POST http://localhost:3000/admin/verification
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","code":"314335"}
-
-###
-
-POST http://localhost:3000/admin/signUp
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"1095933649@qq.com","name":"YueWang","password":"Yue123...","password2":"Yue123..."}
-
-<> 2019-04-11T124523.200.json
-
-###
-
-GET http://localhost:3000/111@qq.com/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T122216.400.html
-
-###
-
-GET http://localhost:3000/customers
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T122203.404.html
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T122155.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T121813.200.json
-
-###
-
-POST http://localhost:3000/admin/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T121803.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T120901.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-###
-
-POST http://localhost:3000/customers/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-10T115754.200.json
-
-###
-
-PUT http://localhost:3000/777@qq.com/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-10T112105.401.html
 
 ###
 

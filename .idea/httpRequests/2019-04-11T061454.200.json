@@ -3,11 +3,11 @@
   "data": {
     "isEmpty": true,
     "upvotes": 0,
-    "_id": "5cae81ba9a6bd3078144e2a4",
-    "roomID": "102",
+    "_id": "5caf760dd7933c0397834ac5",
+    "roomID": "405",
     "roomType": "double",
-    "price": 50,
-    "people": 2,
+    "price": 40,
+    "people": 3,
     "__v": 0
   }
 }

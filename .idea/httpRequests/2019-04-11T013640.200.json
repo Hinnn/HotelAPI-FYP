@@ -1,0 +1,14 @@
+{
+  "message": "Welcome to our website! Yvette",
+  "data": {
+    "verification": true,
+    "_id": "5ca88761c440ab045e4f6da3",
+    "name": "Yvette",
+    "email": "111@qq.com",
+    "password": "$2a$10$Ca7UvWsF/FKQY0xi5HrvROn2wJJltN6pUn2LGlyejJYGoFjGodCPi",
+    "password2": "$2a$10$zvOX0ysH4LvjllxXVwObZ.1GVwBvJkOQd5Blj3BT8c1AQDb/gTAH6",
+    "register_date": "2019-04-06T11:02:58.187Z",
+    "admin_code": "173558",
+    "__v": 0
+  }
+}

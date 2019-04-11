@@ -100,8 +100,8 @@ router.login = (req, res) => {
                 //     signed: true
                 // });
                 let token = admin.generateAuthToken();
-                res.header('x-auth-token',token);
-                res.json({ message: 'Welcome to our website! '+ admin.name, data: admin });
+                res.header('token',token);
+                res.json({ message: 'Welcome to our website! '+ admin.name, data: admin, token: token });
                 console.log(token)
             }
             else
@@ -152,7 +152,7 @@ router.logout = (req, res) => {
     if (req.token == null) {
         res.json({ message: 'Please log in first' , data:req.token});
     } else {
-        res.removeHeader('x-auth-token');
+        res.removeHeader('token');
         res.clearCookie('user')
         console.log(req.headers);
         res.json({ message: 'Logout Successfully!',data: req.token});
@@ -245,3 +245,4 @@ router.changePassword = (req, res) => {
 module.exports = router;
 module.exports.admin_code = admin_code;
 module.exports.newPass = newPass;
+

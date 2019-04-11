@@ -109,12 +109,14 @@ router.edit = (req, res) => {
         res.json({ message: 'Price is required'});
     } else if (req.body.roomType== null) {
         res.json({ message: 'Room type is required'});
+    } else if (req.body.people== null) {
+        res.json({ message: 'People amount is required'});
     }  else{
-        Room.updateOne({"roomID" : req.body.roomID},
-            {admin_id: req.params.admin,
-                price: req.body.price,
+        Room.findOneAndUpdate({"roomID" : req.body.roomID},
+            {price: req.body.price,
                 roomType: req.body.roomType,
-                last_edit: Date.now()}, function (err, room) {
+                people : req.body.people,
+                last_edit: Date.now()}, {new: true},function (err, room) {
                 if (err) {
                     res.json({ message: 'Room edited failed', data: null});
                 } else {
@@ -127,40 +129,42 @@ router.addDiscount = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
     if (req.params.admin == null) {
-        res.json({ message: 'You can not edit the room!'});
-    } else if (req.body.price == null) {
-        res.json({ message: 'Price is required'});
+        res.json({ message: 'You can not edit the room price!'});
     }  else{
-        Room.updateOne({"roomID" : req.body.roomID},
-            {admin_id: req.params.admin,
-                price: req.body.price,
-                last_edit: Date.now()}, function (err, room) {
+        Room.findOne({"roomID" : req.params.roomID}, function (err, room) {
                 if (err) {
-                    res.json({ message: 'Room edited failed', data: null});
+                    res.json({ message: 'Room does not exist', data: null});
                 } else {
-                    res.json({ message: 'Room edited successfully', data: room});
+                    room.price *=0.7;
+                    room.save(function (err) {
+                        if (err)
+                            res.json('Fail to add a discount');
+                        else
+                            res.json({ message: 'Room edited successfully', data: room});
+                    })
                 }
             });
     }
 };
+
 router.deleteDiscount = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-
     if (req.params.admin == null) {
-        res.json({ message: 'You can not edit the room!'});
-    } else if (req.body.price == null) {
-        res.json({ message: 'Price is required'});
+        res.json({ message: 'You can not edit the room price!'});
     }  else{
-        Room.findOneAndUpdate({"roomID" : req.body.roomID},
-            {admin_id: req.params.admin,
-                price: req.body.price,
-                last_edit: Date.now()}, function (err, room) {
-                if (err) {
-                    res.json({ message: 'Fail to delete the discount', data: null});
-                } else {
-                    res.json({ message: 'Discount deleted successfully！', data: room});
-                }
-            });
+        Room.findOne({"roomID" : req.params.roomID}, function (err, room) {
+            if (err) {
+                res.json({ message: 'Room does not exist', data: null});
+            } else {
+                room.price /= 0.7;
+                room.save(function (err) {
+                    if (err)
+                        res.json('Fail to add a discount');
+                    else
+                        res.json({ message: 'Room edited successfully', data: room});
+                })
+            }
+        });
     }
 };
 router.deleteRoom = (req, res) => {

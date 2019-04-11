@@ -17,7 +17,7 @@ let BookingSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-        roomNum:{
+        roomID:{
             type: String
         },
         checkin_date:{

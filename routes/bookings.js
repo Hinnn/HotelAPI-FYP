@@ -118,32 +118,33 @@ router.addBooking = (req, res) => {
     }
 }
 
-    router.AdminEdit = (req, res) => {
+    router.Edit = (req, res) => {
         // Find the relevant booking based on params id passed in
 
         res.setHeader('Content-Type', 'application/json');
         let booking = new Booking();
        //  booking.contactNum = req.body.contactNum
-        booking.roomID = req.body.roomID
-            // if(booking.contactNum == null) {
-            //     res.json({message: 'Please input the contact number!', data: null})
+        booking.roomID = req.body.roomID;
+            if(booking.roomID == null) {
+                res.json({message: 'Please choose a room!', data: null})
             // } else if (10 !== req.body.contactNum.length) {
             //     res.json({message: 'Your phone number should contain 10 characters!', data: null})
-            // }  else {
+            }  else {
 
-            Booking.findOneAndUpdate({_id: req.params._id},
-                {
-                    // contactNum: req.body.contactNum,
-                    roomID: req.body.roomID
-                },
-                {new:true},
-                function (err, booking) {
-                    if (err)
-                        res.json({message: 'Booking Not Edited', errmsg: err});
-                    else
+                Booking.findOneAndUpdate({_id: req.params._id},
+                    {
+                        // contactNum: req.body.contactNum,
+                        roomID: req.body.roomID
+                    },
+                    {new: true},
+                    function (err, booking) {
+                        if (err)
+                            res.json({message: 'Booking Not Edited', data: err});
+                        else
                         // console.log(booking)
-                        res.json({message: 'Booking Edited successfully', data: booking});
-                });
+                            res.json({message: 'Booking Edited successfully', data: booking});
+                    });
+            }
         };
         router.deleteBooking = (req, res) => {
             res.setHeader('Content-Type', 'application/json');
