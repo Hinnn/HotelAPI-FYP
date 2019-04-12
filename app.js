@@ -87,12 +87,12 @@ app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
 app.post('/admin/verification', admin.verification);
 app.post('/admin/logout', admin.logout);
-app.put('/admin/changePassword/:email', admin.changePassword);
+app.put('/admin/changePassword/:admin', auth.authAdmin, admin.changePassword);
 app.post('/admin/forgetPassword',admin.forgetPassword);
 app.get('/admin/:email', admin.findOne);
 
 app.get('/:admin/bookings',auth.authAdmin, bookings.findAll);
-app.get('/bookings/byEmail/:email',bookings.findByCusEmail);
+app.get('/bookings/byEmail/:email',auth.authCustomer, bookings.findByCusEmail);
 app.get('/bookings/getByCondition/:roomType',bookings.getByCondition);
 app.post('/bookings', bookings.addBooking);
 app.put('/bookings/:_id/edit', bookings.Edit);
