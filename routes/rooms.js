@@ -1,6 +1,30 @@
 let Room = require('../models/rooms');
 let express = require('express');
 let router = express.Router();
+// const multer = require('multer');
+// const storage = multer.diskStorage({
+//     destination: function(req, file, cb){
+//         cb(null, './uploads/');
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, new Date().toISOString() + file.originalname);
+//     }
+// });
+// const fileFilter = (req, file, cb) => {
+//     if (file.mimeType === 'image/jpeg' || file.mimeType === 'image/png' || file.mimeType === 'image/jpg') {
+//         callback(null, true);
+//     } else {
+//         cb(new Error('Only .jpeg or .png files are accepted'), false);
+//     }
+// };
+// const upload = multer({
+//     storage: storage,
+//     limits: {
+//         fileSize: 1024 * 1024 *5
+//     },
+//     fileFilter: fileFilter
+//
+// });
 
 router.findAll = (req, res) => {
     // Return a JSON representation of room list
@@ -66,7 +90,7 @@ router.addRoom = (req, res) => {
     // room.price = req.body.price;
     // // room.isEmpty = true;
     // room.people = req.body.people;
-   // let email = req.admin.email;
+    // let email = req.admin.email;
     if (req.params.admin == null) {
         res.json({ message: 'You can not do this operation!'});
     } else if (req.body.roomID == null) {
@@ -84,22 +108,22 @@ router.addRoom = (req, res) => {
                 res.json({ message : 'Room already exists! Please change another room!', data: null });
             } else{
                 let room = new Room();
-            room.roomID = req.body.roomID;
-        room.roomType = req.body.roomType;
-        room.price = req.body.price;
-        room.isEmpty = true;
-        room.people = req.body.people;
-        room.save(function(err) {
-            if (err)
-                res.json({ message: 'Room NOT Added!', errmsg : err } );
-            else
-                res.json({ message: 'Room Successfully Added!', data: room });
+                room.roomID = req.body.roomID;
+                room.roomType = req.body.roomType;
+                room.price = req.body.price;
+                room.isEmpty = true;
+                room.people = req.body.people;
+                room.roomImage = req.file.path;
+                room.save(function(err) {
+                    if (err)
+                        res.json({ message: 'Room NOT Added!', errmsg : err } );
+                    else
+                        res.json({ message: 'Room Successfully Added!', data: room });
+                });
+            }
         });
     }
-    });
-  }
 };
-
 router.edit = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 

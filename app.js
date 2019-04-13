@@ -25,14 +25,36 @@ db.once('open', function () {
     console.log('Successfully Connected to [ ' + db.name + ' ] ');
 });
 
-
-
 const customers = require("./routes/customers");
 const bookings = require("./routes/bookings");
 const admin = require("./routes/admin");
 const rooms = require("./routes/rooms");
 const auth = require('./middleware/check-auth');
-// const cookiekey = require('./models/secretkey');
+// const images = require("./routes/images");
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, './uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, new Date().toISOString() + file.originalname);
+    }
+});
+// const fileFilter = (req, file, cb) => {
+//     if (file.mimeType === 'image/jpeg' || file.mimeType === 'image/png' || file.mimeType === 'image/jpg') {
+//         cb(null, true);
+//     } else {
+//         cb(new Error('Only .jpeg or .png files are accepted'), false);
+//     }
+// };
+const upload = multer({
+    storage: storage
+    // limits: {
+    //     fileSize: 1024 * 1024 *5
+    // },
+    // fileFilter: fileFilter
+
+});
 
 var app = express();
 var port = process.env.PORT || 3001;
@@ -51,6 +73,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static('uploads'));
+// app.use(multer({dest:'/uploads'}));
 app.use(cors({
     credentials: true,
     origin: 'http://localhost:8080'
@@ -82,7 +106,7 @@ app.post('/customers/forgetPassword',customers.forgetPassword);
 app.delete('/:admin/customers/:email',auth.authAdmin, customers.deleteCustomer);
 app.get('/customers/:email', customers.findOne);
 app.get('/:admin/customers', auth.authAdmin, customers.findAll);
-
+// app.post('/customer/:id/uploadLogo', auth.authCustomer, images.uploadImage);
 app.post('/admin/signUp', admin.signUp);
 app.post('/admin/login', admin.login);
 app.post('/admin/verification', admin.verification);
@@ -105,14 +129,14 @@ app.get('/rooms', rooms.findAll);
 app.get('/rooms/byNum/:roomID', rooms.findOne);
 app.get('/rooms/byType/:roomType', rooms.getByType);
 app.put('/:customer/rooms/upvotes/:roomID', auth.authCustomer, rooms.UpVotes);
-app.post('/:admin/rooms', auth.authAdmin, rooms.addRoom);
+app.post('/:admin/rooms', auth.authAdmin, upload.single('roomImage'), rooms.addRoom);
 app.put('/:admin/rooms/edit/:roomID', auth.authAdmin, rooms.edit);
 //app.put('/rooms/changeStatus/:roomID',rooms.changeStatus);
 app.put('/:admin/rooms/addDiscount/:roomID', auth.authAdmin, rooms.addDiscount);
 app.put('/:admin/rooms/deleteDiscount/:roomID', auth.authAdmin, rooms.deleteDiscount);
 //comments
 app.delete('/:admin/rooms/:roomID', auth.authAdmin, rooms.deleteRoom);
-
+// app.post('/:admin/rooms/:roomID/uploadImage', auth.authAdmin, images.uploadImage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

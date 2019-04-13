@@ -23,8 +23,9 @@ let RoomSchema = new mongoose.Schema({
     },
     people: {
         type: Number,
-        required: true
+        default: null
     },
+    roomImage: { type: String}
 
 
     },

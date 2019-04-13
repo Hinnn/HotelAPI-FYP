@@ -2,6 +2,64 @@ POST http://localhost:3000/111@qq.com/rooms
 Accept: */*
 Cache-Control: no-cache
 Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUxMDU0NTJ9.dXZtBrulIKCwH4bRC6daL0vvtd5SWx1kJBBMBED0jSQ
+
+--null
+
+
+< /Users/hin/Desktop/屏幕快照 2019-03-31 下午5.41.40.png
+--null--
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUxMDU0NTJ9.dXZtBrulIKCwH4bRC6daL0vvtd5SWx1kJBBMBED0jSQ
+
+--null
+
+
+< /Users/hin/Desktop/屏幕快照 2019-03-31 下午5.41.40.png
+--null--
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUxMDU0NTJ9.dXZtBrulIKCwH4bRC6daL0vvtd5SWx1kJBBMBED0jSQ
+
+--null
+
+
+< /Users/hin/Desktop/屏幕快照 2019-03-31 下午5.41.40.png
+--null--
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUwMDI3OTh9.XroCE9oeIvwvj_GeXdalzdgn3K0G-Gx3IBQhaenMWRI
+
+--null
+
+
+< /Users/hin/Desktop/屏幕快照 2019-03-31 下午5.41.40.png
+--null--
+
+<> 2019-04-12T112622.401.html
+
+###
+
+POST http://localhost:3000/111@qq.com/rooms
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
 x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUwMDI3OTh9.XroCE9oeIvwvj_GeXdalzdgn3K0G-Gx3IBQhaenMWRI
 
 {"roomType":"double","roomID":"405","price":"40","people":"3"}
@@ -539,51 +597,6 @@ Content-Type: application/json
 {"email":"111@qq.com","password":"Yue123..."}
 
 <> 2019-04-11T112023.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T104347.200.json
-
-###
-
-POST http://localhost:3000/admin/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T104330.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T104255.200.json
-
-###
-
-PUT http://localhost:3000/777@qq.com/rooms/upvotes/101
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-x-access-token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEwOTU5MzM2NDlAcXEuY29tIiwiaWF0IjoxNTU0OTQwMDcwLCJleHAiOjE1NTQ5NDM2NzB9.31wds2Eud_9lwx6BiFst2fz0ykR0RvNjuTjTDgDq-KA
-
-{"email":"777@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T100538.401.html
 
 ###
 
