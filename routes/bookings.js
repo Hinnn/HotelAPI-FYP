@@ -169,6 +169,7 @@ router.getByCondition= (req, res) => {
             res.send(JSON.stringify(booking, null, 5));
     });
 }
+/*
 router.getByDate = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     var d1 = req.body.checkin_date;
@@ -177,5 +178,6 @@ router.getByDate = (req, res) => {
     var d4 = router.getByCondition.booking.leave_date;
 
 }
+*/
 module.exports = router;
 module.exports.booking = router.addBooking.booking;

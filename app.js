@@ -139,6 +139,8 @@ app.put('/:admin/rooms/deleteDiscount/:roomID', auth.authAdmin, rooms.deleteDisc
 app.delete('/:admin/rooms/:roomID', auth.authAdmin, rooms.deleteRoom);
 
 app.get('/conditions/searchByDate', conditions.searchByDate);
+app.get('/conditions/getAmountByType', conditions.getAmountByType);
+app.get('/conditions/multipleSelect', conditions.multipleSelect);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
