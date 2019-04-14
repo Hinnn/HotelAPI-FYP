@@ -1,30 +1,6 @@
 let Room = require('../models/rooms');
 let express = require('express');
 let router = express.Router();
-// const multer = require('multer');
-// const storage = multer.diskStorage({
-//     destination: function(req, file, cb){
-//         cb(null, './uploads/');
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, new Date().toISOString() + file.originalname);
-//     }
-// });
-// const fileFilter = (req, file, cb) => {
-//     if (file.mimeType === 'image/jpeg' || file.mimeType === 'image/png' || file.mimeType === 'image/jpg') {
-//         callback(null, true);
-//     } else {
-//         cb(new Error('Only .jpeg or .png files are accepted'), false);
-//     }
-// };
-// const upload = multer({
-//     storage: storage,
-//     limits: {
-//         fileSize: 1024 * 1024 *5
-//     },
-//     fileFilter: fileFilter
-//
-// });
 
 router.findAll = (req, res) => {
     // Return a JSON representation of room list
@@ -33,8 +9,9 @@ router.findAll = (req, res) => {
         console.log(rooms);
         if (err)
             res.send(err);
-
-        res.send(JSON.stringify(rooms,null,5));
+        else
+            res.send(JSON.stringify(rooms,null,5));
+        // res.json({data: rooms});
     });
 }
 
@@ -101,6 +78,8 @@ router.addRoom = (req, res) => {
         res.json({ message: 'Price is required'});
     } else if (req.body.people == null) {
         res.json({ message: 'People amount is required'});
+    } else if (req.body.bedType == null) {
+        res.json({ message: 'Bed type is required'});
     }else{
         // console.log(token);
         Room.findOne({ roomID: req.body.roomID }, function (err, room) {
@@ -111,8 +90,8 @@ router.addRoom = (req, res) => {
                 room.roomID = req.body.roomID;
                 room.roomType = req.body.roomType;
                 room.price = req.body.price;
-                room.isEmpty = true;
                 room.people = req.body.people;
+                room.bedType = req.body.bedType;
                 room.roomImage = req.file.path;
                 room.save(function(err) {
                     if (err)
@@ -135,11 +114,14 @@ router.edit = (req, res) => {
         res.json({ message: 'Room type is required'});
     } else if (req.body.people== null) {
         res.json({ message: 'People amount is required'});
-    }  else{
+    } else if (req.body.bedType == null){
+        res.json({message: 'Bed type is required'})
+    } else{
         Room.findOneAndUpdate({"roomID" : req.body.roomID},
             {price: req.body.price,
                 roomType: req.body.roomType,
                 people : req.body.people,
+                bedType : req.body.bedType,
                 last_edit: Date.now()}, {new: true},function (err, room) {
                 if (err) {
                     res.json({ message: 'Room edited failed', data: null});

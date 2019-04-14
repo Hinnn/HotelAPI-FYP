@@ -9,9 +9,13 @@ let RoomSchema = new mongoose.Schema({
             type: String,
             required: true
         },
-    isEmpty: {
-        type: Boolean,
-        default: true
+    bedType: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        default: 'empty'
     },
     price: {
         type: Number,
@@ -25,6 +29,10 @@ let RoomSchema = new mongoose.Schema({
         type: Number,
         default: null
     },
+    order_id: {
+        type: String
+    },
+
     roomImage: { type: String}
 
 

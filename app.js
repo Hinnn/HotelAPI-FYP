@@ -30,6 +30,7 @@ const bookings = require("./routes/bookings");
 const admin = require("./routes/admin");
 const rooms = require("./routes/rooms");
 const auth = require('./middleware/check-auth');
+const conditions = require("./routes/conditions");
 // const images = require("./routes/images");
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -136,7 +137,8 @@ app.put('/:admin/rooms/addDiscount/:roomID', auth.authAdmin, rooms.addDiscount);
 app.put('/:admin/rooms/deleteDiscount/:roomID', auth.authAdmin, rooms.deleteDiscount);
 //comments
 app.delete('/:admin/rooms/:roomID', auth.authAdmin, rooms.deleteRoom);
-// app.post('/:admin/rooms/:roomID/uploadImage', auth.authAdmin, images.uploadImage);
+
+app.get('/conditions/searchByDate', conditions.searchByDate);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

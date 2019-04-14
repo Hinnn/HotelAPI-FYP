@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f35bd161-a4b3-46b7-ba33-0acf901a3942" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T100538.401.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T104255.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T104330.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T104347.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/rooms.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rooms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/rooms.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rooms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/2019-04-13T10:36:56.294Zegg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/2019-04-13T10:38:10.034Zegg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/2019-04-13T10:38:15.341Zegg.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,16 +24,16 @@
     <session id="695062625">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="80" />
+          <entry key="project.closed" value="81" />
           <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="30" />
           <entry key="project.open.time.2" value="5" />
           <entry key="project.open.time.4" value="15" />
-          <entry key="project.open.time.5" value="19" />
+          <entry key="project.open.time.5" value="20" />
           <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="81" />
+          <entry key="project.opened" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -46,7 +42,7 @@
           <entry key="css" value="1" />
           <entry key="ejs" value="2" />
           <entry key="jpeg" value="2" />
-          <entry key="js" value="295" />
+          <entry key="js" value="302" />
           <entry key="json" value="7" />
           <entry key="www" value="1" />
         </counts>
@@ -57,14 +53,14 @@
           <entry key="EJS" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="296" />
+          <entry key="JavaScript" value="303" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="5" />
-          <entry key="js" value="23364" />
+          <entry key="js" value="24598" />
           <entry key="json" value="3126" />
           <entry key="txt" value="136" />
         </counts>
@@ -74,7 +70,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="5" />
           <entry key="JSON" value="3126" />
-          <entry key="JavaScript" value="23359" />
+          <entry key="JavaScript" value="24593" />
           <entry key="PLAIN_TEXT" value="136" />
         </counts>
       </usages-collector>
@@ -88,26 +84,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/rooms.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="3" selection-start-line="3" selection-start-column="3" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="276">
+              <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/rooms.js">
+        <entry file="file://$PROJECT_DIR$/routes/rooms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="-324">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/customers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3560">
+              <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/bookings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="119" column="1" lean-forward="true" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/conditions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -172,10 +186,11 @@
         <option value="$PROJECT_DIR$/models/room_images.js" />
         <option value="$PROJECT_DIR$/models/Image.js" />
         <option value="$PROJECT_DIR$/routes/image.js" />
-        <option value="$PROJECT_DIR$/models/rooms.js" />
         <option value="$PROJECT_DIR$/routes/images.js" />
-        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/models/rooms.js" />
         <option value="$PROJECT_DIR$/routes/rooms.js" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/conditions.js" />
       </list>
     </option>
   </component>
@@ -207,10 +222,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="86" />
+    <option name="x" value="-143" />
     <option name="y" value="23" />
-    <option name="width" value="1219" />
-    <option name="height" value="946" />
+    <option name="width" value="1449" />
+    <option name="height" value="947" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -230,7 +245,12 @@
             <path>
               <item name="HotelAPI" type="b2602c69:ProjectViewProjectNode" />
               <item name="HotelAPI" type="462c0819:PsiDirectoryNode" />
-              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HotelAPI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HotelAPI" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2410,12 +2430,13 @@
       <workItem from="1554995614835" duration="5703000" />
       <workItem from="1555019850617" duration="4351000" />
       <workItem from="1555073421584" duration="13271000" />
-      <workItem from="1555146059230" duration="5648000" />
+      <workItem from="1555146059230" duration="7489000" />
+      <workItem from="1555184316353" duration="11093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="339864000" />
+    <option name="totallyTimeSpent" value="352798000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2427,16 +2448,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="86" y="23" width="1219" height="946" extended-state="0" />
+    <frame x="-143" y="23" width="1449" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5037936" side_tool="true" weight="0.17594256" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" sideWeight="0.5015625" side_tool="true" weight="0.218125" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" sideWeight="0.49620637" visible="true" weight="0.13689482" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49620637" visible="true" weight="0.15126051" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867374" weight="0.3293556" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.3290398" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.31578946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2508,20 +2529,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>112</line>
+          <line>113</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/models/rooms.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Desktop/api/routes/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="227" column="37" lean-forward="true" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/nodemailer/lib/smtp-connection/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -2729,16 +2749,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uploads/2019-04-12T21:58:37.735Ztimg.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/bookings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uploads/2019-04-12T21:58:37.735Ztimg.jpeg" />
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -2746,45 +2757,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/customers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="191" column="5" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Images.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/images.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Images.js" />
+    <entry file="file://$PROJECT_DIR$/routes/images.js" />
     <entry file="file://$PROJECT_DIR$/models/rooms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="200">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/routes/customers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        <state relative-caret-position="3560">
+          <caret line="178" lean-forward="true" selection-start-line="178" selection-end-line="178" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/rooms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="3" selection-start-line="3" selection-start-column="3" selection-end-line="26" selection-end-column="6" />
+        <state relative-caret-position="-324">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/bookings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="119" column="1" lean-forward="true" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="121" column="43" lean-forward="true" selection-start-line="121" selection-start-column="43" selection-end-line="121" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/conditions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
         </state>
       </provider>
     </entry>
