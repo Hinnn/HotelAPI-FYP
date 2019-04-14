@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f35bd161-a4b3-46b7-ba33-0acf901a3942" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bookings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/conditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/conditions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -57,7 +54,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="5" />
-          <entry key="js" value="26658" />
+          <entry key="js" value="26862" />
           <entry key="json" value="3126" />
           <entry key="txt" value="136" />
         </counts>
@@ -67,7 +64,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="5" />
           <entry key="JSON" value="3126" />
-          <entry key="JavaScript" value="26653" />
+          <entry key="JavaScript" value="26857" />
           <entry key="PLAIN_TEXT" value="136" />
         </counts>
       </usages-collector>
@@ -99,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/conditions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+            <state relative-caret-position="1097">
+              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -202,10 +199,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="14" />
-    <option name="y" value="24" />
-    <option name="width" value="1614" />
-    <option name="height" value="947" />
+    <option name="x" value="-72" />
+    <option name="y" value="23" />
+    <option name="width" value="1901" />
+    <option name="height" value="888" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -2414,12 +2411,12 @@
       <workItem from="1555184316353" duration="11150000" />
       <workItem from="1555232824791" duration="7547000" />
       <workItem from="1555259782987" duration="4206000" />
-      <workItem from="1555272735904" duration="7242000" />
+      <workItem from="1555272735904" duration="10430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371850000" />
+    <option name="totallyTimeSpent" value="375038000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2431,16 +2428,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="24" width="1614" height="947" extended-state="0" />
+    <frame x="-72" y="23" width="1901" height="888" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5037936" side_tool="true" weight="0.17594256" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" sideWeight="0.5015625" side_tool="true" weight="0.218125" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49620637" visible="true" weight="0.075329565" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49620637" visible="true" weight="0.06382979" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867374" weight="0.3293556" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.32982457" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.46356785" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2776,8 +2773,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/conditions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+        <state relative-caret-position="1097">
+          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
         </state>
       </provider>
     </entry>
