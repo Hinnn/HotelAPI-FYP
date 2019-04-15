@@ -2,6 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f35bd161-a4b3-46b7-ba33-0acf901a3942" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112023.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112036.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112037.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112152.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112158.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112230.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2019-04-11T112237.200.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/rooms.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/rooms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bookings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/conditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/conditions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,16 +30,16 @@
     <session id="695062625">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="84" />
+          <entry key="project.closed" value="87" />
           <entry key="project.open.time.0" value="7" />
           <entry key="project.open.time.1" value="30" />
           <entry key="project.open.time.2" value="5" />
-          <entry key="project.open.time.4" value="17" />
-          <entry key="project.open.time.5" value="20" />
+          <entry key="project.open.time.4" value="19" />
+          <entry key="project.open.time.5" value="21" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="85" />
+          <entry key="project.opened" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -36,7 +48,7 @@
           <entry key="css" value="1" />
           <entry key="ejs" value="2" />
           <entry key="jpeg" value="2" />
-          <entry key="js" value="311" />
+          <entry key="js" value="320" />
           <entry key="json" value="7" />
           <entry key="www" value="1" />
         </counts>
@@ -47,15 +59,15 @@
           <entry key="EJS" value="2" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="7" />
-          <entry key="JavaScript" value="312" />
+          <entry key="JavaScript" value="321" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="5" />
-          <entry key="js" value="26862" />
-          <entry key="json" value="3126" />
+          <entry key="js" value="27169" />
+          <entry key="json" value="3211" />
           <entry key="txt" value="136" />
         </counts>
       </usages-collector>
@@ -63,8 +75,8 @@
         <counts>
           <entry key="CSS" value="5" />
           <entry key="HTML" value="5" />
-          <entry key="JSON" value="3126" />
-          <entry key="JavaScript" value="26857" />
+          <entry key="JSON" value="3211" />
+          <entry key="JavaScript" value="27164" />
           <entry key="PLAIN_TEXT" value="136" />
         </counts>
       </usages-collector>
@@ -75,11 +87,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="233">
+              <caret line="144" column="30" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/types.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -87,17 +108,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/bookings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+            <state relative-caret-position="1220">
+              <caret line="61" selection-start-line="61" selection-end-line="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/types.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/conditions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1097">
-              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+            <state relative-caret-position="1020">
+              <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/bookings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -148,7 +187,6 @@
         <option value="$PROJECT_DIR$/models/secretkey.js" />
         <option value="$PROJECT_DIR$/models/auth.js" />
         <option value="$PROJECT_DIR$/models/adminmail.js" />
-        <option value="$PROJECT_DIR$/models/roomType.js" />
         <option value="$PROJECT_DIR$/routes/searchByCondition.js" />
         <option value="$PROJECT_DIR$/middleware/auth.js" />
         <option value="$PROJECT_DIR$/models/customers.js" />
@@ -164,10 +202,16 @@
         <option value="$PROJECT_DIR$/routes/image.js" />
         <option value="$PROJECT_DIR$/routes/images.js" />
         <option value="$PROJECT_DIR$/routes/rooms.js" />
-        <option value="$PROJECT_DIR$/models/rooms.js" />
-        <option value="$PROJECT_DIR$/routes/bookings.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/routes/conditions.js" />
+        <option value="$PROJECT_DIR$/routes/bookings.js" />
+        <option value="$PROJECT_DIR$/models/rooms.js" />
+        <option value="$PROJECT_DIR$/models/roomType.js" />
+        <option value="$PROJECT_DIR$/routes/RoomType.js" />
+        <option value="$PROJECT_DIR$/models/Type.js" />
+        <option value="$PROJECT_DIR$/routes/Type.js" />
+        <option value="$PROJECT_DIR$/models/types.js" />
+        <option value="$PROJECT_DIR$/routes/types.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -198,10 +242,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-72" />
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
-    <option name="width" value="1901" />
+    <option name="width" value="1638" />
     <option name="height" value="888" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -212,6 +255,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -233,7 +277,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,6 +298,126 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="/111@qq.com/types" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="token" />
+                <option name="value" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="{&quot;roomType&quot;:&quot;single&quot;,&quot;bedType&quot;:&quot;one single bed&quot;,&quot;price&quot;:&quot;45&quot;,&quot;people&quot;:&quot;1&quot;}" />
+          <option name="filesToSend" value="$USER_HOME$/Downloads/2019-01-02-23-57-48-314.jpg.265-265.jpg" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="/111@qq.com/types" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="token" />
+                <option name="value" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="haveFileToSend" value="true" />
+          <option name="isFileUpload" value="true" />
+          <option name="textToSend" value="{&quot;roomType&quot;:&quot;twin&quot;,&quot;bedType&quot;:&quot;two single beds&quot;,&quot;price&quot;:&quot;80&quot;,&quot;people&quot;:&quot;2&quot;}" />
+          <option name="filesToSend" value="$USER_HOME$/Downloads/2019-01-02-23-57-48-314.jpg.265-265.jpg" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="/111@qq.com/types" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="token" />
+                <option name="value" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;roomType&quot;:&quot;double&quot;,&quot;bedType&quot;:&quot;one double bed&quot;,&quot;price&quot;:&quot;70&quot;,&quot;people&quot;:&quot;2&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:3000" />
+          <option name="urlPath" value="/admin/login" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Cache-Control" />
+                <option name="value" value="no-cache" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="x-auth-token" />
+                <option name="value" value="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUwMDI3OTh9.XroCE9oeIvwvj_GeXdalzdgn3K0G-Gx3IBQhaenMWRI" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&quot;email&quot;:&quot;111@qq.com&quot;,&quot;password&quot;:&quot;Yue123...&quot;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:3000" />
@@ -2102,206 +2265,6 @@
           <option name="textToSend" value="{&quot;roomNum&quot;:&quot;101&quot;,&quot;roomType&quot;:&quot;double&quot;,&quot;price&quot;:&quot;50&quot;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="customer" />
-                <option name="path" value="/" />
-                <option name="value" value="1095933649%40qq.com" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="user" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A772012459%40qq.com.7B2lgshocMfsXqjcIfCY3nkP6xqsN0S0FoLU5QwUV3w" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="admin" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A1095933649%40qq.com.EifeIA08U5R4djk89RRUyZHkAGSIqMtNCzMVlPzywxk" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="/111@qq.com/rooms" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;roomType&quot;:&quot;double&quot;,&quot;roomNum&quot;:&quot;101&quot;,&quot;price&quot;:&quot;50&quot;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="customer" />
-                <option name="path" value="/" />
-                <option name="value" value="1095933649%40qq.com" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="user" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A772012459%40qq.com.7B2lgshocMfsXqjcIfCY3nkP6xqsN0S0FoLU5QwUV3w" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="admin" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A1095933649%40qq.com.EifeIA08U5R4djk89RRUyZHkAGSIqMtNCzMVlPzywxk" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="admin/login" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;email&quot;:&quot;111@qq.com&quot;,&quot;password&quot;:&quot;Yue123...&quot;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="customer" />
-                <option name="path" value="/" />
-                <option name="value" value="1095933649%40qq.com" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="user" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A772012459%40qq.com.7B2lgshocMfsXqjcIfCY3nkP6xqsN0S0FoLU5QwUV3w" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="admin" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A1095933649%40qq.com.EifeIA08U5R4djk89RRUyZHkAGSIqMtNCzMVlPzywxk" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="admin/login" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;roomNum&quot;:&quot;101&quot;,&quot;roomType&quot;:&quot;double&quot;,&quot;price&quot;:&quot;50&quot;,&quot;people&quot;:&quot;1&quot;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="biscuits">
-            <list>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="customer" />
-                <option name="path" value="/" />
-                <option name="value" value="1095933649%40qq.com" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="user" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A772012459%40qq.com.7B2lgshocMfsXqjcIfCY3nkP6xqsN0S0FoLU5QwUV3w" />
-              </Biscuit>
-              <Biscuit>
-                <option name="date" value="-1" />
-                <option name="domain" value="localhost" />
-                <option name="name" value="admin" />
-                <option name="path" value="/" />
-                <option name="value" value="s%3A1095933649%40qq.com.EifeIA08U5R4djk89RRUyZHkAGSIqMtNCzMVlPzywxk" />
-              </Biscuit>
-            </list>
-          </option>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:3000" />
-          <option name="urlPath" value="/111@qq.com/customers" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Accept" />
-                <option name="value" value="*/*" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Cache-Control" />
-                <option name="value" value="no-cache" />
-              </KeyValuePair>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="parametersEnabled" value="true" />
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&quot;roomNum&quot;:&quot;101&quot;,&quot;roomType&quot;:&quot;double&quot;,&quot;price&quot;:&quot;50&quot;,&quot;people&quot;:&quot;1&quot;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
@@ -2411,12 +2374,15 @@
       <workItem from="1555184316353" duration="11150000" />
       <workItem from="1555232824791" duration="7547000" />
       <workItem from="1555259782987" duration="4206000" />
-      <workItem from="1555272735904" duration="10430000" />
+      <workItem from="1555272735904" duration="10653000" />
+      <workItem from="1555319173550" duration="2246000" />
+      <workItem from="1555334541546" duration="7297000" />
+      <workItem from="1555364991281" duration="1341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="375038000" />
+    <option name="totallyTimeSpent" value="386145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2428,24 +2394,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-72" y="23" width="1901" height="888" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1638" height="888" extended-state="1" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5037936" side_tool="true" weight="0.17594256" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" sideWeight="0.5015625" side_tool="true" weight="0.218125" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49620637" visible="true" weight="0.06382979" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49620637" visible="true" weight="0.32962275" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867374" weight="0.3293556" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.46356785" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867374" weight="0.04522613" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.32914573" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976135" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4992908" weight="0.3290398" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4992908" weight="0.32788944" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="REST Client" order="9" sideWeight="0.85026735" weight="0.3969555" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.25380117" />
+      <window_info anchor="bottom" id="REST Client" order="9" sideWeight="0.85026735" weight="0.39572865" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.25251257" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.14973262" side_tool="true" weight="0.33372366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2509,7 +2474,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app.js</url>
-          <line>113</line>
+          <line>114</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -2521,16 +2486,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/cosmeticAPI-master/middleware/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/cosmeticAPI-master/routes/users.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -2584,7 +2539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/roomType.js" />
     <entry file="file://$USER_HOME$/Desktop/api/models/catalogues.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -2671,13 +2625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/bookings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/api/routes/upload_image.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1887" />
@@ -2729,13 +2676,6 @@
         <state relative-caret-position="-315" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/rooms.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/customers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -2750,31 +2690,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/models/rooms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/Type.js" />
     <entry file="file://$PROJECT_DIR$/routes/rooms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="36" column="65" selection-start-line="36" selection-start-column="65" selection-end-line="36" selection-end-column="65" />
+        <state relative-caret-position="-1440">
+          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="233">
+          <caret line="144" column="30" selection-start-line="144" selection-start-column="16" selection-end-line="144" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/bookings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="156" column="17" selection-start-line="156" selection-start-column="17" selection-end-line="156" selection-end-column="17" />
+        <state relative-caret-position="1220">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/conditions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1097">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+        <state relative-caret-position="1020">
+          <caret line="51" column="62" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/bookings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
         </state>
       </provider>
     </entry>

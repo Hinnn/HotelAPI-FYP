@@ -1,3 +1,95 @@
+POST http://localhost:3000/111@qq.com/types
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ
+
+--null
+
+
+< /Users/hin/Downloads/2019-01-02-23-57-48-314.jpg.265-265.jpg
+--null--
+
+<> 2019-04-15T095037.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/types
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ
+
+--null
+
+
+< /Users/hin/Downloads/2019-01-02-23-57-48-314.jpg.265-265.jpg
+--null--
+
+<> 2019-04-15T095005.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/types
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ
+
+--null
+
+
+< /Users/hin/Downloads/2019-01-02-23-57-48-314.jpg.265-265.jpg
+--null--
+
+###
+
+POST http://localhost:3000/111@qq.com/types
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ
+
+{"roomType":"double","bedType":"one double bed","price":"70","people":"2"}
+
+<> 2019-04-15T094712.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/types
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ
+
+{"roomType":"double","bedType":"one double bed","price":"70","people":"2"}
+
+<> 2019-04-15T094645.200.json
+
+###
+
+POST http://localhost:3000/111@qq.com/types
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUzNjExMTV9.GJaOFQnwU0LNswjMwRR6mmypwEBJq5f6Gsvkup_rLVQ
+
+{"roomType":"double","bedType":"one double bed","price":"70","people":"2"}
+
+###
+
+POST http://localhost:3000/admin/login
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjExMUBxcS5jb20iLCJpYXQiOjE1NTUwMDI3OTh9.XroCE9oeIvwvj_GeXdalzdgn3K0G-Gx3IBQhaenMWRI
+
+{"email":"111@qq.com","password":"Yue123..."}
+
+<> 2019-04-15T094515.200.json
+
+###
+
 POST http://localhost:3000/111@qq.com/rooms
 Accept: */*
 Cache-Control: no-cache
@@ -518,85 +610,6 @@ Authentication:
 {"email":"111@qq.com","password":"Yue123..."}
 
 <> 2019-04-11T112755.200.json
-
-###
-
-POST http://localhost:3000/admin/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Authentication:
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112237.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-Authentication:
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112230.200.json
-
-###
-
-POST http://localhost:3000/admin/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112158.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112152.200.json
-
-###
-
-POST http://localhost:3000/admin/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112037.200.json
-
-###
-
-POST http://localhost:3000/admin/logout
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112036.200.json
-
-###
-
-POST http://localhost:3000/admin/login
-Accept: */*
-Cache-Control: no-cache
-Content-Type: application/json
-
-{"email":"111@qq.com","password":"Yue123..."}
-
-<> 2019-04-11T112023.200.json
 
 ###
 

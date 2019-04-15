@@ -1,0 +1,21 @@
+{
+  "message": "Type NOT Added!",
+  "errmsg": {
+    "errors": {
+      "RoomType": {
+        "message": "Path `RoomType` is required.",
+        "name": "ValidatorError",
+        "properties": {
+          "message": "Path `RoomType` is required.",
+          "type": "required",
+          "path": "RoomType"
+        },
+        "kind": "required",
+        "path": "RoomType"
+      }
+    },
+    "_message": "Type validation failed",
+    "message": "Type validation failed: RoomType: Path `RoomType` is required.",
+    "name": "ValidationError"
+  }
+}

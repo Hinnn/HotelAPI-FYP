@@ -72,17 +72,6 @@ router.getOne = (req, res) => {
 
 router.addBooking = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    let booking = new Booking();
-    booking.contactNum = req.body.contactNum;
-    booking.name = req.body.name;
-    booking.email = req.body.email;
-    booking.amount = req.body.amount;
-    booking.roomType = req.body.roomType;
-    booking.checkin_date = req.body.checkin_date;
-    booking.leave_date = req.body.leave_date;
-
-    let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
-    let email = req.body.email;
     var d1 = req.body.checkin_date;
     var d2 = req.body.leave_date;
     var d5 = new Date();//get current date
@@ -91,6 +80,26 @@ router.addBooking = (req, res) => {
     var d3 = new Date(d1).getTime();
     var d4 = new Date(d2).getTime();
     var d6 = new Date(d5).getTime();
+    let dateDiff = d4 - d3;
+    let booking = new Booking();
+    booking.contactNum = req.body.contactNum;
+    booking.name = req.body.name;
+    booking.email = req.body.email;
+    booking.amount = req.body.amount;
+    booking.roomType = req.body.roomType;
+    booking.checkin_date = req.body.checkin_date;
+    booking.leave_date = req.body.leave_date;
+    booking.days =  Math.floor(dateDiff / (24 * 3600 * 1000))
+    let checkEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+    let email = req.body.email;
+    // var d1 = req.body.checkin_date;
+    // var d2 = req.body.leave_date;
+    // var d5 = new Date();//get current date
+    // d5.toLocaleDateString();
+    // console.log(d5);
+    // var d3 = new Date(d1).getTime();
+    // var d4 = new Date(d2).getTime();
+    // var d6 = new Date(d5).getTime();
     if (booking.name == null || booking.email == null || booking.contactNum == null || booking.amount == null || booking.roomType == null || booking.checkin_date == null || booking.leave_date == null) {
         res.json({message: 'Please complete all the information!', data: null})
     }

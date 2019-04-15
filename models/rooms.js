@@ -34,8 +34,6 @@ let RoomSchema = new mongoose.Schema({
     },
 
     roomImage: { type: String}
-
-
     },
     { collection: 'rooms' });
 

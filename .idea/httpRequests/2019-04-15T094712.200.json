@@ -1,0 +1,11 @@
+{
+  "message": "Type Successfully Added!",
+  "data": {
+    "people": 2,
+    "_id": "5cb4edd09ab907055e700040",
+    "roomType": "double",
+    "price": 70,
+    "bedType": "one double bed",
+    "__v": 0
+  }
+}

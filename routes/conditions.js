@@ -50,8 +50,7 @@ router.getAmountByType = (req, res) => {
             roomArray = room;
             let totalAmount = 0;
             roomArray.forEach(function() { totalAmount +=1;});
-            console.log(roomArray.length);
-            console.log(roomArray);
+            console.log(totalAmount);
             res.send(JSON.stringify(room, null, 5));
     })
 }
