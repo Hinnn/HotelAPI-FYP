@@ -2,7 +2,7 @@ let Room = require('../models/rooms');
 let express = require('express');
 let router = express.Router();
 let Booking = require('../models/bookings');
-
+/*
 router.searchByDate = (req, res) => {
     // Return a JSON representation of room list
     res.setHeader('Content-Type', 'application/json');
@@ -40,10 +40,11 @@ router.searchByDate = (req, res) => {
 //             res.send(JSON.stringify(bookings, null, 5));
 //     });
 }
+*/
 router.getAmountByType = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let roomArray = null;
-    Room.find({"roomType": req.body.roomType}, function (err, room) {
+    Room.find({"roomType": req.params.roomType}, function (err, room) {
         if (err)
             res.json({message: 'Room NOT Found!', data: null});
         else
@@ -51,9 +52,35 @@ router.getAmountByType = (req, res) => {
             let totalAmount = 0;
             roomArray.forEach(function() { totalAmount +=1;});
             console.log(totalAmount);
-            res.send(JSON.stringify(room, null, 5));
+            res.send(JSON.stringify(totalAmount, null, 5));
     })
 }
+router.getReserveAmount = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    var d1 = req.params.checkin_date;
+    var d2 = req.params.leave_date;
+    // var d3 = new Date(d1);
+    // var d4 = new Date(d2);
+    // console.log(d3);
+    // console.log(d4);
+    Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
+    .select('amount')
+        .exec()
+        .then(doc => {
+            console.log(d1);
+            console.log("From database", doc);
+            if (doc) {
+                // res.json({doc});
+                let totalAmount = 0;
+                doc.forEach(function(obj) { totalAmount += obj.amount;});
+                console.log(totalAmount);
+                res.send(JSON.stringify(totalAmount, null, 5));
+            } else {
+                res.json({message: 'NOT Found!', data: null});
+            }
+        })
+}
+
 router.multipleSelect = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     var d1 = req.body.checkin_date;

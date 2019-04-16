@@ -17,7 +17,11 @@ let TypeSchema = new mongoose.Schema({
             type: Number,
             default: null
         },
-        Image: { type: String}
+        quantity: {
+            type: Number,
+        required: true
+    },
+        typeImage: { type: String}
     },
     { collection: 'types' });
 module.exports = mongoose.model('Type', TypeSchema);

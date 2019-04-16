@@ -139,11 +139,14 @@ app.put('/:admin/rooms/deleteDiscount/:roomID', auth.authAdmin, rooms.deleteDisc
 //comments
 app.delete('/:admin/rooms/:roomID', auth.authAdmin, rooms.deleteRoom);
 
-app.get('/conditions/searchByDate', conditions.searchByDate);
-app.get('/conditions/getAmountByType', conditions.getAmountByType);
+// app.get('/conditions/searchByDate', conditions.searchByDate);
+app.get('/conditions/getAmountByType/:roomType', conditions.getAmountByType);
 app.get('/conditions/multipleSelect', conditions.multipleSelect);
+app.get('/conditions/getReserveAmount/:checkin_date/:leave_date', conditions.getReserveAmount);
 app.get('/types/findByRoomType/:roomType',types.findByRoomType);
-app.post('/:admin/types',auth.authAdmin, types.addType);
+// app.get('/types/getType',types.getType);
+app.post('/:admin/types',auth.authAdmin, upload.single('typeImage'), types.addType);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));

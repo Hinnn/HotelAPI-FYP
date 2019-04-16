@@ -10,7 +10,6 @@ router.findByRoomType = (req, res) => {
             res.send(JSON.stringify(roomType, null, 5));
     });
 }
-
 router.addType = (req, res) => {
     //Add a new room to our list
     res.setHeader('Content-Type', 'application/json')
@@ -24,26 +23,29 @@ router.addType = (req, res) => {
         res.json({ message: 'People amount is required'});
     } else if (req.body.bedType == null) {
         res.json({ message: 'Bed type is required'});
-    }else{
-        // console.log(token);
-        Type.findOne({ roomType: req.body.roomType }, function (err, type) {
-            if(type) {
-                res.json({ message : 'Room type already exists! Please change another room!', data: null });
-            } else{
-                let type = new Type();
-                type.roomType = req.body.roomType;
-                type.price = req.body.price;
-                type.people = req.body.people;
-                type.bedType = req.body.bedType;
-                // type.Image = req.file.path;
-                type.save(function(err) {
-                    if (err)
-                        res.json({ message: 'Type NOT Added!', errmsg : err } );
-                    else
-                        res.json({ message: 'Type Successfully Added!', data: type });
-                });
-            }
-        });
+    } else if (req.body.quantity == null) {
+        res.json({message: 'Room amount is required'});
+    } else {
+            // console.log(token);
+            Type.findOne({ roomType: req.body.roomType }, function (err, type) {
+                if(type) {
+                    res.json({ message : 'Room type already exists! Please change another room!', data: null });
+                } else{
+                    let type = new Type();
+                    type.roomType = req.body.roomType;
+                    type.price = req.body.price;
+                    type.people = req.body.people;
+                    type.bedType = req.body.bedType;
+                    type.quantity = req.body.quantity;
+                    type.typeImage = req.file.path;
+                    type.save(function(err) {
+                        if (err)
+                            res.json({ message: 'Type NOT Added!', errmsg : err } );
+                        else
+                            res.json({ message: 'Type Successfully Added!', data: type });
+                    });
+                }
+            });
+        }
     }
-};
 module.exports = router;
