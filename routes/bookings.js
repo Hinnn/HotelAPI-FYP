@@ -137,8 +137,6 @@ router.addBooking = (req, res) => {
         booking.roomID = req.body.roomID;
             if(booking.roomID == null) {
                 res.json({message: 'Please choose a room!', data: null})
-            // } else if (10 !== req.body.contactNum.length) {
-            //     res.json({message: 'Your phone number should contain 10 characters!', data: null})
             }  else {
 
                 Booking.findOneAndUpdate({_id: req.params._id},

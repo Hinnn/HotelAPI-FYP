@@ -43,20 +43,24 @@ router.getByType = (req, res) => {
 }
 
 router.UpVotes = (req, res) => {
-
-    Room.findOne({"roomID": req.params.roomID}, function(err,room) {
-        if (err)
-            res.json({ message: 'Room NOT Found!', errmsg : err } );
-        else {
-            room.upvotes += 1;
-            room.save(function (err) {
-                if (err)
-                    res.json({ message: 'Room NOT UpVoted!', errmsg : err } );
-                else
-                    res.json({ message: 'Room Successfully UpVoted!', data: room });
-            });
-        }
-    });
+    res.setHeader('Content-Type', 'application/json');
+    if (req.params.customer == null) {
+        res.json({message: 'You can not do this operation!'});
+    } else {
+        Room.findOne({"roomID": req.params.roomID}, function (err, room) {
+            if (err)
+                res.json({message: 'Room NOT Found!', errmsg: err});
+            else {
+                room.upvotes += 1;
+                room.save(function (err) {
+                    if (err)
+                        res.json({message: 'Room NOT UpVoted!', errmsg: err});
+                    else
+                        res.json({message: 'Room Successfully UpVoted!', data: room});
+                });
+            }
+        });
+    }
 }
 router.addRoom = (req, res) => {
     //Add a new room to our list
@@ -190,3 +194,4 @@ router.deleteRoom = (req, res) => {
 };
 
 module.exports = router;
+// module.exports.room = router.getByType.room;

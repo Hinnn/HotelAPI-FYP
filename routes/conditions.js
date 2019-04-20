@@ -2,6 +2,7 @@ let Room = require('../models/rooms');
 let express = require('express');
 let router = express.Router();
 let Booking = require('../models/bookings');
+let Type = require('../models/types');
 /*
 router.searchByDate = (req, res) => {
     // Return a JSON representation of room list
@@ -83,24 +84,62 @@ router.getReserveAmount = (req, res) => {
 
 router.multipleSelect = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
+    var d1 = req.params.checkin_date;
+    var d2 = req.params.leave_date;
+    var d3 = new Date(d1);
+    var d4 = new Date(d2);
+    console.log(d3);
+    console.log(d4);
+    Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
+        // .select('roomID')
+        .exec()
+        .then(doc => {
+        console.log("From database", doc);
+        if (doc) {
+                    res.json({doc});
+        } else {
+            res.json({message: 'Room NOT Found!', data: null});
+        }
+    })
+}
+router.getAvailableRooms = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
     var d1 = req.body.checkin_date;
     var d2 = req.body.leave_date;
     var d3 = new Date(d1);
     var d4 = new Date(d2);
     console.log(d3);
     console.log(d4);
+    let result = null;
+    Room.find({"roomType": req.body.roomType}).select('roomID').exec().then(room => {
+        console.log("From room database:", room);
+        if (room){
+            console.log(room);
     Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
-        // .select('roomID', 'checkin_date','leave_date', 'roomType')
+     .select('roomID')
         .exec()
         .then(doc => {
-        console.log("From database", doc);
-        if (doc) {
-                    res.json({doc});
-
-        } else {
-            res.json({message: 'Room NOT Found!', data: null});
-        }
-    })
+            console.log("From database", doc);
+        // })
+            // if (doc) {
+            //     console.log(doc);
+            //     Room.find({"roomType": req.body.roomType}).select('roomID').exec().then(room => {
+            //         result = room + doc;
+            //         console.log(result)
+            //         res.json({result})
+            //         room.find({roomID: {$in: doc}})
+                    // console.log(array_diff(room, doc));
+                    // db.aggregate(
+                    //     [
+                    //         { $project: {doc:1,room:1,diff: {$setDifference: ["$doc", "$room"]}}}
+                    //     ]
+                    // )
+                    // console.log(result)
+                })
+                } else {
+                console.log('Booking NOT Found');
+            }
+        })
 }
 /*
   //available的查询

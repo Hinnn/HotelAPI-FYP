@@ -1,18 +1,18 @@
-const nodemailer = require("nodemailer");
+let nodemailer = require("nodemailer");
 
 function send (email, admin_code) {
 //new smtp server
-
-    let transporter = nodemailer.createTransport({
-        // host: 'smtp.126.com',
-        host: 'localhost',// https://github.com/nodemailer/nodemailer/issues/441
+    const config = {
+        service: 'smtp.126.com',
+        host: 'smtp.126.com',
         port: 465,
         secure: true,
         auth: {
             user: 'wy20082242@126.com', //account to send email
             pass: 'yue123' //email authentication
         }
-    });
+    };
+
     let mail = {
         from: '"Yve Hotel"<wy20082242@126.com>',
         to: email,
@@ -21,19 +21,30 @@ function send (email, admin_code) {
     };
 
 
-
+    let transporter = nodemailer.createTransport(config);
+        // // host: 'smtp.126.com',
+        // host: 'localhost',// https://github.com/nodemailer/nodemailer/issues/441
+        // port: 465,
+        // secure: true,
+        // auth: {
+        //     user: 'wy20082242@126.com', //account to send email
+        //     pass: 'yue123' //email authentication
+        // }
+    // });
 
 //send email
 
-    transporter.sendMail(mail, admin_code, function (error) {
-         callback(admin_code);
+    transporter.sendMail(mail, function (error, admin_code) {
+         // callback(admin_code);
         if (error) {
             console.log('Error occurred');
             console.log(error.message);
+        } else {
+            console.log('Email sent successfully! Your code is ' + admin_code);
+            //transporter.close();
         }
-        console.log('Email sent successfully! Your code is '+ admin_code );
-        //transporter.close();
     });
+    return;
 }
 
 module.exports.send = send;

@@ -23,15 +23,17 @@ function send (email, code) {
     let transporter = nodemailer.createTransport(config);
 //send email
 
-    transporter.sendMail(mail, code, function (error) {
+    transporter.sendMail(mail, function (error, code) {
         // callback(null);
         if (error) {
             console.log('Error occurred');
             console.log(error.message);
+        } else {
+            console.log('Email sent successfully! Your code is ' + code);
+            //transporter.close();
         }
-        console.log('Email sent successfully! Your code is '+ code );
-        //transporter.close();
     });
+    return;
 }
 
 module.exports.send = send;

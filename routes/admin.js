@@ -183,23 +183,22 @@ function randomWord(randomFlag,str){
 router.forgetPassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let email = req.body.email;
-    Admin.findOne({ email: req.body.email }, function (err, user) {
-        if(!user) {
+    Admin.findOne({ email: req.body.email }, function (err, admin) {
+        if(!admin) {
             res.json({ message : 'Account does not exist! Please check your email!', data: null });
         } else {
             mail.send(email, newPass);
-            // res.json({message : 'Email sent successfully!'})
+            res.json({message : 'Email sent successfully!',  data: newPass})
         }
     });
     Admin.updateOne({"email": req.body.email},
         {password :bcrypt.hashSync(newPass),
             password2 : bcrypt.hashSync(newPass)
         }, function (err){
-
             if (err) {
                 console.log( 'Password failed to change!');
             } else {
-                console.log( 'Password has been changed. Please do remember to change your password! ');
+                console.log( 'Password has been changed. Please do remember to change your password! ', newPass);
             }
         })
 
@@ -215,6 +214,9 @@ router.findOne = (req, res) => {
 }
 router.changePassword = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
+    if (req.params.admin == null) {
+        res.json({ message: 'You can not change password!'});
+    } else {
     let admin = new Admin();
     admin.password = bcrypt.hashSync(req.body.password);
     admin.password2 = bcrypt.hashSync(req.body.password2)
@@ -227,20 +229,22 @@ router.changePassword = (req, res) => {
     } else if (req.body.password !== req.body.password2) {
         res.json({message: 'Please input the same password!', data: null})
     }
-    else{
+    else {
         Admin.findOneAndUpdate({"email": req.params.email},
             {
                 password: bcrypt.hashSync(req.body.password),
                 password2: bcrypt.hashSync(req.body.password2)
             },
-            {new:true},
+            {new: true},
             function (err, admin) {
                 if (err)
                     res.json({message: 'Unable to change', errmsg: err});
                 else
-                    res.json({message: 'Password changed successfully!', data: admin});
+                    console.log(admin)
+                res.json({message: 'Password changed successfully! Please login again', data: admin});
             });
-    };
+    }
+    }
 };
 module.exports = router;
 module.exports.admin_code = admin_code;

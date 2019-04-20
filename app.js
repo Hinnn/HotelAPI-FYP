@@ -79,7 +79,8 @@ app.use('/uploads', express.static('uploads'));
 // app.use(multer({dest:'/uploads'}));
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:8080'
+    // origin: 'http://localhost:8080'
+    origin: 'https://feellikehomehotel.firebaseapp.com'
 }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -130,7 +131,7 @@ app.get('/bookings/:id', bookings.getOne);
 app.get('/rooms', rooms.findAll);
 app.get('/rooms/byNum/:roomID', rooms.findOne);
 app.get('/rooms/byType/:roomType', rooms.getByType);
-app.put('/:customer/rooms/upvotes/:roomID', auth.authCustomer, rooms.UpVotes);
+app.put('/:customer/rooms/upvotes/:roomID', rooms.UpVotes);
 app.post('/:admin/rooms', auth.authAdmin, upload.single('roomImage'), rooms.addRoom);
 app.put('/:admin/rooms/edit/:roomID', auth.authAdmin, rooms.edit);
 //app.put('/rooms/changeStatus/:roomID',rooms.changeStatus);
@@ -141,12 +142,13 @@ app.delete('/:admin/rooms/:roomID', auth.authAdmin, rooms.deleteRoom);
 
 // app.get('/conditions/searchByDate', conditions.searchByDate);
 app.get('/conditions/getAmountByType/:roomType', conditions.getAmountByType);
-app.get('/conditions/multipleSelect', conditions.multipleSelect);
+app.get('/conditions/multipleSelect/:checkin_date/:leave_date', conditions.multipleSelect);
 app.get('/conditions/getReserveAmount/:checkin_date/:leave_date', conditions.getReserveAmount);
+app.get('/conditions/getAvailableRooms', conditions.getAvailableRooms);
 app.get('/types/findByRoomType/:roomType',types.findByRoomType);
 // app.get('/types/getType',types.getType);
 app.post('/:admin/types',auth.authAdmin, upload.single('typeImage'), types.addType);
-
+// app.get('/getAvailableRoom', conditions.getAvailableRoom);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     next(createError(404));

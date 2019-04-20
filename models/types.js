@@ -21,6 +21,9 @@ let TypeSchema = new mongoose.Schema({
             type: Number,
         required: true
     },
+        availableAmount:{
+            type: Number
+        },
         typeImage: { type: String}
     },
     { collection: 'types' });
