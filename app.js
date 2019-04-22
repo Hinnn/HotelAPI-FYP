@@ -79,8 +79,8 @@ app.use('/uploads', express.static('uploads'));
 // app.use(multer({dest:'/uploads'}));
 app.use(cors({
     credentials: true,
-    // origin: 'http://localhost:8080'
-    origin: 'https://feellikehomehotel.firebaseapp.com'
+    origin: 'http://localhost:8080'
+    // origin: 'https://feellikehomehotel.firebaseapp.com'
 }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -126,8 +126,8 @@ app.put('/bookings/:_id/edit', bookings.Edit);
 //app.put('/:customers/bookings/:_id',auth.authCustomer,bookings.customerEdit);
 app.delete('/bookings/delete/:id',bookings.deleteBooking);
 app.get('/bookings/:id', bookings.getOne);
-
-
+app.post('/bookings/pay', bookings.pay);
+// app.get('/bookings/successPay/success', bookings.successPay);
 app.get('/rooms', rooms.findAll);
 app.get('/rooms/byNum/:roomID', rooms.findOne);
 app.get('/rooms/byType/:roomType', rooms.getByType);

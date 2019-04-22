@@ -10,6 +10,15 @@ router.findByRoomType = (req, res) => {
             res.send(JSON.stringify(roomType, null, 5));
     });
 }
+// router.findPrice = (req, res) => {
+//     res.setHeader('Content-Type', 'application/json');
+//     Type.find({"roomType": req.body.roomType}).select('price').exec().then(type => {
+//         if (type) {
+//             console.log(type)
+//         }
+//     })
+// }
+
 router.addType = (req, res) => {
     //Add a new room to our list
     res.setHeader('Content-Type', 'application/json')
@@ -49,3 +58,4 @@ router.addType = (req, res) => {
         }
     }
 module.exports = router;
+

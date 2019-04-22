@@ -40,8 +40,11 @@ let BookingSchema = new mongoose.Schema({
             // required: true
         },
         payment_status: {
-            type: Boolean,
-            default: false
+            type: String,
+            default: 'not paid'
+        },
+        paymentId: {
+            type: String
         },
     },
     { collection: 'bookings' });
