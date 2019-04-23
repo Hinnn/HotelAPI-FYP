@@ -87,7 +87,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="207">
@@ -153,17 +153,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/customers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
+            <state relative-caret-position="360">
               <caret line="48" column="61" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/bookings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="272" column="38" lean-forward="true" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
+            <state relative-caret-position="64">
+              <caret line="263" column="42" lean-forward="true" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -278,7 +278,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="284" />
+    <option name="x" value="387" />
     <option name="y" value="23" />
     <option name="width" value="1586" />
     <option name="height" value="946" />
@@ -2459,13 +2459,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="284" y="23" width="1586" height="946" extended-state="1" />
-    <editor active="true" />
+    <frame x="575" y="23" width="1586" height="946" extended-state="0" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5065666" side_tool="true" weight="0.13531353" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" sideWeight="0.5015625" side_tool="true" weight="0.218125" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4934334" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4934334" visible="true" weight="0.32971245" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867374" weight="0.044496488" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.3208431" />
@@ -2546,13 +2545,7 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/check-auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/check-auth.js" />
     <entry file="file://$PROJECT_DIR$/models/pass_mail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -2716,13 +2709,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/transaction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="42" column="36" lean-forward="true" selection-start-line="42" selection-start-column="36" selection-end-line="42" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/transaction.js" />
     <entry file="file://$PROJECT_DIR$/middleware/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -2732,18 +2719,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/customers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
+        <state relative-caret-position="360">
           <caret line="48" column="61" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/transactions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/models/transactions.js" />
     <entry file="file://$PROJECT_DIR$/routes/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -2795,8 +2776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/bookings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="272" column="38" lean-forward="true" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
+        <state relative-caret-position="64">
+          <caret line="263" column="42" lean-forward="true" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
         </state>
       </provider>
     </entry>
