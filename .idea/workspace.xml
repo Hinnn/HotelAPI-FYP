@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f35bd161-a4b3-46b7-ba33-0acf901a3942" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/bookings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/lodash/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/lodash/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/bookings.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/bookings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/conditions.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/conditions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/customers.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="f35bd161-a4b3-46b7-ba33-0acf901a3942" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -162,8 +151,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/bookings.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="64">
               <caret line="263" column="42" lean-forward="true" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+=======
+            <state relative-caret-position="384">
+              <caret line="272" column="38" lean-forward="true" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
+>>>>>>> paypal
             </state>
           </provider>
         </entry>
@@ -278,7 +272,11 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="387" />
+=======
+    <option name="x" value="575" />
+>>>>>>> paypal
     <option name="y" value="23" />
     <option name="width" value="1586" />
     <option name="height" value="946" />
@@ -2442,12 +2440,12 @@
       <workItem from="1555841461614" duration="296000" />
       <workItem from="1555926062815" duration="8331000" />
       <workItem from="1555967855544" duration="8853000" />
-      <workItem from="1556012998931" duration="3599000" />
+      <workItem from="1556012998931" duration="4052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="477870000" />
+    <option name="totallyTimeSpent" value="478323000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2459,15 +2457,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="575" y="23" width="1586" height="946" extended-state="0" />
+=======
+    <frame x="161" y="23" width="1586" height="946" extended-state="0" />
+    <editor active="true" />
+>>>>>>> paypal
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5065666" side_tool="true" weight="0.13531353" />
       <window_info id="npm" order="1" side_tool="true" />
       <window_info id="Favorites" order="2" sideWeight="0.5015625" side_tool="true" weight="0.218125" />
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4934334" visible="true" weight="0.32971245" />
+=======
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.4934334" weight="0.0" />
+>>>>>>> paypal
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49867374" weight="0.044496488" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8494695" visible="true" weight="0.3208431" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8494695" weight="0.26580796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39929742" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2475,7 +2482,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="REST Client" order="9" sideWeight="0.85026735" weight="0.39572865" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.38173303" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.38173303" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.14973262" side_tool="true" weight="0.33372366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2717,6 +2724,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/models/customers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -2725,6 +2733,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/transactions.js" />
+=======
+    <entry file="file://$PROJECT_DIR$/models/transactions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="649">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> paypal
     <entry file="file://$PROJECT_DIR$/routes/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -2774,17 +2791,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/bookings.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="64">
           <caret line="263" column="42" lean-forward="true" selection-start-line="263" selection-start-column="42" selection-end-line="263" selection-end-column="42" />
+=======
+        <state relative-caret-position="207">
+          <caret line="134" column="59" lean-forward="true" selection-start-line="134" selection-start-column="59" selection-end-line="134" selection-end-column="59" />
+>>>>>>> paypal
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/models/customers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="134" column="59" lean-forward="true" selection-start-line="134" selection-start-column="59" selection-end-line="134" selection-end-column="59" />
+        <state relative-caret-position="360">
+          <caret line="48" column="61" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/bookings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="272" column="38" lean-forward="true" selection-start-line="272" selection-start-column="38" selection-end-line="272" selection-end-column="38" />
         </state>
       </provider>
     </entry>
