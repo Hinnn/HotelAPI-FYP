@@ -31,7 +31,7 @@ let BookingSchema = new mongoose.Schema({
         days:{
             type :Number
         },
-        amount:{
+        quantity:{
             type: Number,
             required: true
         },
@@ -46,6 +46,10 @@ let BookingSchema = new mongoose.Schema({
         paymentId: {
             type: String
         },
+    total: {
+            type: String
+        // required: true
+    }
     },
     { collection: 'bookings' });
 

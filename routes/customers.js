@@ -88,7 +88,7 @@ router.login = (req, res) => {
 
     Customer.findOne({email: req.body.email}, function (err, customer) {
         if(!customer) {
-            res.json({ message: ' Please sign up first!', data: null });
+            res.json({ message: 'Please sign up first!', data: null });
         } else if(customer.verification === false) {
             res.json({ message: 'You are not verified!', data: null })
         } else{

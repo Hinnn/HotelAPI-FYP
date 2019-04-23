@@ -65,7 +65,7 @@ router.getReserveAmount = (req, res) => {
     // console.log(d3);
     // console.log(d4);
     Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
-    .select('amount')
+    .select('quantity')
         .exec()
         .then(doc => {
             console.log(d1);
@@ -73,7 +73,7 @@ router.getReserveAmount = (req, res) => {
             if (doc) {
                 // res.json({doc});
                 let totalAmount = 0;
-                doc.forEach(function(obj) { totalAmount += obj.amount;});
+                doc.forEach(function(obj) { totalAmount += obj.quantity;});
                 console.log(totalAmount);
                 res.send(JSON.stringify(totalAmount, null, 5));
             } else {
