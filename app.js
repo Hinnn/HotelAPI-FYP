@@ -128,7 +128,7 @@ app.delete('/bookings/delete/:id',bookings.deleteBooking);
 app.get('/bookings/:id', bookings.getOne);
 // app.post('/bookings/pay', bookings.pay);
 app.post('/bookings/:id/pay', bookings.pay);
-// app.get('/success', bookings.success);
+app.put('/bookings/:_id/changePayment', bookings.changePayment);
 app.get('/rooms', rooms.findAll);
 app.get('/rooms/byNum/:roomID', rooms.findOne);
 app.get('/rooms/byType/:roomType', rooms.getByType);

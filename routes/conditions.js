@@ -115,11 +115,12 @@ router.getAvailableRooms = (req, res) => {
         console.log("From room database:", room);
         if (room){
             console.log(room);
-    Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
-     .select('roomID')
-        .exec()
-        .then(doc => {
-            console.log("From database", doc);
+            res.json(room)
+    // Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
+    //  .select('roomID')
+    //     .exec()
+    //     .then(doc => {
+    //         console.log("From database", doc);
         // })
             // if (doc) {
             //     console.log(doc);
@@ -135,9 +136,9 @@ router.getAvailableRooms = (req, res) => {
                     //     ]
                     // )
                     // console.log(result)
-                })
-                } else {
-                console.log('Booking NOT Found');
+                // })
+                // } else {
+                // console.log('Booking NOT Found');
             }
         })
 }

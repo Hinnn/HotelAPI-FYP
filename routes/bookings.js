@@ -117,7 +117,6 @@ router.addBooking = (req, res) => {
 
     router.Edit = (req, res) => {
         // Find the relevant booking based on params id passed in
-
         res.setHeader('Content-Type', 'application/json');
         let booking = new Booking();
        //  booking.contactNum = req.body.contactNum
@@ -141,6 +140,55 @@ router.addBooking = (req, res) => {
                     });
             }
         };
+router.pay = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    const payerId = req.body.data.payerID;
+    const paymentId = req.body.data.paymentID;
+    var execute_payment_json = {
+        "payer_id": payerId
+    };
+    const payment ={};
+    payment.amount = req.body.data.amount;
+    console.log(payment.amount)
+    paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+        if (error) {
+            console.log(error.response);
+            throw error;
+        } else {
+            console.log("Get Payment Response");
+            console.log(JSON.stringify(payment,null,5));
+            res.json({message: 'Paid successfully', data: payment});
+            // let booking = new Booking();
+            // booking.payment_status = 'paid';
+            // booking.paymentId= payment.id
+            // Booking.findOneAndUpdate({_id: req.params._id}, { payment_status: 'paid', paymentId: payment.id},
+            //     {new:true},
+            //     function (err, booking) {
+            //         if (err)
+            //             res.json({message: 'Unpaid', data: err});
+            //         else
+            //         console.log(booking)
+            //             console.log('Booking paid successfully', booking);
+            //     });
+            // res.send('Success')
+        }
+    })
+}
+router.changePayment = (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    let booking = new Booking();
+    //  booking.contactNum = req.body.contactNum
+    booking.payment_status = 'paid';
+    Booking.findOneAndUpdate({_id: req.params._id}, { payment_status: 'paid'},
+        {new:true},
+        function (err, booking) {
+            if (err)
+                res.json({message: 'Unpaid', data: err});
+            else
+                console.log(booking)
+            res.json({message: 'Booking paid successfully', data:booking});
+        });
+}
         router.deleteBooking = (req, res) => {
             res.setHeader('Content-Type', 'application/json');
             Booking.findOneAndRemove({_id: req.params.id}, function (err, booking) {
@@ -252,36 +300,7 @@ router.success = (req, res) => {
     });
     }
 */
-router.pay = (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
 
-    const payerId = req.body.data.payerID;
-    const paymentId = req.body.data.paymentID;
-    var execute_payment_json = {
-        "payer_id": payerId
-    };
-    const payment ={};
-    payment.amount = req.body.data.amount;
-    console.log(payment.amount)
-    paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
-        if (error) {
-            console.log(error.response);
-            throw error;
-        } else {
-            console.log("Get Payment Response");
-            console.log(JSON.stringify(payment,null,5));
-            Booking.findOneAndUpdate({_id: req.params._id}, { payment_status: 'paid'}, {new: true},
-                function (err, booking) {
-                    if (err)
-                         res.json({message: 'Unpaid', data: err});
-                    else
-                                // console.log(booking)
-                         res.json({message: 'Booking paid successfully', data: booking});
-                });
-            // res.send('Success')
-        }
-    })
-}
 
 module.exports = router;
 module.exports.booking = router.addBooking.booking;
