@@ -94,7 +94,7 @@ router.addBooking = (req, res) => {
     }
     else if (10 !== req.body.contactNum.length) {
         res.json({message: 'Your phone number should contain 10 characters!', data: null})
-    } else if (0 > req.body.quantity) {
+    } else if (0 >= req.body.quantity) {
         res.json({message: 'Please choose at least one room!', data: null})
     } else if (4 < req.body.quantity) {
         res.json({message: 'You can only book no more than 3 rooms!', data: null})

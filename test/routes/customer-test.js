@@ -12,7 +12,8 @@ chai.use(require('chai-things'));
 let bcrypt = require('bcrypt-nodejs');
 let password = bcrypt.hashSync("Yue123...");
 let _ = require('lodash');
-
+let jwt = require('jsonwebtoken');
+let token = null;
 let customer = [
     {
         "name": "Yue",
@@ -36,6 +37,7 @@ describe('Customers', () => {
             delete require.cache[require.resolve('../../bin/www')];
             datastore = require('../../models/customers');
             server = require('../../bin/www');
+            token = jwt.sign({email: datastore.email}, 'customerJwtKey');
         try {
             db.collection('customers').insertMany(customer);
             console.log('Customer inserted successfully.');
@@ -100,5 +102,53 @@ describe('Customers', () => {
                 });
             });
     })
-})
+});
+describe('PUT /customers/:customer/edit', () => {
+    it('should return customer edited successfully message', function (done) {
+        let customer = {
+            'DateOfBirth': '1997-01-01',
+            'Gender': 'female',
+            'phoneNum': '1000009999'
+        };
+        chai.request(server)
+            .put('/customers/777@qq.com/edit')
+            .set('token', token)
+            .send(customer)
+            .end((err, res) => {
+                expect(res.body).to.have.property('message').equal('Information Successfully edited');
+                done();
+            });
+    });
+    it('should return error message about invalid phone number', function (done) {
+        let customer = {
+            'DateOfBirth': '1997-01-01',
+            'Gender': 'female',
+            'phoneNum': '1009999'
+        };
+        chai.request(server)
+            .put('/customers/777@qq.com/edit')
+            .set('token', token)
+            .send(customer)
+            .end((err, res) => {
+                expect(res.body).to.have.property('message').equal('Please input 10 digital phone numbers!');
+                done();
+            });
+    });
+    it('should return error message about all information required', function (done) {
+        let customer = {
+            'DateOfBirth': '1997-01-01',
+            'phoneNum': '1009999'
+        };
+        chai.request(server)
+            .put('/customers/777@qq.com/edit')
+            .set('token', token)
+            .send(customer)
+            .end((err, res) => {
+                expect(res.body).to.have.property('message').equal('Please input all the information!');
+                done();
+            });
+    });
+});
+
+
 // });
