@@ -66,7 +66,7 @@ describe('Admin', () => {
                 done();
             });
         });
-        it('should retuen all customers in an array', function (done) {
+        it('should return all customers in an array', function (done) {
             chai.request(server)
                 .get('/test1@qq.com/customers')
                 .set('token', token)

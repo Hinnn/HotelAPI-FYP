@@ -1,17 +1,17 @@
-let nodemailer = require("nodemailer");
+const nodemailer = require("nodemailer");
 
 function send (email, admin_code) {
 //new smtp server
-    const config = {
-        service: 'smtp.126.com',
+    let transporter = nodemailer.createTransport({
         host: 'smtp.126.com',
         port: 465,
         secure: true,
+        secureConnection:true,
         auth: {
             user: 'wy20082242@126.com', //account to send email
             pass: 'yue123' //email authentication
         }
-    };
+    });
 
     let mail = {
         from: '"Yve Hotel"<wy20082242@126.com>',
@@ -21,7 +21,7 @@ function send (email, admin_code) {
     };
 
 
-    let transporter = nodemailer.createTransport(config);
+    // let transporter = nodemailer.createTransport(config);
         // // host: 'smtp.126.com',
         // host: 'localhost',// https://github.com/nodemailer/nodemailer/issues/441
         // port: 465,
@@ -41,10 +41,10 @@ function send (email, admin_code) {
             console.log(error.message);
         } else {
             console.log('Email sent successfully! Your code is ' + admin_code);
-            //transporter.close();
+            transporter.close();
         }
     });
-    return;
+    // return;
 }
 
 module.exports.send = send;

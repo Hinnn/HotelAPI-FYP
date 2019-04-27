@@ -104,17 +104,17 @@ router.multipleSelect = (req, res) => {
 }
 router.getAvailableRooms = (req, res) => {
     res.setHeader('Content-Type', 'application/json');
-    var d1 = req.body.checkin_date;
-    var d2 = req.body.leave_date;
-    var d3 = new Date(d1);
-    var d4 = new Date(d2);
-    console.log(d3);
-    console.log(d4);
-    let result = null;
-    Room.find({"roomType": req.body.roomType}).select('roomID').exec().then(room => {
+    // var d1 = req.body.checkin_date;
+    // var d2 = req.body.leave_date;
+    // var d3 = new Date(d1);
+    // var d4 = new Date(d2);
+    // console.log(d3);
+    // console.log(d4);
+    // let result = null;
+    Room.find({"roomType": req.params.roomType}).select('roomID').exec().then(room => {
         console.log("From room database:", room);
         if (room){
-            console.log(room);
+            // console.log(room);
             res.json(room)
     // Booking.find({"$or": [{"leave_date": { "$gt":  d1}, "checkin_date" : { "$lte": d1}},{"leave_date": { "$gte":  d2}, "checkin_date" : { "$lt": d2}}]})
     //  .select('roomID')

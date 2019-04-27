@@ -145,7 +145,7 @@ app.delete('/:admin/rooms/:roomID', auth.authAdmin, rooms.deleteRoom);
 app.get('/conditions/getAmountByType/:roomType', conditions.getAmountByType);
 app.get('/conditions/multipleSelect/:checkin_date/:leave_date', conditions.multipleSelect);
 app.get('/conditions/getReserveAmount/:checkin_date/:leave_date', conditions.getReserveAmount);
-app.get('/conditions/getAvailableRooms', conditions.getAvailableRooms);
+app.get('/conditions/getAvailableRooms/:roomType', conditions.getAvailableRooms);
 app.get('/types/findByRoomType/:roomType',types.findByRoomType);
 // app.get('/types/getType',types.getType);
 app.post('/:admin/types',auth.authAdmin, upload.single('typeImage'), types.addType);

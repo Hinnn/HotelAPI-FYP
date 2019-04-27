@@ -230,7 +230,7 @@ router.changePassword = (req, res) => {
         res.json({message: 'Please input the same password!', data: null})
     }
     else {
-        Admin.findOneAndUpdate({"email": req.params.email},
+        Admin.findOneAndUpdate({"email": req.params.admin},
             {
                 password: bcrypt.hashSync(req.body.password),
                 password2: bcrypt.hashSync(req.body.password2)

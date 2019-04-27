@@ -6,7 +6,7 @@ router.findAll = (req, res) => {
     // Return a JSON representation of room list
     res.setHeader('Content-Type', 'application/json');
     Room.find(function(err, rooms) {
-        console.log(rooms);
+        // console.log(rooms);
         if (err)
             res.send(err);
         else
@@ -96,7 +96,7 @@ router.addRoom = (req, res) => {
                 room.price = req.body.price;
                 room.people = req.body.people;
                 room.bedType = req.body.bedType;
-                room.roomImage = req.file.path;
+                // room.roomImage = req.file.path;
                 room.save(function(err) {
                     if (err)
                         res.json({ message: 'Room NOT Added!', errmsg : err } );

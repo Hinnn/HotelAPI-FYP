@@ -3,24 +3,34 @@ let nodemailer = require('nodemailer');
 // let customer = require('../models/customers');
 function send (email, code) {
 //new smtp server
-    const config = {
+//     const config = {
+//         host: 'smtp.126.com',
+//         port: 465,
+//         secure: true,
+//         auth: {
+//             user: 'wy20082242@126.com', //account to send email
+//             pass: 'yue123' //email authentication
+//         }
+//     };
+    let transporter = nodemailer.createTransport({
         host: 'smtp.126.com',
         port: 465,
         secure: true,
+        secureConnection:true,
         auth: {
             user: 'wy20082242@126.com', //account to send email
             pass: 'yue123' //email authentication
         }
-    };
+    });
     let mail = {
         from: '"Yve Hotel"<wy20082242@126.com>',
         to: email,
         subject: 'Email Verification',
-        text: 'Your verification code is ' + code + '. The valid time is 10 minutes'
-    };
+        text: 'Your verification code is ' + code + '. Please verify your email in 10 minutes'
+    }
 
 // add a new SMTP server object
-    let transporter = nodemailer.createTransport(config);
+//     let transporter = nodemailer.createTransport(config);
 //send email
 
     transporter.sendMail(mail, function (error, code) {
@@ -30,10 +40,10 @@ function send (email, code) {
             console.log(error.message);
         } else {
             console.log('Email sent successfully! Your code is ' + code);
-            //transporter.close();
+            transporter.close();
         }
     });
-    return;
+    // return;
 }
 
 module.exports.send = send;

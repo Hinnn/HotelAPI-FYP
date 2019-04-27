@@ -53,6 +53,15 @@ describe('Admin', () => {
         }
     });
     describe('DELETE /:admin/rooms/:roomID', () => {
+        it('should return unauthorized error', function (done) {
+            chai.request(server)
+                .delete('/rooms/801')
+                .end((err, res) => {
+                    expect(res).to.have.status(404);
+                    // expect(res.body).to.have.property('message').equal('You can not delete the room!');
+                    done();
+                });
+        });
         it('should return room deleted successfully message', function (done) {
             chai.request(server)
                 .delete('/111@qq.com/rooms/801')
@@ -61,7 +70,6 @@ describe('Admin', () => {
                     expect(res.body).to.have.property('message').equal('Room Successfully Deleted!');
                     done();
                 });
-        });
         after(function (done) {
             chai.request(server)
                 .get('/rooms')
@@ -74,11 +82,12 @@ describe('Admin', () => {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.a('array');
                     expect(result).to.include({
-                        "roomID": "802"
+                        "roomID": "102"
 
                     });
                     done();
                 });
+        });
         })
     })
 })
