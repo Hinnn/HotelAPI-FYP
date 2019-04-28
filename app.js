@@ -79,8 +79,8 @@ app.use('/uploads', express.static('uploads'));
 // app.use(multer({dest:'/uploads'}));
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:8080'
-    // origin: 'https://feellikehomehotel.firebaseapp.com'
+    // origin: 'http://localhost:8080'
+    origin: 'https://feellikehomehotel.firebaseapp.com'
 }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
